@@ -41,7 +41,6 @@ export default function ContactForm() {
     setErrors({});
     
     const form = new FormData(e.currentTarget);
-    const formData = Object.fromEntries(form.entries());
     
     // Validate form
     const validationErrors = validateForm(form);

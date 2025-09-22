@@ -32,8 +32,8 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
       event_category: "error",
       event_label: "react_error",
       error_message: error.message,
-      error_stack: error.stack,
-      component_stack: errorInfo.componentStack
+      error_stack: error.stack || "No stack trace available",
+      component_stack: errorInfo.componentStack || "No component stack available"
     });
 
     // Call custom error handler if provided
@@ -122,7 +122,7 @@ export const useErrorHandler = () => {
       event_category: "error",
       event_label: "javascript_error",
       error_message: error.message,
-      error_stack: error.stack,
+      error_stack: error.stack || "No stack trace available",
       context: context || "unknown"
     });
 

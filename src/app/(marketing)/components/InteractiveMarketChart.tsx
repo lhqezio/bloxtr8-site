@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Shield, DollarSign, BarChart3 } from "lucide-react";
 
 const InteractiveMarketChart = () => {

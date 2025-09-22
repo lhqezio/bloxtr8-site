@@ -33,14 +33,14 @@ export function Analytics({ gaId }: AnalyticsProps) {
 }
 
 // Custom event tracking functions
-export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
+export const trackEvent = (eventName: string, parameters?: Record<string, string | number | boolean>) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", eventName, parameters);
   }
 };
 
 export const trackPageView = (url: string) => {
-  if (typeof window !== "undefined" && window.gtag) {
+  if (typeof window !== "undefined" && window.gtag && process.env.NEXT_PUBLIC_GA_ID) {
     window.gtag("config", process.env.NEXT_PUBLIC_GA_ID, {
       page_path: url,
     });
@@ -50,6 +50,6 @@ export const trackPageView = (url: string) => {
 // Declare gtag function for TypeScript
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    gtag: (command: string, targetId: string, config?: Record<string, string | number | boolean>) => void;
   }
 }
