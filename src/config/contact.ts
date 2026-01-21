@@ -34,7 +34,7 @@ export const emailTemplates = {
   earlyAccess: {
     from: `${contact.company.name} <${contact.emails.site}>`,
     subject: "New Early Access Request",
-    to: process.env.CONTACT_TO || contact.emails.founders
+    to: process.env.CONTACT_TO || contact.emails.general
   }
 };
 

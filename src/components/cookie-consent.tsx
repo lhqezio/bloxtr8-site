@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 
 const COOKIE_CONSENT_KEY = "bloxtr8-cookie-consent";
 
