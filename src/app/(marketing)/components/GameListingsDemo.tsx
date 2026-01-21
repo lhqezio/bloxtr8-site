@@ -39,20 +39,20 @@ const GameListingsDemo = () => {
   ];
 
   return (
-    <div className="bg-background/50 rounded-2xl p-6 border border-border max-w-4xl mx-auto shadow-light">
+    <div className="bg-background/50 rounded-2xl p-4 md:p-6 border border-border w-full max-w-4xl mx-auto shadow-light">
       {/* Discord Header */}
-      <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
+      <div className="flex items-center gap-3 mb-4 md:mb-6 pb-3 md:pb-4 border-b border-border">
         <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
           <span className="text-white font-bold text-sm">B</span>
         </div>
         <div>
-          <h3 className="text-foreground font-semibold">#game-listings</h3>
-          <p className="text-muted-foreground text-sm">Protected by Bloxtr8</p>
+          <h3 className="text-foreground font-semibold text-sm md:text-base">#game-listings</h3>
+          <p className="text-muted-foreground text-xs md:text-sm">Protected by Bloxtr8</p>
         </div>
       </div>
 
       {/* Game Listings */}
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         {gameListings.map((listing, index) => (
           <motion.div
             key={listing.id}
@@ -60,35 +60,35 @@ const GameListingsDemo = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <Card className="bg-card/50 border-border p-4 hover:bg-card/70 transition-colors shadow-light">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">🎮</span>
+            <Card className="bg-card/50 border-border p-3 md:p-4 hover:bg-card/70 transition-colors shadow-light">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3 gap-2 md:gap-0">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-xs md:text-sm">🎮</span>
                   </div>
-                  <div>
-                    <h4 className="text-foreground font-semibold">{listing.game}</h4>
-                    <p className="text-muted-foreground text-sm">by {listing.seller}</p>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-foreground font-semibold text-sm md:text-base truncate">{listing.game}</h4>
+                    <p className="text-muted-foreground text-xs md:text-sm">by {listing.seller}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-green-600 dark:text-green-400 font-bold text-lg">{listing.price}</p>
-                  <p className="text-muted-foreground text-sm">{listing.timeLeft} left</p>
+                <div className="text-left md:text-right">
+                  <p className="text-green-600 dark:text-green-400 font-bold text-base md:text-lg">{listing.price}</p>
+                  <p className="text-muted-foreground text-xs md:text-sm">{listing.timeLeft} left</p>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
-                    <Shield className="h-4 w-4" />
-                    <span className="text-sm font-medium">{listing.escrow}</span>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
+                <div className="flex flex-wrap items-center gap-2 md:gap-4">
+                  <div className="flex items-center gap-1.5 md:gap-2 text-green-600 dark:text-green-400">
+                    <Shield className="h-3.5 w-3.5 md:h-4 md:w-4" />
+                    <span className="text-xs md:text-sm font-medium">{listing.escrow}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
-                    <Users className="h-4 w-4" />
-                    <span className="text-sm">{listing.buyers} interested</span>
+                  <div className="flex items-center gap-1.5 md:gap-2 text-blue-600 dark:text-blue-400">
+                    <Users className="h-3.5 w-3.5 md:h-4 md:w-4" />
+                    <span className="text-xs md:text-sm">{listing.buyers} interested</span>
                   </div>
                 </div>
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white w-full md:w-auto min-h-[44px]">
                   Start Trade
                 </Button>
               </div>
@@ -98,14 +98,14 @@ const GameListingsDemo = () => {
       </div>
 
       {/* Footer */}
-      <div className="mt-6 pt-4 border-t border-border">
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
+      <div className="mt-4 md:mt-6 pt-3 md:pt-4 border-t border-border">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 text-xs md:text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-green-600 dark:text-green-400" />
+            <Shield className="h-3.5 w-3.5 md:h-4 md:w-4 text-green-600 dark:text-green-400" />
             <span>All trades protected by Bloxtr8 escrow</span>
           </div>
           <div className="flex items-center gap-2">
-            <Clock className="h-4 w-4" />
+            <Clock className="h-3.5 w-3.5 md:h-4 md:w-4" />
             <span>Auto-refresh every 30s</span>
           </div>
         </div>

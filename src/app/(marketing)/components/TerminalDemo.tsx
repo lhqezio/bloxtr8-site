@@ -64,31 +64,31 @@ const TerminalDemo = () => {
   }, [currentStep, demoSteps]);
 
   return (
-    <div className="bg-black/90 rounded-2xl p-6 font-mono text-sm border border-gray-800 max-w-2xl mx-auto">
+    <div className="bg-black/90 rounded-2xl p-4 md:p-6 font-mono text-xs md:text-sm border border-gray-800 w-full max-w-2xl mx-auto">
       {/* Terminal Header */}
-      <div className="flex items-center gap-2 mb-4 pb-2 border-b border-gray-700">
-        <div className="flex gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+      <div className="flex items-center gap-1.5 md:gap-2 mb-3 md:mb-4 pb-2 border-b border-gray-700">
+        <div className="flex gap-1.5 md:gap-2">
+          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
         </div>
-        <span className="text-gray-400 ml-4">bloxtr8-escrow</span>
+        <span className="text-gray-400 ml-2 md:ml-4 text-xs md:text-sm truncate">bloxtr8-escrow</span>
       </div>
 
       {/* Terminal Content */}
-      <div className="space-y-4">
+      <div className="space-y-3 md:space-y-4">
         {/* Step Header */}
         <motion.div
           key={`step-${currentStep}`}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-3"
+          className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
         >
-          <div className={`${demoSteps[currentStep]?.color} text-white px-3 py-1 rounded-full text-xs font-bold`}>
+          <div className={`${demoSteps[currentStep]?.color} text-white px-2.5 md:px-3 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-bold whitespace-nowrap`}>
             {demoSteps[currentStep]?.step}
           </div>
-          <span className="text-gray-300 font-medium">
+          <span className="text-gray-300 font-medium text-xs md:text-sm">
             {demoSteps[currentStep]?.description}
           </span>
         </motion.div>
@@ -100,17 +100,17 @@ const TerminalDemo = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 20 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 bg-gray-900/50 p-3 rounded-lg"
+          className="flex items-center gap-2 md:gap-3 bg-gray-900/50 p-2.5 md:p-3 rounded-lg overflow-x-auto"
         >
-          <span className="text-green-400">$</span>
-          <span className="text-white">
+          <span className="text-green-400 flex-shrink-0">$</span>
+          <span className="text-white break-words">
             {demoSteps[currentStep]?.command}
             {isTyping && <span className="animate-pulse">|</span>}
           </span>
         </motion.div>
 
         {/* Progress Indicator */}
-        <div className="flex gap-1 mt-4">
+        <div className="flex gap-1 mt-3 md:mt-4">
           {demoSteps.map((_, index) => (
             <div
               key={index}
@@ -126,7 +126,7 @@ const TerminalDemo = () => {
         </div>
 
         {/* Step Counter */}
-        <div className="text-gray-500 text-xs mt-2">
+        <div className="text-gray-500 text-[10px] md:text-xs mt-1 md:mt-2">
           Step {currentStep + 1} of {demoSteps.length}
         </div>
       </div>

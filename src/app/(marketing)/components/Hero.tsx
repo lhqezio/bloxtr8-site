@@ -10,7 +10,7 @@ import Link from "next/link";
 // Smooth Floating Graphics Component
 const SmoothGraphics = () => {
   return (
-    <div className="absolute inset-0 z-10 pointer-events-none">
+    <div className="absolute inset-0 z-10 pointer-events-none hidden md:block">
       {/* Slow, smooth floating graphics */}
       <motion.div
         className="absolute top-20 left-20 text-pink-500"
