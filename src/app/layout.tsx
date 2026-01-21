@@ -1,8 +1,9 @@
 import "./globals.css";
 import { Inter, JetBrains_Mono, Orbitron } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { meta } from "@/content/copy";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Analytics } from "@/components/analytics";
+import { Analytics as GoogleAnalytics } from "@/components/analytics";
 import ErrorBoundary from "@/components/error-boundary";
 import CookieConsent from "@/components/cookie-consent";
 
@@ -28,7 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <CookieConsent />
           </ThemeProvider>
         </ErrorBoundary>
-        <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <Analytics />
       </body>
     </html>
   );
