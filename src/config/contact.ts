@@ -5,13 +5,8 @@ export const contact = {
   // Primary contact emails
   emails: {
     general: "contact@bloxtr8.com",
-    founders: "founders@bloxtr8.com", 
     investors: "investors@bloxtr8.com",
-    site: "site@bloxtr8.com",
-    // Individual founder emails
-    youssef: "youssef@bloxtr8.com",
-    hoang: "hoang@bloxtr8.com",
-    minh: "minh@bloxtr8.com"
+    site: "site@bloxtr8.com"
   },
   
   // Social media and external links

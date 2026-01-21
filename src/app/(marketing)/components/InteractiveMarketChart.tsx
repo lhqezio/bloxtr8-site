@@ -74,16 +74,16 @@ const InteractiveMarketChart = () => {
             }`} />
           </div>
         </div>
-        <h3 className="text-2xl font-mono-bold mb-2 text-foreground">
+        <h3 className="text-xl md:text-2xl font-mono-bold mb-2 text-foreground">
           {currentData.title}
         </h3>
         <p className="text-muted-foreground mb-4">
           {currentData.subtitle}
         </p>
-        <div className={`text-4xl font-mono-bold mb-2 text-white ${
-          activeChart === "volume" ? "underline decoration-blue-500 decoration-[6px]" :
-          activeChart === "losses" ? "underline decoration-red-500 decoration-[6px]" :
-          "underline decoration-green-500 decoration-[6px]"
+        <div className={`text-3xl md:text-4xl font-mono-bold mb-2 text-white ${
+          activeChart === "volume" ? "underline decoration-blue-500 decoration-[3px]" :
+          activeChart === "losses" ? "underline decoration-red-500 decoration-[3px]" :
+          "underline decoration-green-500 decoration-[3px]"
         }`}>
           {currentData.total}
         </div>
@@ -212,9 +212,9 @@ const InteractiveMarketChart = () => {
             <button
               key={button.id}
               onClick={() => setActiveChart(button.id)}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-2xl transition-all font-medium text-sm ${
+              className={`flex items-center space-x-2 px-5 py-3 md:px-6 md:py-3 rounded-2xl transition-all font-medium text-sm min-h-[44px] ${
                 isActive 
-                  ? `text-white underline decoration-white decoration-[6px] ${
+                  ? `text-white underline decoration-white decoration-[3px] ${
                       button.color === "blue" ? "bg-blue-500 hover:bg-blue-600" :
                       button.color === "red" ? "bg-red-500 hover:bg-red-600" :
                       "bg-green-500 hover:bg-green-600"

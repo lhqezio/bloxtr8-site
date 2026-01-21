@@ -5,7 +5,6 @@ import { navigation } from "@/content/copy";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,42 +13,50 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[100] border-b border-border bg-background/95 backdrop-blur-md">
-      <div className="container-wide flex h-16 items-center">
+      <div className="container-wide flex h-16 items-center relative">
         <Link href="/" className="flex items-center gap-2 relative z-[101]">
-          <span className="font-mono text-sm tracking-widest uppercase underline decoration-foreground decoration-2">{navigation.brand}</span>
+          <span className="font-mono text-sm tracking-widest uppercase font-medium">{navigation.brand}</span>
         </Link>
         
-        {/* Desktop Navigation - Centered */}
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground font-mono relative z-[101] flex-1 justify-center">
+        {/* Desktop Navigation - Absolutely Centered */}
+        <nav className="hidden md:flex items-center gap-10 text-sm text-muted-foreground font-mono font-medium absolute left-1/2 -translate-x-1/2 z-[101]">
           {isHomePage ? (
             <>
-              <a href="#challenge" className="hover:text-foreground transition-colors cursor-pointer">{navigation.links.product}</a>
-              <a href="#solution" className="hover:text-foreground transition-colors cursor-pointer">{navigation.links.trust}</a>
+              <a href="#features" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer">{navigation.links.features}</a>
+              <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer">{navigation.links.pricing}</Link>
+              <Link 
+                href="/blockchain" 
+                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer"
+                style={{ fontFamily: 'var(--font-orbitron)' }}
+              >
+                {navigation.links.blockchain}
+              </Link>
             </>
           ) : (
             <>
-              <Link href="/#challenge" className="hover:text-foreground transition-colors cursor-pointer">{navigation.links.product}</Link>
-              <Link href="/#solution" className="hover:text-foreground transition-colors cursor-pointer">{navigation.links.trust}</Link>
+              <Link href="/#features" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer">{navigation.links.features}</Link>
+              <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer">{navigation.links.pricing}</Link>
+              <Link 
+                href="/blockchain" 
+                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer"
+                style={{ fontFamily: 'var(--font-orbitron)' }}
+              >
+                {navigation.links.blockchain}
+              </Link>
             </>
           )}
-          <Link href="/founders" className="hover:text-foreground transition-colors cursor-pointer">{navigation.links.founders}</Link>
         </nav>
 
-        {/* Desktop CTA and Theme Toggle */}
-        <div className="hidden md:flex items-center gap-3 relative z-[101]">
-          <ThemeToggle />
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center gap-3 relative z-[101] ml-auto">
           <Button asChild variant="outline" className="rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono">
-            {isHomePage ? (
-              <a href="#contact">{navigation.cta}</a>
-            ) : (
-              <Link href="/#contact">{navigation.cta}</Link>
-            )}
+            <Link href="/contact">{navigation.cta}</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-[101] p-2 text-muted-foreground hover:text-foreground transition-colors"
+          className="md:hidden relative z-[101] p-2 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -63,56 +70,58 @@ export default function Header() {
           <nav className="container-wide py-4 space-y-4">
             {isHomePage ? (
               <>
-                <a 
-                  href="#challenge" 
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
+                <a
+                  href="#features"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-all duration-200 font-mono font-medium py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {navigation.links.product}
+                  {navigation.links.features}
                 </a>
-                <a 
-                  href="#solution" 
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
+                <Link
+                  href="/pricing"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-all duration-200 font-mono font-medium py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {navigation.links.trust}
-                </a>
+                  {navigation.links.pricing}
+                </Link>
+                <Link
+                  href="/blockchain"
+                  className="block text-sm bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold py-1 transition-all duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ fontFamily: 'var(--font-orbitron)' }}
+                >
+                  {navigation.links.blockchain}
+                </Link>
               </>
             ) : (
               <>
-                <Link 
-                  href="/#challenge" 
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
+                <Link
+                  href="/#features"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-all duration-200 font-mono font-medium py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {navigation.links.product}
+                  {navigation.links.features}
                 </Link>
-                <Link 
-                  href="/#solution" 
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
+                <Link
+                  href="/pricing"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-all duration-200 font-mono font-medium py-1"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {navigation.links.trust}
+                  {navigation.links.pricing}
+                </Link>
+                <Link
+                  href="/blockchain"
+                  className="block text-sm bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold py-1 transition-all duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ fontFamily: 'var(--font-orbitron)' }}
+                >
+                  {navigation.links.blockchain}
                 </Link>
               </>
             )}
-            <Link 
-              href="/founders" 
-              className="block text-sm text-muted-foreground hover:text-foreground transition-colors font-mono"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {navigation.links.founders}
-            </Link>
-            <div className="pt-4 space-y-3">
-              <div className="flex justify-center">
-                <ThemeToggle />
-              </div>
-              <Button asChild variant="outline" className="w-full rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono">
-                {isHomePage ? (
-                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</a>
-                ) : (
-                  <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</Link>
-                )}
+            <div className="pt-4">
+              <Button asChild variant="outline" className="w-full rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono min-h-[44px]">
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</Link>
               </Button>
             </div>
           </nav>

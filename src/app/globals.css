@@ -70,6 +70,7 @@
   --color-ring: var(--ring);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-orbitron: var(--font-orbitron);
   --radius: var(--radius);
   --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);
@@ -100,6 +101,28 @@ body {
   padding: 0 1.5rem;
 }
 
+/*
+ * Spacing System
+ * ===============
+ *
+ * Section Padding:
+ * - py-24 (96px): Major sections (Hero, Challenge, Solution, ContactForm)
+ * - py-16 (64px): Minor sections (TeamSnippet)
+ *
+ * Content Spacing Scale:
+ * - mb-2 (8px): Tight spacing (very close elements)
+ * - mb-4 (16px): Small spacing (related elements)
+ * - mb-6 (24px): Medium spacing (distinct elements)
+ * - mb-8 (32px): Large spacing (section headers)
+ * - mb-12 (48px): Extra large spacing (major content blocks)
+ * - mb-16 (64px): Section separation (rare, use borders instead)
+ *
+ * Visual Separation:
+ * - border-t border-border: Between major sections
+ * - bg-background/[0.02]: Subtle section backgrounds (dark mode)
+ * - bg-gray-50: Subtle section backgrounds (light mode)
+ */
+
 /* JetBrains Mono utility classes */
 .font-mono-bold {
   font-family: var(--font-mono), monospace;
@@ -124,6 +147,11 @@ body {
   font-weight: 400;
   letter-spacing: 0.05em;
   font-size: 0.875rem;
+}
+
+/* Orbitron font utility classes */
+.font-orbitron {
+  font-family: var(--font-orbitron), sans-serif;
 }
 
 /* Border utilities for light/dark mode */
@@ -183,6 +211,20 @@ body {
   mask-image: radial-gradient(ellipse at center, rgba(255,255,255,0.35), transparent 60%);
 }
 
+/*
+ * Visual Separation System
+ * ========================
+ *
+ * Background Patterns:
+ * - .section-bg-subtle: bg-background/[0.02] (dark) / bg-gray-50 (light)
+ * - .section-bg-medium: bg-background/[0.05] (dark) / bg-gray-100 (light)
+ * - .section-bg-strong: bg-background/[0.10] (dark) / bg-gray-200 (light)
+ *
+ * Border Separation:
+ * - border-t border-border: Between major sections
+ * - border-b border-border: Section bottom borders
+ */
+
 /* Light mode improvements */
 .light {
   /* Use borders instead of shadows for cleaner look */
@@ -202,4 +244,41 @@ body {
   --border-light: none;
   --border-medium: none;
   --border-strong: none;
+}
+
+/* Section Background Utilities */
+.section-bg-subtle {
+  background: var(--background);
+}
+
+.dark .section-bg-subtle {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.light .section-bg-subtle {
+  background: rgb(249 250 251); /* gray-50 */
+}
+
+.section-bg-medium {
+  background: var(--background);
+}
+
+.dark .section-bg-medium {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.light .section-bg-medium {
+  background: rgb(243 244 246); /* gray-100 */
+}
+
+.section-bg-strong {
+  background: var(--background);
+}
+
+.dark .section-bg-strong {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.light .section-bg-strong {
+  background: rgb(229 231 235); /* gray-200 */
 }

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { hero } from "@/content/copy";
 import { Shield, Zap, Star, Heart, Globe, Rocket, Sparkles, Crown } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
+import Link from "next/link";
 
 // Smooth Floating Graphics Component
 const SmoothGraphics = () => {
@@ -211,7 +212,7 @@ const SmoothGraphics = () => {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[70vh] flex items-center pt-24">
+    <section className="relative overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center py-12 md:py-16 lg:py-24">
       <div className="grid-bg absolute inset-0 -z-20" />
       
       {/* FlowAnimation disabled - was showing gray ring */}
@@ -220,9 +221,9 @@ export default function Hero() {
       {/* Smooth Floating Graphics */}
       <SmoothGraphics />
       
-      <div className="container-wide py-20 relative z-20">
+      <div className="container-wide py-8 md:py-12 lg:py-20 relative z-20">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Left Side - Text */}
             <div className="text-center lg:text-left">
           <motion.h1 
@@ -231,34 +232,36 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-mono-bold leading-tight mb-6"
           >
-                <span className="underline decoration-green-500 decoration-[6px]">{hero.title.main}</span> {hero.title.connector} <span className="underline decoration-green-500 decoration-[6px]">{hero.title.underlineWords.trades}</span> in <span className="underline decoration-purple-500 decoration-[6px]">{hero.title.underlineWords.roblox}</span> {hero.title.context}
+                <span className="underline decoration-green-500 decoration-[3px]">{hero.title.main}</span> {hero.title.connector} <span className="underline decoration-green-500 decoration-[3px]">{hero.title.underlineWords.trades}</span> in <span className="underline decoration-purple-500 decoration-[3px]">{hero.title.underlineWords.roblox}</span> {hero.title.context}
           </motion.h1>
           <motion.p 
             initial={{ y: 20, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl text-muted-foreground mb-8 leading-relaxed"
+                className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed"
           >
-            {hero.subtitle.flows}, {hero.subtitle.contracts}, {hero.subtitle.description} <span className="underline decoration-blue-500 decoration-[3px]">{hero.subtitle.underlineWords.stripe}</span> {hero.subtitle.stripeLimit} <span className="underline decoration-yellow-400 decoration-[3px]">{hero.subtitle.underlineWords.usdc}</span> {hero.subtitle.base} {hero.subtitle.baseLimit}
+            {hero.subtitle.flows}, {hero.subtitle.contracts}, {hero.subtitle.description} <span className="underline decoration-blue-500 decoration-[2px]">{hero.subtitle.underlineWords.stripe}</span> {hero.subtitle.stripeLimit} <span className="underline decoration-yellow-400 decoration-[2px]">{hero.subtitle.underlineWords.usdc}</span> {hero.subtitle.base} {hero.subtitle.baseLimit}
           </motion.p>
           <motion.div 
             initial={{ y: 20, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start"
           >
             <Button asChild size="lg" className="rounded-2xl px-8">
-              <a 
-                href="#contact"
-                onClick={() => trackEvent("cta_click", {
-                  event_category: "engagement",
-                  event_label: "hero_cta",
-                  cta_text: hero.cta.primary,
-                  cta_location: "hero_section"
-                })}
+              <Link 
+                href="/contact"
+                onClick={() => {
+                  trackEvent("cta_click", {
+                    event_category: "engagement",
+                    event_label: "hero_cta",
+                    cta_text: hero.cta.primary,
+                    cta_location: "hero_section"
+                  });
+                }}
               >
                 {hero.cta.primary}
-              </a>
+              </Link>
             </Button>
           </motion.div>
             </div>
