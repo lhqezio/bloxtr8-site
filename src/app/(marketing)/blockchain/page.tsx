@@ -103,32 +103,6 @@ const FloatingParticles = () => {
   );
 };
 
-// Glitch text effect component
-const GlitchText = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  return (
-    <span className={`relative inline-block ${className}`}>
-      <motion.span
-        className="absolute inset-0"
-        animate={{
-          x: [0, -2, 2, -2, 2, 0],
-        }}
-        transition={{
-          duration: 0.3,
-          repeat: Infinity,
-          repeatDelay: 5,
-        }}
-        style={{
-          textShadow: "2px 0 #ff00ff, -2px 0 #00ffff",
-          clipPath: "inset(0 0 0 0)",
-        }}
-      >
-        {children}
-      </motion.span>
-      <span className="relative">{children}</span>
-    </span>
-  );
-};
-
 // Interactive card component with mouse tracking
 const InteractiveCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const x = useMotionValue(0);

@@ -48,7 +48,7 @@ export default function CookieConsent() {
               <h3 className="font-mono-medium text-base mb-2">Cookie Consent</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. 
-                By clicking "Accept", you consent to our use of cookies.{" "}
+                By clicking &quot;Accept&quot;, you consent to our use of cookies.{" "}
                 <a
                   href="#"
                   className="underline hover:text-foreground transition-colors"

@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { pricing } from "@/content/copy";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Check, Zap, Shield, TrendingUp, Clock, DollarSign, Users } from "lucide-react";
+import { ArrowLeft, Check, Zap, Shield, TrendingUp, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 

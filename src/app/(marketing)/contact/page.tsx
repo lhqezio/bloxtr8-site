@@ -40,7 +40,7 @@ export default function ContactPage() {
                 Join the waitlist to be among the first to experience secure Roblox trading.
               </p>
               <p className="text-base md:text-lg text-muted-foreground">
-                We're building something special. Be the first to know when we launch.
+                We&apos;re building something special. Be the first to know when we launch.
               </p>
             </motion.div>
 
