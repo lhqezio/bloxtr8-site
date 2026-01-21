@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Challenge from "./components/Challenge";
 import Solution from "./components/Solution";
+import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 export default function Page() {
@@ -12,6 +13,7 @@ export default function Page() {
         <Hero />
         <Challenge />
         <Solution />
+        <CTA />
       </main>
       <Footer />
     </div>
