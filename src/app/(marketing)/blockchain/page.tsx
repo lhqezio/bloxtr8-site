@@ -224,21 +224,21 @@ const TransactionDemo = () => {
   const steps = blockchain.transactionDemo.steps;
 
   return (
-    <div className="relative">
-      <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-12">
+    <div className="relative w-full overflow-hidden">
+      <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-12 w-full">
         {/* Progress indicator */}
         <div className="text-center mb-3 sm:mb-4 w-full px-2 sm:px-4">
-          <p className="text-sm sm:text-base md:text-lg font-mono-bold text-foreground mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wider">
+          <p className="text-sm sm:text-base md:text-lg font-mono-bold text-foreground mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wider break-words">
             Step {activeStep + 1} of {steps.length}
           </p>
-          <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-mono-medium mb-3 sm:mb-4 md:mb-5 min-h-[16px] sm:min-h-[20px] md:min-h-[24px] px-2">
+          <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-mono-medium mb-3 sm:mb-4 md:mb-5 min-h-[16px] sm:min-h-[20px] md:min-h-[24px] px-2 break-words">
             {steps[activeStep].label}
           </p>
-          <div className="flex gap-2 sm:gap-2.5 md:gap-3 justify-center px-2">
+          <div className="flex gap-2 sm:gap-2.5 md:gap-3 justify-center px-2 flex-wrap">
             {steps.map((_, idx) => (
               <div
                 key={idx}
-                className={`h-1.5 sm:h-2 md:h-2 w-8 sm:w-10 md:w-12 lg:w-16 rounded-full transition-all duration-300 ${
+                className={`h-1.5 sm:h-2 md:h-2 w-8 sm:w-10 md:w-12 lg:w-16 rounded-full transition-all duration-300 flex-shrink-0 ${
                   idx === activeStep
                     ? "bg-blue-400"
                     : idx < activeStep
@@ -251,29 +251,29 @@ const TransactionDemo = () => {
         </div>
 
         {/* Visual flow - Vertical layout */}
-        <div className="w-full max-w-2xl px-3 sm:px-4 md:px-0">
-          <div className="flex flex-col gap-4 sm:gap-5 md:gap-8">
+        <div className="w-full max-w-2xl px-2 sm:px-4 md:px-0">
+          <div className="flex flex-col gap-4 sm:gap-5 md:gap-8 w-full">
             {/* Buyer */}
             <motion.div
               animate={{
-                scale: activeStep === 0 ? 1.02 : 1,
+                scale: activeStep === 0 ? 1.01 : 1,
                 borderColor: activeStep === 0 ? "rgb(59, 130, 246)" : "rgb(255, 255, 255, 0.1)",
               }}
-              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-blue-500/50 transition-all relative min-h-[110px] sm:min-h-[130px] md:min-h-[140px]"
+              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-blue-500/50 transition-all relative min-h-[110px] sm:min-h-[130px] md:min-h-[140px] w-full overflow-hidden"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-2.5 md:mb-3">
                 <User className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-blue-400" />
               </div>
-              <p className="font-mono-bold text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide">Buyer</p>
-              <div className="min-h-[20px] sm:min-h-[24px] md:min-h-[28px] flex items-center justify-center">
+              <p className="font-mono-bold text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide break-words">Buyer</p>
+              <div className="min-h-[20px] sm:min-h-[24px] md:min-h-[28px] flex items-center justify-center px-2">
                 {activeStep === 0 && (
                   <motion.div
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5 flex-wrap"
                   >
                     <Coins className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-400 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm md:text-base text-blue-400 font-mono-medium">Depositing USDC...</span>
+                    <span className="text-xs sm:text-sm md:text-base text-blue-400 font-mono-medium break-words text-center">Depositing USDC...</span>
                   </motion.div>
                 )}
                 {activeStep >= 3 && (
@@ -281,9 +281,9 @@ const TransactionDemo = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                   >
-                    <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-purple-500/20 border border-purple-500/30 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg">
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-purple-500/20 border border-purple-500/30 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg flex-wrap justify-center">
                       <Gamepad2 className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base font-mono-medium text-purple-400">Roblox Item</span>
+                      <span className="text-xs sm:text-sm md:text-base font-mono-medium text-purple-400 break-words">Roblox Item</span>
                     </div>
                   </motion.div>
                 )}
@@ -308,10 +308,10 @@ const TransactionDemo = () => {
             {/* Smart Contract */}
             <motion.div
               animate={{
-                scale: [1, 2, 3, 4].includes(activeStep) ? 1.02 : 1,
+                scale: [1, 2, 3, 4].includes(activeStep) ? 1.01 : 1,
                 borderColor: [1, 2, 3, 4].includes(activeStep) ? "rgb(168, 85, 247)" : "rgb(255, 255, 255, 0.1)",
               }}
-              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center relative hover:border-purple-500/50 transition-all min-h-[130px] sm:min-h-[150px] md:min-h-[160px]"
+              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center relative hover:border-purple-500/50 transition-all min-h-[130px] sm:min-h-[150px] md:min-h-[160px] w-full overflow-hidden"
             >
               {[1, 2, 3, 4].includes(activeStep) && (
                 <motion.div
@@ -323,13 +323,13 @@ const TransactionDemo = () => {
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-2.5 md:mb-3 relative z-10">
                 <Zap className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-purple-400" />
               </div>
-              <p className="font-mono-bold text-xs sm:text-sm md:text-base relative z-10 mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide">Smart Contract</p>
-              <div className="min-h-[24px] sm:min-h-[32px] md:min-h-[40px] flex items-center justify-center relative z-10">
+              <p className="font-mono-bold text-xs sm:text-sm md:text-base relative z-10 mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide break-words">Smart Contract</p>
+              <div className="min-h-[24px] sm:min-h-[32px] md:min-h-[40px] flex items-center justify-center relative z-10 px-2">
                 {activeStep === 1 && (
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium break-words text-center"
                   >
                     Holding USDC escrow
                   </motion.p>
@@ -338,7 +338,7 @@ const TransactionDemo = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium break-words text-center"
                   >
                     Waiting for Roblox transfer...
                   </motion.p>
@@ -349,15 +349,15 @@ const TransactionDemo = () => {
                     animate={{ opacity: 1 }}
                     className="space-y-1 sm:space-y-1 md:space-y-1.5"
                   >
-                    <p className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium">Roblox item verified</p>
-                    <p className="text-[10px] sm:text-xs md:text-sm text-purple-400/70 font-mono-medium uppercase tracking-tight">Ready to release funds</p>
+                    <p className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium break-words text-center">Roblox item verified</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-purple-400/70 font-mono-medium uppercase tracking-tight break-words text-center">Ready to release funds</p>
                   </motion.div>
                 )}
                 {activeStep === 4 && (
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium break-words text-center"
                   >
                     Releasing USDC...
                   </motion.p>
@@ -402,24 +402,24 @@ const TransactionDemo = () => {
             {/* Seller */}
             <motion.div
               animate={{
-                scale: [2, 3, 4].includes(activeStep) ? 1.02 : 1,
+                scale: [2, 3, 4].includes(activeStep) ? 1.01 : 1,
                 borderColor: [2, 3, 4].includes(activeStep) ? "rgb(34, 197, 94)" : "rgb(255, 255, 255, 0.1)",
               }}
-              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-green-500/50 transition-all relative min-h-[110px] sm:min-h-[130px] md:min-h-[140px]"
+              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-green-500/50 transition-all relative min-h-[110px] sm:min-h-[130px] md:min-h-[140px] w-full overflow-hidden"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-2.5 md:mb-3">
                 <Package className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-400" />
               </div>
-              <p className="font-mono-bold text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide">Seller</p>
-              <div className="min-h-[20px] sm:min-h-[24px] md:min-h-[28px] flex items-center justify-center">
+              <p className="font-mono-bold text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide break-words">Seller</p>
+              <div className="min-h-[20px] sm:min-h-[24px] md:min-h-[28px] flex items-center justify-center px-2">
                 {activeStep < 2 && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
-                    <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-green-500/20 border border-green-500/30 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg">
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-green-500/20 border border-green-500/30 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg flex-wrap justify-center">
                       <Gamepad2 className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base font-mono-medium text-green-400">Roblox Item</span>
+                      <span className="text-xs sm:text-sm md:text-base font-mono-medium text-green-400 break-words">Roblox Item</span>
                     </div>
                   </motion.div>
                 )}
@@ -427,7 +427,7 @@ const TransactionDemo = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium break-words text-center"
                   >
                     Transferring Roblox item...
                   </motion.p>
@@ -436,7 +436,7 @@ const TransactionDemo = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium break-words text-center"
                   >
                     Item transferred ✓
                   </motion.p>
@@ -445,10 +445,10 @@ const TransactionDemo = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5 flex-wrap"
                   >
                     <Coins className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium">Receiving USDC...</span>
+                    <span className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium break-words text-center">Receiving USDC...</span>
                   </motion.div>
                 )}
               </div>
@@ -610,21 +610,21 @@ export default function BlockchainPage() {
         </section>
 
         {/* Interactive Transaction Demo */}
-        <section id="transaction-demo" className="py-12 md:py-16 lg:py-24">
-          <div className="container-narrow">
+        <section id="transaction-demo" className="py-12 md:py-16 lg:py-24 overflow-x-hidden">
+          <div className="container-narrow px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12 lg:mb-16"
+              className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono-bold mb-3 sm:mb-4 break-words">
                 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   {blockchain.transactionDemo.title}
                 </span>
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto break-words">
                 See how blockchain escrow executes in real-time
               </p>
             </motion.div>
