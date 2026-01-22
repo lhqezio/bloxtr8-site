@@ -225,20 +225,20 @@ const TransactionDemo = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-col items-center gap-6 md:gap-12">
+      <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-12">
         {/* Progress indicator */}
-        <div className="text-center mb-2 sm:mb-3 w-full px-2 sm:px-4">
-          <p className="text-xs sm:text-sm md:text-lg font-mono-bold text-foreground mb-1 sm:mb-1.5 md:mb-2 uppercase tracking-wider">
+        <div className="text-center mb-3 sm:mb-4 w-full px-2 sm:px-4">
+          <p className="text-sm sm:text-base md:text-lg font-mono-bold text-foreground mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wider">
             Step {activeStep + 1} of {steps.length}
           </p>
-          <p className="text-[10px] sm:text-xs md:text-base text-muted-foreground font-mono-medium mb-2 sm:mb-3 md:mb-4 h-4 sm:h-5 md:h-6 px-2">
+          <p className="text-xs sm:text-sm md:text-base text-muted-foreground font-mono-medium mb-3 sm:mb-4 md:mb-5 min-h-[16px] sm:min-h-[20px] md:min-h-[24px] px-2">
             {steps[activeStep].label}
           </p>
-          <div className="flex gap-1 sm:gap-1.5 md:gap-2 justify-center px-2">
+          <div className="flex gap-2 sm:gap-2.5 md:gap-3 justify-center px-2">
             {steps.map((_, idx) => (
               <div
                 key={idx}
-                className={`h-1 w-4 sm:w-6 md:w-8 lg:w-12 rounded-full transition-all duration-300 ${
+                className={`h-1.5 sm:h-2 md:h-2 w-8 sm:w-10 md:w-12 lg:w-16 rounded-full transition-all duration-300 ${
                   idx === activeStep
                     ? "bg-blue-400"
                     : idx < activeStep
@@ -251,29 +251,29 @@ const TransactionDemo = () => {
         </div>
 
         {/* Visual flow - Vertical layout */}
-        <div className="w-full max-w-2xl px-2 sm:px-4 md:px-0">
-          <div className="flex flex-col gap-3 sm:gap-4 md:gap-8">
+        <div className="w-full max-w-2xl px-3 sm:px-4 md:px-0">
+          <div className="flex flex-col gap-4 sm:gap-5 md:gap-8">
             {/* Buyer */}
             <motion.div
               animate={{
                 scale: activeStep === 0 ? 1.02 : 1,
                 borderColor: activeStep === 0 ? "rgb(59, 130, 246)" : "rgb(255, 255, 255, 0.1)",
               }}
-              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:border-blue-500/50 transition-all relative min-h-[100px] sm:min-h-[120px] md:min-h-[140px]"
+              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-blue-500/50 transition-all relative min-h-[110px] sm:min-h-[130px] md:min-h-[140px]"
             >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl flex items-center justify-center mx-auto mb-1.5 sm:mb-2 md:mb-3">
-                <User className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-blue-400" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-2.5 md:mb-3">
+                <User className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-blue-400" />
               </div>
-              <p className="font-mono-bold text-[10px] sm:text-xs md:text-base mb-1 sm:mb-1.5 md:mb-2 uppercase tracking-wide">Buyer</p>
-              <div className="h-4 sm:h-5 md:h-6 flex items-center justify-center">
+              <p className="font-mono-bold text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide">Buyer</p>
+              <div className="min-h-[20px] sm:min-h-[24px] md:min-h-[28px] flex items-center justify-center">
                 {activeStep === 0 && (
                   <motion.div
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center justify-center gap-1 sm:gap-1.5 md:gap-2"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5"
                   >
-                    <Coins className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-blue-400 flex-shrink-0" />
-                    <span className="text-[9px] sm:text-[10px] md:text-xs text-blue-400 font-mono-medium">Depositing USDC...</span>
+                    <Coins className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-400 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm md:text-base text-blue-400 font-mono-medium">Depositing USDC...</span>
                   </motion.div>
                 )}
                 {activeStep >= 3 && (
@@ -281,9 +281,9 @@ const TransactionDemo = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                   >
-                    <div className="inline-flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-purple-500/20 border border-purple-500/30 px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded-lg">
-                      <Gamepad2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-purple-400 flex-shrink-0" />
-                      <span className="text-[9px] sm:text-[10px] md:text-xs font-mono-medium text-purple-400">Roblox Item</span>
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-purple-500/20 border border-purple-500/30 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg">
+                      <Gamepad2 className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm md:text-base font-mono-medium text-purple-400">Roblox Item</span>
                     </div>
                   </motion.div>
                 )}
@@ -291,17 +291,17 @@ const TransactionDemo = () => {
             </motion.div>
 
             {/* Arrow down - Funds going to contract */}
-            <div className="flex justify-center relative h-10 sm:h-12 md:h-16">
+            <div className="flex justify-center relative h-12 sm:h-14 md:h-16">
               <motion.div
                 animate={{
                   opacity: activeStep >= 1 ? 1 : 0.3,
                   y: activeStep === 1 ? [0, 8, 0] : 0,
                 }}
                 transition={{ duration: 1, repeat: activeStep === 1 ? Infinity : 0 }}
-                className="flex flex-col items-center gap-0.5"
+                className="flex flex-col items-center gap-1"
               >
-                <Coins className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-blue-400 flex-shrink-0" />
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-blue-400 rotate-90 flex-shrink-0" />
+                <Coins className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-blue-400 flex-shrink-0" />
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-400 rotate-90 flex-shrink-0" />
               </motion.div>
             </div>
 
@@ -311,7 +311,7 @@ const TransactionDemo = () => {
                 scale: [1, 2, 3, 4].includes(activeStep) ? 1.02 : 1,
                 borderColor: [1, 2, 3, 4].includes(activeStep) ? "rgb(168, 85, 247)" : "rgb(255, 255, 255, 0.1)",
               }}
-              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center relative hover:border-purple-500/50 transition-all min-h-[120px] sm:min-h-[140px] md:min-h-[160px]"
+              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center relative hover:border-purple-500/50 transition-all min-h-[130px] sm:min-h-[150px] md:min-h-[160px]"
             >
               {[1, 2, 3, 4].includes(activeStep) && (
                 <motion.div
@@ -320,16 +320,16 @@ const TransactionDemo = () => {
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
               )}
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-xl flex items-center justify-center mx-auto mb-1.5 sm:mb-2 md:mb-3 relative z-10">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-purple-400" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-2.5 md:mb-3 relative z-10">
+                <Zap className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-purple-400" />
               </div>
-              <p className="font-mono-bold text-[10px] sm:text-xs md:text-base relative z-10 mb-1 sm:mb-1.5 md:mb-2 uppercase tracking-wide">Smart Contract</p>
-              <div className="h-6 sm:h-8 md:h-10 flex items-center justify-center relative z-10">
+              <p className="font-mono-bold text-xs sm:text-sm md:text-base relative z-10 mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide">Smart Contract</p>
+              <div className="min-h-[24px] sm:min-h-[32px] md:min-h-[40px] flex items-center justify-center relative z-10">
                 {activeStep === 1 && (
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-[9px] sm:text-[10px] md:text-xs text-purple-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium"
                   >
                     Holding USDC escrow
                   </motion.p>
@@ -338,7 +338,7 @@ const TransactionDemo = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-[9px] sm:text-[10px] md:text-xs text-purple-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium"
                   >
                     Waiting for Roblox transfer...
                   </motion.p>
@@ -347,17 +347,17 @@ const TransactionDemo = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="space-y-0.5 sm:space-y-0.5 md:space-y-1"
+                    className="space-y-1 sm:space-y-1 md:space-y-1.5"
                   >
-                    <p className="text-[9px] sm:text-[10px] md:text-xs text-purple-400 font-mono-medium">Roblox item verified</p>
-                    <p className="text-[8px] sm:text-[9px] md:text-[10px] text-purple-400/70 font-mono-medium uppercase tracking-tight">Ready to release funds</p>
+                    <p className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium">Roblox item verified</p>
+                    <p className="text-[10px] sm:text-xs md:text-sm text-purple-400/70 font-mono-medium uppercase tracking-tight">Ready to release funds</p>
                   </motion.div>
                 )}
                 {activeStep === 4 && (
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-[9px] sm:text-[10px] md:text-xs text-purple-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-purple-400 font-mono-medium"
                   >
                     Releasing USDC...
                   </motion.p>
@@ -366,7 +366,7 @@ const TransactionDemo = () => {
             </motion.div>
 
             {/* Arrow down - Item going up, funds going down */}
-            <div className="flex justify-center relative h-12 sm:h-16 md:h-20">
+            <div className="flex justify-center relative h-14 sm:h-16 md:h-20">
               {activeStep === 2 && (
                 <motion.div
                   animate={{
@@ -374,11 +374,11 @@ const TransactionDemo = () => {
                     opacity: 1,
                   }}
                   transition={{ duration: 1, repeat: Infinity }}
-                  className="absolute flex flex-col items-center gap-0.5"
+                  className="absolute flex flex-col items-center gap-1"
                 >
-                  <Gamepad2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-green-400 flex-shrink-0" />
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-400 -rotate-90 flex-shrink-0" />
-                  <span className="text-[8px] sm:text-[9px] md:text-[10px] text-green-400 font-mono-medium uppercase tracking-tighter">Roblox Item</span>
+                  <Gamepad2 className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-400 -rotate-90 flex-shrink-0" />
+                  <span className="text-[10px] sm:text-xs md:text-sm text-green-400 font-mono-medium uppercase tracking-tighter">Roblox Item</span>
                 </motion.div>
               )}
               {activeStep === 4 && (
@@ -388,14 +388,14 @@ const TransactionDemo = () => {
                     opacity: 1,
                   }}
                   transition={{ duration: 1, repeat: Infinity }}
-                  className="absolute flex flex-col items-center gap-0.5"
+                  className="absolute flex flex-col items-center gap-1"
                 >
-                  <Coins className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-green-400 flex-shrink-0" />
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-400 rotate-90 flex-shrink-0" />
+                  <Coins className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-400 rotate-90 flex-shrink-0" />
                 </motion.div>
               )}
               {activeStep !== 2 && activeStep !== 4 && (
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-400 rotate-90 opacity-20 flex-shrink-0" />
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-green-400 rotate-90 opacity-20 flex-shrink-0" />
               )}
             </div>
 
@@ -405,21 +405,21 @@ const TransactionDemo = () => {
                 scale: [2, 3, 4].includes(activeStep) ? 1.02 : 1,
                 borderColor: [2, 3, 4].includes(activeStep) ? "rgb(34, 197, 94)" : "rgb(255, 255, 255, 0.1)",
               }}
-              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:border-green-500/50 transition-all relative min-h-[100px] sm:min-h-[120px] md:min-h-[140px]"
+              className="bg-card/50 backdrop-blur-md border border-border/50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-green-500/50 transition-all relative min-h-[110px] sm:min-h-[130px] md:min-h-[140px]"
             >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl flex items-center justify-center mx-auto mb-1.5 sm:mb-2 md:mb-3">
-                <Package className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 text-green-400" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-2.5 md:mb-3">
+                <Package className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-400" />
               </div>
-              <p className="font-mono-bold text-[10px] sm:text-xs md:text-base mb-1 sm:mb-1.5 md:mb-2 uppercase tracking-wide">Seller</p>
-              <div className="h-4 sm:h-5 md:h-6 flex items-center justify-center">
+              <p className="font-mono-bold text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 uppercase tracking-wide">Seller</p>
+              <div className="min-h-[20px] sm:min-h-[24px] md:min-h-[28px] flex items-center justify-center">
                 {activeStep < 2 && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
-                    <div className="inline-flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-green-500/20 border border-green-500/30 px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded-lg">
-                      <Gamepad2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-green-400 flex-shrink-0" />
-                      <span className="text-[9px] sm:text-[10px] md:text-xs font-mono-medium text-green-400">Roblox Item</span>
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-green-500/20 border border-green-500/30 px-2 sm:px-2.5 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-lg">
+                      <Gamepad2 className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm md:text-base font-mono-medium text-green-400">Roblox Item</span>
                     </div>
                   </motion.div>
                 )}
@@ -427,7 +427,7 @@ const TransactionDemo = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-[9px] sm:text-[10px] md:text-xs text-green-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium"
                   >
                     Transferring Roblox item...
                   </motion.p>
@@ -436,7 +436,7 @@ const TransactionDemo = () => {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-[9px] sm:text-[10px] md:text-xs text-green-400 font-mono-medium"
+                    className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium"
                   >
                     Item transferred ✓
                   </motion.p>
@@ -445,10 +445,10 @@ const TransactionDemo = () => {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex items-center justify-center gap-1 sm:gap-1.5 md:gap-2"
+                    className="flex items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5"
                   >
-                    <Coins className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-green-400 flex-shrink-0" />
-                    <span className="text-[9px] sm:text-[10px] md:text-xs text-green-400 font-mono-medium">Receiving USDC...</span>
+                    <Coins className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm md:text-base text-green-400 font-mono-medium">Receiving USDC...</span>
                   </motion.div>
                 )}
               </div>
@@ -459,11 +459,11 @@ const TransactionDemo = () => {
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center mt-2 sm:mt-3 md:mt-4"
+                className="text-center mt-3 sm:mt-4 md:mt-5"
               >
-                <div className="inline-flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-green-500/20 border border-green-500/30 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full">
-                  <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-green-400 flex-shrink-0" />
-                  <span className="text-green-400 font-mono-bold text-[9px] sm:text-[10px] md:text-sm uppercase tracking-wide">Trade Complete!</span>
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-2.5 bg-green-500/20 border border-green-500/30 px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full">
+                  <Check className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-green-400 font-mono-bold text-xs sm:text-sm md:text-base uppercase tracking-wide">Trade Complete!</span>
                 </div>
               </motion.div>
             )}
@@ -473,7 +473,7 @@ const TransactionDemo = () => {
         {/* Control button */}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base font-mono-medium text-muted-foreground hover:text-foreground active:text-foreground transition-colors min-h-[44px] px-2 sm:px-3"
+          className="inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base md:text-lg font-mono-medium text-muted-foreground hover:text-foreground active:text-foreground transition-colors min-h-[48px] px-4 sm:px-5 mt-2 sm:mt-3"
         >
           {isPlaying ? (
             <>
