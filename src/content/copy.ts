@@ -470,52 +470,110 @@ export const pricing = {
 // Blockchain page content
 export const blockchain = {
   hero: {
-    title: "The Future of Escrow is Decentralized",
-    subtitle: "Blockchain integration coming soon",
-    tagline: "Trustless. Transparent. Revolutionary."
+    title: "Escrow that runs itself",
+    subtitle: "Smart contracts execute. You just trade.",
+    tagline: "Settlement in under 2 seconds. Zero middlemen."
   },
-  comingSoon: {
-    message: "We're building the next generation of escrow",
-    description: "Powered by smart contracts and blockchain technology"
-  },
-  features: [
+  stats: [
     {
-      title: "Smart Contract Automation",
-      description: "Self-executing contracts that eliminate the need for intermediaries",
-      icon: "⚡"
+      value: 2,
+      prefix: "<",
+      suffix: "s",
+      label: "Settlement Time",
+      description: "Near-instant finality"
     },
     {
-      title: "Zero-Trust Architecture",
-      description: "Trust the code, not the parties. Blockchain ensures security",
-      icon: "🔒"
+      value: 0.001,
+      prefix: "$",
+      suffix: "",
+      label: "Gas Fees",
+      description: "On Base L2"
     },
     {
-      title: "Instant Global Settlements",
-      description: "No borders, no delays. Settle trades instantly worldwide",
-      icon: "🌐"
+      value: 24,
+      prefix: "",
+      suffix: "/7",
+      label: "Uptime",
+      description: "Always online"
     },
     {
-      title: "Reduced Fees",
-      description: "Lower transaction costs through decentralized infrastructure",
-      icon: "💰"
-    },
-    {
-      title: "Immutable Records",
-      description: "Every transaction permanently recorded on the blockchain",
-      icon: "📜"
+      value: 0,
+      prefix: "",
+      suffix: "%",
+      label: "Trust Required",
+      description: "Code is the judge"
     }
   ],
-  benefits: [
-    "Complete transparency through public blockchain",
-    "No single point of failure",
-    "24/7 automated operation",
-    "Global accessibility",
-    "Reduced operational costs"
-  ],
+  transactionDemo: {
+    title: "Watch a blockchain escrow in action",
+    steps: [
+      { id: 1, label: "Buyer deposits USDC", node: "buyer" },
+      { id: 2, label: "Smart contract holds escrow", node: "contract" },
+      { id: 3, label: "Roblox item transferred & verified", node: "seller" },
+      { id: 4, label: "Funds released to seller", node: "contract" },
+      { id: 5, label: "Trade complete", node: "complete" }
+    ]
+  },
+  comparison: {
+    title: "Traditional vs Blockchain",
+    subtitle: "The difference is dramatic",
+    traditional: {
+      label: "Traditional Escrow",
+      items: [
+        { label: "Settlement time", value: "3-5 days", negative: true },
+        { label: "Fees", value: "6-10%", negative: true },
+        { label: "Availability", value: "Business hours", negative: true },
+        { label: "Dispute resolution", value: "Manual process", negative: true },
+        { label: "Trust model", value: "Trust the middleman", negative: true }
+      ]
+    },
+    blockchain: {
+      label: "Blockchain Escrow",
+      items: [
+        { label: "Settlement time", value: "<2 seconds", positive: true },
+        { label: "Fees", value: "<1%", positive: true },
+        { label: "Availability", value: "24/7/365", positive: true },
+        { label: "Dispute resolution", value: "Smart contract logic", positive: true },
+        { label: "Trust model", value: "Trust the code", positive: true }
+      ]
+    }
+  },
+  tech: {
+    title: "Built on cutting-edge infrastructure",
+    subtitle: "Powered by the most advanced blockchain technology",
+    specs: [
+      {
+        label: "Network",
+        value: "Base",
+        description: "Ethereum L2 with low fees and high speed"
+      },
+      {
+        label: "Currency",
+        value: "USDC",
+        description: "Stablecoin for predictable value"
+      },
+      {
+        label: "Contract",
+        value: "Audited Solidity",
+        description: "Security-first smart contracts"
+      },
+      {
+        label: "Settlement",
+        value: "~2 second blocks",
+        description: "Near-instant transaction finality"
+      },
+      {
+        label: "Security",
+        value: "On-chain",
+        description: "Immutable and verifiable"
+      }
+    ]
+  },
   emailSignup: {
-    title: "Get notified when we launch",
+    title: "Be first to trade trustlessly",
+    subtitle: "Join the waitlist for early access to blockchain escrow",
     placeholder: "Enter your email",
-    button: "Notify me",
-    success: "Thanks! We'll notify you when blockchain integration launches."
+    button: "Get Early Access",
+    success: "You're on the list! We'll notify you when blockchain integration launches."
   }
 };

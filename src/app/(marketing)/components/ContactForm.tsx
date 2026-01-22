@@ -112,8 +112,8 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="py-12 md:py-16 lg:py-24">
-      <div className="container-narrow">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-24">
+      <div className="container-narrow px-4 sm:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -121,23 +121,23 @@ export default function ContactForm() {
           className="max-w-2xl mx-auto"
         >
           {/* Form Card */}
-          <div className="bg-card/50 backdrop-blur-md border-2 border-border rounded-3xl p-6 md:p-8 lg:p-12 shadow-strong">
-            <form onSubmit={onSubmit} className="space-y-4 md:space-y-6">
+          <div className="bg-card/50 backdrop-blur-md border-2 border-border rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-strong">
+            <form onSubmit={onSubmit} className="space-y-3 sm:space-y-4 md:space-y-6">
               {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                 <motion.div
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <label className="block text-sm font-mono-medium text-foreground mb-2">
+                  <label className="block text-xs sm:text-sm font-mono-medium text-foreground mb-1.5 sm:mb-2">
                     {contact.form.name.label}
                   </label>
                   <Input 
                     name="name" 
                     placeholder={contact.form.name.placeholder} 
                     required 
-                    className={`bg-background/50 border-2 border-border text-foreground placeholder:text-muted-foreground h-12 md:h-14 rounded-xl transition-all ${
+                    className={`bg-background/50 border-2 border-border text-foreground placeholder:text-muted-foreground h-11 sm:h-12 md:h-14 rounded-lg sm:rounded-xl transition-all text-sm sm:text-base ${
                       errors.name ? "border-red-500" : "hover:border-foreground/30"
                     }`}
                   />
@@ -157,7 +157,7 @@ export default function ContactForm() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <label className="block text-sm font-mono-medium text-foreground mb-2">
+                  <label className="block text-xs sm:text-sm font-mono-medium text-foreground mb-1.5 sm:mb-2">
                     {contact.form.email.label}
                   </label>
                   <Input 
@@ -165,7 +165,7 @@ export default function ContactForm() {
                     placeholder={contact.form.email.placeholder} 
                     type="email" 
                     required 
-                    className={`bg-background/50 border-2 border-border text-foreground placeholder:text-muted-foreground h-12 md:h-14 rounded-xl transition-all ${
+                    className={`bg-background/50 border-2 border-border text-foreground placeholder:text-muted-foreground h-11 sm:h-12 md:h-14 rounded-lg sm:rounded-xl transition-all text-sm sm:text-base ${
                       errors.email ? "border-red-500" : "hover:border-foreground/30"
                     }`}
                   />
@@ -204,13 +204,13 @@ export default function ContactForm() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <label className="block text-sm font-mono-medium text-foreground mb-2">
+                <label className="block text-xs sm:text-sm font-mono-medium text-foreground mb-1.5 sm:mb-2">
                   {contact.form.context.label}
                 </label>
                 <Textarea 
                   name="context" 
                   placeholder={contact.form.context.placeholder} 
-                  className={`bg-background/50 border-2 border-border text-foreground placeholder:text-muted-foreground min-h-[140px] rounded-xl transition-all resize-none ${
+                  className={`bg-background/50 border-2 border-border text-foreground placeholder:text-muted-foreground min-h-[120px] sm:min-h-[140px] rounded-lg sm:rounded-xl transition-all resize-none text-sm sm:text-base ${
                     errors.context ? "border-red-500" : "hover:border-foreground/30"
                   }`}
                 />
@@ -235,7 +235,7 @@ export default function ContactForm() {
               >
                 <Button 
                   type="submit" 
-                  className="w-full h-12 md:h-14 text-base font-mono-medium rounded-xl min-h-[44px]" 
+                  className="w-full h-11 sm:h-12 md:h-14 text-sm sm:text-base font-mono-medium rounded-lg sm:rounded-xl min-h-[48px]" 
                   disabled={status === "loading"}
                 >
                   {status === "loading" ? (
@@ -287,9 +287,9 @@ export default function ContactForm() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-12 text-center"
+            className="mt-8 sm:mt-10 md:mt-12 text-center"
           >
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground px-2">
               We respect your privacy. Your information will only be used to notify you about Bloxtr8 updates.
             </p>
           </motion.div>

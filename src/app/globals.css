@@ -92,13 +92,25 @@ body {
 .container-narrow { 
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-narrow {
+    padding: 0 1.5rem;
+  }
 }
 
 .container-wide { 
   max-width: 112rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-wide {
+    padding: 0 1.5rem;
+  }
 }
 
 /*

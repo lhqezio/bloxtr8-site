@@ -212,7 +212,7 @@ const SmoothGraphics = () => {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center py-12 md:py-16 lg:py-24">
+    <section className="relative overflow-hidden min-h-[60vh] sm:min-h-[65vh] md:min-h-[70vh] flex items-center py-8 sm:py-12 md:py-16 lg:py-24">
       <div className="grid-bg absolute inset-0 -z-20" />
       
       {/* FlowAnimation disabled - was showing gray ring */}
@@ -221,34 +221,34 @@ export default function Hero() {
       {/* Smooth Floating Graphics */}
       <SmoothGraphics />
       
-      <div className="container-wide py-8 md:py-12 lg:py-20 relative z-20">
+      <div className="container-wide py-6 sm:py-8 md:py-12 lg:py-20 relative z-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-12 items-center">
             {/* Left Side - Text */}
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left order-1 lg:order-1">
           <motion.h1 
             initial={{ y: 20, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-mono-bold leading-tight mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono-bold leading-[1.1] sm:leading-tight mb-4 sm:mb-6 px-2 sm:px-0"
           >
-                <span className="underline decoration-green-500 decoration-[3px]">{hero.title.main}</span> {hero.title.connector} <span className="underline decoration-green-500 decoration-[3px]">{hero.title.underlineWords.trades}</span> in <span className="underline decoration-purple-500 decoration-[3px]">{hero.title.underlineWords.roblox}</span> {hero.title.context}
+                <span className="underline decoration-green-500 decoration-[2px] sm:decoration-[3px]">{hero.title.main}</span> {hero.title.connector} <span className="underline decoration-green-500 decoration-[2px] sm:decoration-[3px]">{hero.title.underlineWords.trades}</span> in <span className="underline decoration-purple-500 decoration-[2px] sm:decoration-[3px]">{hero.title.underlineWords.roblox}</span> {hero.title.context}
           </motion.h1>
           <motion.p 
             initial={{ y: 20, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed"
+                className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0"
           >
-            {hero.subtitle.flows}, {hero.subtitle.contracts}, {hero.subtitle.description} <span className="underline decoration-blue-500 decoration-[2px]">{hero.subtitle.underlineWords.stripe}</span> {hero.subtitle.stripeLimit} <span className="underline decoration-yellow-400 decoration-[2px]">{hero.subtitle.underlineWords.usdc}</span> {hero.subtitle.base} {hero.subtitle.baseLimit}
+            {hero.subtitle.flows}, {hero.subtitle.contracts}, {hero.subtitle.description} <span className="underline decoration-blue-500 decoration-[1.5px] sm:decoration-[2px]">{hero.subtitle.underlineWords.stripe}</span> {hero.subtitle.stripeLimit} <span className="underline decoration-yellow-400 decoration-[1.5px] sm:decoration-[2px]">{hero.subtitle.underlineWords.usdc}</span> {hero.subtitle.base} {hero.subtitle.baseLimit}
           </motion.p>
           <motion.div 
             initial={{ y: 20, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start px-2 sm:px-0"
           >
-            <Button asChild size="lg" className="rounded-2xl px-8">
+            <Button asChild size="lg" className="rounded-2xl px-6 sm:px-8 min-h-[48px] text-base sm:text-lg w-full sm:w-auto">
               <Link 
                 href="/contact"
                 onClick={() => {
@@ -271,7 +271,7 @@ export default function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex justify-center lg:justify-end"
+              className="flex justify-center lg:justify-end order-2 lg:order-2"
             >
               <GameListingsDemo />
             </motion.div>

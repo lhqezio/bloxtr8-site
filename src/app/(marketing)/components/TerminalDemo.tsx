@@ -64,31 +64,31 @@ const TerminalDemo = () => {
   }, [currentStep, demoSteps]);
 
   return (
-    <div className="bg-black/90 rounded-2xl p-4 md:p-6 font-mono text-xs md:text-sm border border-gray-800 w-full max-w-2xl mx-auto">
+    <div className="bg-black/90 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 font-mono text-[11px] sm:text-xs md:text-sm border border-gray-800 w-full max-w-2xl mx-auto overflow-hidden">
       {/* Terminal Header */}
-      <div className="flex items-center gap-1.5 md:gap-2 mb-3 md:mb-4 pb-2 border-b border-gray-700">
-        <div className="flex gap-1.5 md:gap-2">
-          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
-          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+      <div className="flex items-center gap-1.5 sm:gap-2 mb-2.5 sm:mb-3 md:mb-4 pb-2 border-b border-gray-700">
+        <div className="flex gap-1 sm:gap-1.5 md:gap-2 flex-shrink-0">
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
         </div>
-        <span className="text-gray-400 ml-2 md:ml-4 text-xs md:text-sm truncate">bloxtr8-escrow</span>
+        <span className="text-gray-400 ml-2 sm:ml-3 md:ml-4 text-[10px] sm:text-xs md:text-sm truncate">bloxtr8-escrow</span>
       </div>
 
       {/* Terminal Content */}
-      <div className="space-y-3 md:space-y-4">
+      <div className="space-y-2.5 sm:space-y-3 md:space-y-4">
         {/* Step Header */}
         <motion.div
           key={`step-${currentStep}`}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
+          className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 md:gap-3"
         >
-          <div className={`${demoSteps[currentStep]?.color} text-white px-2.5 md:px-3 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-bold whitespace-nowrap`}>
+          <div className={`${demoSteps[currentStep]?.color} text-white px-2 sm:px-2.5 md:px-3 py-0.5 rounded-full text-[9px] sm:text-[10px] md:text-xs font-bold whitespace-nowrap`}>
             {demoSteps[currentStep]?.step}
           </div>
-          <span className="text-gray-300 font-medium text-xs md:text-sm">
+          <span className="text-gray-300 font-medium text-[10px] sm:text-xs md:text-sm break-words">
             {demoSteps[currentStep]?.description}
           </span>
         </motion.div>
@@ -100,17 +100,17 @@ const TerminalDemo = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 20 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-2 md:gap-3 bg-gray-900/50 p-2.5 md:p-3 rounded-lg overflow-x-auto"
+          className="flex items-start gap-1.5 sm:gap-2 md:gap-3 bg-gray-900/50 p-2 sm:p-2.5 md:p-3 rounded-lg overflow-x-auto"
         >
-          <span className="text-green-400 flex-shrink-0">$</span>
-          <span className="text-white break-words">
+          <span className="text-green-400 flex-shrink-0 mt-0.5">$</span>
+          <span className="text-white break-words text-[11px] sm:text-xs md:text-sm leading-relaxed">
             {demoSteps[currentStep]?.command}
             {isTyping && <span className="animate-pulse">|</span>}
           </span>
         </motion.div>
 
         {/* Progress Indicator */}
-        <div className="flex gap-1 mt-3 md:mt-4">
+        <div className="flex gap-0.5 sm:gap-1 mt-2.5 sm:mt-3 md:mt-4">
           {demoSteps.map((_, index) => (
             <div
               key={index}
@@ -126,7 +126,7 @@ const TerminalDemo = () => {
         </div>
 
         {/* Step Counter */}
-        <div className="text-gray-500 text-[10px] md:text-xs mt-1 md:mt-2">
+        <div className="text-gray-500 text-[9px] sm:text-[10px] md:text-xs mt-1 sm:mt-1.5 md:mt-2">
           Step {currentStep + 1} of {demoSteps.length}
         </div>
       </div>

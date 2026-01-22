@@ -25,18 +25,18 @@ export default function AboutPage() {
         </section>
 
         {/* Hero Section */}
-        <section className="py-12 md:py-16 lg:py-24">
-          <div className="container-narrow">
+        <section className="py-8 sm:py-12 md:py-16 lg:py-24">
+          <div className="container-narrow px-4 sm:px-6">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-mono-bold mb-4 md:mb-6">
-                About <span className="underline decoration-green-500 decoration-[3px]">Bloxtr8</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-mono-bold mb-3 sm:mb-4 md:mb-6">
+                About <span className="underline decoration-green-500 decoration-[2px] sm:decoration-[3px]">Bloxtr8</span>
               </h1>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
                 {about.mission}
               </p>
             </motion.div>
@@ -44,35 +44,35 @@ export default function AboutPage() {
         </section>
 
         {/* Story Section */}
-        <section className="py-12 md:py-16 lg:py-24 section-bg-subtle border-t border-border">
-          <div className="container-narrow">
+        <section className="py-8 sm:py-12 md:py-16 lg:py-24 section-bg-subtle border-t border-border">
+          <div className="container-narrow px-4 sm:px-6">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12 lg:mb-16"
+              className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-mono-bold mb-4 md:mb-6">
-                Our <span className="underline decoration-blue-500 decoration-[3px]">story</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 sm:mb-4 md:mb-6">
+                Our <span className="underline decoration-blue-500 decoration-[2px] sm:decoration-[3px]">story</span>
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto px-2">
                 {about.story}
               </p>
             </motion.div>
 
             {/* Values Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-center"
               >
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-green-500/10 rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
-                  <Shield className="w-6 h-6 md:w-8 md:h-8 text-green-500" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-green-500/10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-green-500" />
                 </div>
-                <h3 className="text-lg md:text-xl font-mono-bold mb-2">{about.values.security.title}</h3>
-                <p className="text-sm md:text-base text-muted-foreground">{about.values.security.description}</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-mono-bold mb-1 sm:mb-2">{about.values.security.title}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">{about.values.security.description}</p>
               </motion.div>
 
               <motion.div
@@ -118,23 +118,23 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-12 md:py-16 lg:py-24">
-          <div className="container-narrow">
+        <section className="py-8 sm:py-12 md:py-16 lg:py-24">
+          <div className="container-narrow px-4 sm:px-6">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <h2 className="text-3xl md:text-4xl font-mono-bold mb-4 md:mb-6">
-                Meet the <span className="underline decoration-purple-500 decoration-[3px]">team</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 sm:mb-4 md:mb-6">
+                Meet the <span className="underline decoration-purple-500 decoration-[2px] sm:decoration-[3px]">team</span>
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8 md:mb-12">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12 px-2">
                 {about.team.description}
               </p>
 
               {/* Team Grid - Placeholder for now */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
                 {about.team.members.map((member, index) => (
                   <motion.div
                     key={member.name}
