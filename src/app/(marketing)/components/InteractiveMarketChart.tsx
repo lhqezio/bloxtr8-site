@@ -66,7 +66,7 @@ const InteractiveMarketChart = () => {
         className="text-center mb-4 sm:mb-6 md:mb-8 px-2"
       >
         <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center">
             <currentData.icon className={`h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 ${
               activeChart === "volume" ? "text-blue-500" :
               activeChart === "losses" ? "text-red-500" :
@@ -80,7 +80,7 @@ const InteractiveMarketChart = () => {
         <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-2 sm:mb-3 md:mb-4">
           {currentData.subtitle}
         </p>
-        <div className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono-bold mb-1.5 sm:mb-2 text-white ${
+        <div className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-mono-bold mb-1.5 sm:mb-2 text-gray-900 dark:text-white ${
           activeChart === "volume" ? "underline decoration-blue-500 decoration-[2px] sm:decoration-[3px]" :
           activeChart === "losses" ? "underline decoration-red-500 decoration-[2px] sm:decoration-[3px]" :
           "underline decoration-green-500 decoration-[2px] sm:decoration-[3px]"
@@ -100,7 +100,7 @@ const InteractiveMarketChart = () => {
         transition={{ duration: 0.6 }}
         className="mb-4 sm:mb-6 md:mb-8 px-2"
       >
-        <Card className="bg-white/5 border-white/10 p-3 sm:p-4 md:p-6 lg:p-8">
+        <Card className="bg-gray-50 dark:bg-white/5 border-gray-200 dark:border-white/10 p-3 sm:p-4 md:p-6 lg:p-8">
           {activeChart === "volume" && (
             <div className="space-y-3 sm:space-y-4">
               {/* Horizontal Bar Chart */}
@@ -120,7 +120,7 @@ const InteractiveMarketChart = () => {
                       ${item.value}M
                     </span>
                   </div>
-                  <div className="relative w-full h-6 sm:h-8 bg-white/10 rounded-lg overflow-hidden">
+                  <div className="relative w-full h-6 sm:h-8 bg-gray-200 dark:bg-white/10 rounded-lg overflow-hidden">
                     <motion.div
                       key={`${activeChart}-${item.label}-bar`}
                       initial={{ width: 0 }}
@@ -153,7 +153,7 @@ const InteractiveMarketChart = () => {
                       ${item.value}M
                     </span>
                   </div>
-                  <div className="relative w-full h-5 sm:h-6 bg-white/10 rounded-lg overflow-hidden">
+                  <div className="relative w-full h-5 sm:h-6 bg-gray-200 dark:bg-white/10 rounded-lg overflow-hidden">
                     <motion.div
                       key={`${activeChart}-${item.label}-bar`}
                       initial={{ width: 0 }}
@@ -186,7 +186,7 @@ const InteractiveMarketChart = () => {
                       {item.percentage}%
                     </span>
                   </div>
-                  <div className="relative w-full h-5 sm:h-6 bg-white/10 rounded-lg overflow-hidden">
+                  <div className="relative w-full h-5 sm:h-6 bg-gray-200 dark:bg-white/10 rounded-lg overflow-hidden">
                     <motion.div
                       key={`${activeChart}-${item.label}-bar`}
                       initial={{ width: 0 }}
@@ -219,7 +219,7 @@ const InteractiveMarketChart = () => {
                       button.color === "red" ? "bg-red-500 hover:bg-red-600 active:bg-red-700" :
                       "bg-green-500 hover:bg-green-600 active:bg-green-700"
                     }` 
-                  : "text-muted-foreground hover:text-foreground active:text-foreground hover:bg-white/5 active:bg-white/10 border border-white/10"
+                  : "text-muted-foreground hover:text-foreground active:text-foreground hover:bg-gray-100 dark:hover:bg-white/5 active:bg-gray-200 dark:active:bg-white/10 border border-gray-200 dark:border-white/10"
               }`}
             >
               <IconComponent className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
