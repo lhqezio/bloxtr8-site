@@ -142,7 +142,7 @@ export default function HeroSection() {
                                 </div>
 
                                 <div className="w-full lg:col-span-2 lg:max-w-none">
-                                    <Safari videoSrc={youtubeDemoUrl} mediaType="youtube" mode="default" url={pilotUrl} />
+                                    <Safari videoSrc={youtubeDemoUrl} mediaType="youtube" mode="simple" url={pilotUrl} />
                                 </div>
                             </div>
                         </div>

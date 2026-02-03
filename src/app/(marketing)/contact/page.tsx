@@ -7,21 +7,10 @@ import { motion } from "framer-motion";
 export default function ContactPage() {
   return (
     <>
-      {/* Back to Home Link */}
-      <section className="py-8 border-b border-border">
-        <div className="container-wide">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm"
-          >
-            <ArrowLeft size={16} />
-            Back to home
-          </Link>
-        </div>
-      </section>
+      
 
       {/* Hero Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-b border-border">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-border">
         <div className="container-narrow px-4 sm:px-6">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
