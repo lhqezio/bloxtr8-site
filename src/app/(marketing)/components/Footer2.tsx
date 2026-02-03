@@ -135,7 +135,7 @@ export default function Footer2() {
         {/* Big word */}
         <div className="relative mt-16 pb-8 md:mt-24 md:pb-10">
           <div className="pointer-events-none select-none">
-            <div className="font-semibold tracking-tight leading-[0.82] text-[clamp(96px,22vw,340px)] text-foreground">
+            <div className="font-semibold tracking-tight leading-[0.82] text-[clamp(56px,16vw,340px)] md:text-[clamp(96px,22vw,340px)] break-words text-center md:text-left text-foreground">
               {footer2.bigWord}
             </div>
           </div>
