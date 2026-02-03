@@ -16,7 +16,7 @@ const Challenge = () => {
           className="text-left mb-6 sm:mb-8 md:mb-12"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 sm:mb-4 md:mb-6 text-left">
-            The <span className="underline decoration-red-500 decoration-[2px] sm:decoration-[3px]">challenge</span>
+            The <span className="underline decoration-red-500 decoration-[2px] sm:decoration-[3px]">Challenge</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl text-left">
             High-value Roblox trades happen in Discord DMs. Deals are made on trust, with no formal protection. 
