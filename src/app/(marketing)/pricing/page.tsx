@@ -134,7 +134,7 @@ export default function PricingPage() {
       </section>
 
       {/* Value Props Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-24 section-bg-subtle border-t border-border">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-border">
         <div className="container-narrow px-4 sm:px-6">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -175,7 +175,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-24 section-bg-subtle border-t border-border">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-border">
         <div className="container-narrow px-4 sm:px-6">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
