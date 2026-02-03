@@ -17,7 +17,7 @@ export function ArrowButton({
         size="icon"
         aria-label={label}
         onClick={onClick}
-        className="h-10 w-10 bg-muted text-foreground hover:bg-muted/80 cursor-pointer"
+        className="h-10 w-10 bg-foreground text-background hover:bg-foreground/90 cursor-pointer"
       >
         <Icon className="h-4 w-4" />
       </Button>

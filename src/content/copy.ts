@@ -493,7 +493,7 @@ export const footer2 = {
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" }
   ],
-  bigWord: "bloxtr8"
+  bigWord: "BLOXTR8"
 };
 
 // Pricing page content
