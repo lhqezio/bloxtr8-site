@@ -6,7 +6,7 @@ import InteractiveMarketChart from "./InteractiveMarketChart";
 const Challenge = () => {
 
   return (
-    <section id="challenge" className="py-8 sm:py-12 md:py-16 lg:py-24 border-t border-border">
+    <section id="challenge" className="py-8 sm:py-12 md:py-16 lg:py-24 border-border">
       <div className="container-narrow px-4 sm:px-6">
         {/* Problem Section */}
         <motion.div
@@ -37,7 +37,7 @@ const Challenge = () => {
           className="mb-6 sm:mb-8 md:mb-12 lg:mb-16"
         >
           <h3 className="text-lg sm:text-xl md:text-2xl font-mono-bold text-left mb-3 sm:mb-4 md:mb-6">
-            The <span className="underline decoration-blue-500 decoration-[1.5px] sm:decoration-[2px]">scale</span> of the problem
+            The <span className="underline decoration-blue-500 decoration-[1.5px] sm:decoration-[2px]">Scale</span> of The Problem
           </h3>
           <InteractiveMarketChart />
         </motion.div>

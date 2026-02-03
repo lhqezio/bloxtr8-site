@@ -391,7 +391,7 @@ export const footer = {
     product: {
       title: "Product",
       links: [
-        { label: "Features", href: "/#features" },
+        { label: "Features", href: "/features" },
         { label: "Pricing", href: "/pricing" },
         { label: "Blockchain", href: "/blockchain" }
       ]
@@ -420,6 +420,47 @@ export const footer = {
       { label: "LinkedIn", href: "#" }
     ]
   }
+};
+
+// Footer2 (marketing) content
+export const footer2 = {
+  headline: "Start Trading Now",
+  support: {
+    label: "Get Support :",
+    email: "support@bloxtr8.com"
+  },
+  newsletter: {
+    label: "Sign up for newsletter :",
+    inputPlaceholder: "YOUR EMAIL",
+    inputAriaLabel: "Email",
+    submitAriaLabel: "Submit"
+  },
+  navLinks: [
+    { label: "About", href: "https://tr8.ca", targetBlank: true },
+    { label: "Blockchain", href: "/blockchain" },
+    { label: "Contact", href: "/contact" },
+    { label: "Features", href: "/features" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Home", href: "/" }
+  ],
+  socialLinks: [
+    {
+      label: "Linkedin",
+      href: "https://www.linkedin.com/company/110757936",
+      targetBlank: true,
+      withIcon: true
+    },
+    { label: "Twitter", 
+      href: "https://x.com/bloxtr8", 
+      targetBlank: true, 
+      withIcon: true }
+  ],
+  locationLines: ["Montreal, Canada"],
+  legalLinks: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms & Conditions", href: "/terms" }
+  ],
+  bigWord: "bloxtr8"
 };
 
 // Pricing page content

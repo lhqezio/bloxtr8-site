@@ -32,7 +32,7 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="ghost"
+      variant="default"
       size="sm"
       onClick={cycleTheme}
       className="h-9 w-9 px-0"

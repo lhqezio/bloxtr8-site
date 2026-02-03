@@ -5,6 +5,13 @@ import {DiscordLogo} from '@/components/logos/DiscordLogo'
 import {RobloxLogo} from '@/components/logos/RobloxLogo'
 
 export default function Features() {
+    const integrationPillClass =
+        "shadow-foreground/10 flex h-10 w-fit items-center gap-2 rounded-xl px-4 sm:h-12 sm:px-5"
+
+    const integrationPillIconClass = "size-5 sm:size-6"
+
+    const integrationPillTextClass = "text-nowrap font-medium text-sm sm:text-base"
+
     return (
         <section className="@container py-8 sm:py-12 md:py-16 lg:py-24 ">
             <div className="container-narrow px-4 sm:px-6">
@@ -27,59 +34,29 @@ export default function Features() {
                             aria-hidden
                             className="**:fill-foreground flex h-44 flex-col justify-between pt-8">
                             
-                                <div className="**:fill-foreground grid w-full max-w-full grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-4">
-                                    <div className="ml-auto blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Discord</span>
+                                <div className="**:fill-foreground grid w-full max-w-full grid-cols-2 gap-x-6 gap-y-9">
+                                    <div className="justify-self-start">
+                                        <Card className={integrationPillClass}>
+                                            <DiscordLogo className={integrationPillIconClass} />
+                                            <span className={integrationPillTextClass}>Discord</span>
                                         </Card>
                                     </div>
-                                    <div className="ml-auto">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <StripeLogo className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Stripe</span>
+                                    <div className="justify-self-center">
+                                        <Card className={integrationPillClass}>
+                                            <StripeLogo className={integrationPillIconClass} />
+                                            <span className={integrationPillTextClass}>Stripe</span>
                                         </Card>
                                     </div>
-                                    <div className="ml-auto blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Figma</span>
+                                    <div className="justify-self-center">
+                                        <Card className={integrationPillClass}>
+                                            <RobloxLogo className={integrationPillIconClass} />
+                                            <span className={integrationPillTextClass}>Roblox</span>
                                         </Card>
                                     </div>
-                                    <div className="mr-auto">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Discord</span>
-                                        </Card>
-                                    </div>
-                                    <div className="blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Firebase</span>
-                                        </Card>
-                                    </div>
-                                    <div>
-                                        <Card className="shadow-foreground/10 mx-auto flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Bloxtr8</span>
-                                        </Card>
-                                    </div>
-                                    <div className="ml-auto blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Twilio</span>
-                                        </Card>
-                                    </div>
-                                    <div>
-                                        <Card className="shadow-foreground/10 mx-auto flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <RobloxLogo className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Roblox</span>
-                                        </Card>
-                                    </div>
-                                    <div className="blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <DiscordLogo className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Clerk </span>
+                                    <div className="justify-self-start">
+                                        <Card className={integrationPillClass}>
+                                            <DiscordLogo className={integrationPillIconClass} />
+                                            <span className={integrationPillTextClass}>Bloxtr8</span>
                                         </Card>
                                     </div>
                                 </div>
@@ -146,16 +123,26 @@ export default function Features() {
                         </div>
                     </Card>
                     <Card
-                        className="row-span-2 grid grid-rows-subgrid">
+                        className="row-span-2 grid grid-rows-subgrid overflow-hidden">
                         <div className="space-y-2">
                             
                             <h3 className="text-foreground font-medium">Security First</h3>
                             <p className="text-muted-foreground mt-2 text-sm">Built with security in mind.</p>
                         </div>
 
-                        <div className="pointer-events-none relative -ml-7 flex size-44 items-center justify-center pt-5">
-                            <Shield className="absolute inset-0 top-2.5 size-full stroke-[0.1px] opacity-15" />
-                            <Shield className="size-32 stroke-[0.1px]" />
+                        <div className="pointer-events-none flex h-44 w-full items-center overflow-hidden">
+                            <div className="flex flex-nowrap *:shrink-0">
+                                {Array.from({ length: 4 }).map((_, i) => (
+                                    <div
+                                        // eslint-disable-next-line react/no-array-index-key
+                                        key={i}
+                                        className="pointer-events-none relative -ml-7 flex size-40 items-center justify-center pt-5"
+                                    >
+                                        <Shield className="absolute inset-0 top-2.5 size-full stroke-[0.1px] opacity-15" />
+                                        <Shield className="size-32 stroke-[0.1px]" />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </Card>
                 </div>

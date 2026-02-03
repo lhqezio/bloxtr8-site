@@ -103,6 +103,8 @@ const SmoothGraphics = () => {
         </div>
     )
 }
+const youtubeDemoUrl = "https://www.youtube.com/watch?v=RQZSCy-LgDk"
+const pilotUrl = "https://pilot.bloxtr8.com"
 
 export default function HeroSection() {
     return (
@@ -124,14 +126,14 @@ export default function HeroSection() {
 
                                     <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                                         <Button asChild size="lg" className="px-6">
-                                            <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer">
+                                            <a href={pilotUrl} target="_blank" rel="noopener noreferrer">
                                                 <span className="text-nowrap">Start Trading</span>
                                                 <ChevronRight className="opacity-50" />
                                             </a>
                                         </Button>
 
                                         <Button asChild size="lg" className="px-6" variant="outline">
-                                            <a href="https://www.youtube.com/watch?v=RQZSCy-LgDk" target="_blank" rel="noopener noreferrer">
+                                            <a href={youtubeDemoUrl} target="_blank" rel="noopener noreferrer">
                                                 <span className="text-nowrap">Watch Demo</span>
                                                 <CirclePlay className="h-5 w-5 opacity-70" />
                                             </a>
@@ -140,7 +142,7 @@ export default function HeroSection() {
                                 </div>
 
                                 <div className="w-full lg:col-span-2 lg:max-w-none">
-                                    <Safari videoSrc="https://www.youtube.com/watch?v=RQZSCy-LgDk" mediaType="youtube" mode="default" url="https://pilot.bloxtr8.com" />
+                                    <Safari videoSrc={youtubeDemoUrl} mediaType="youtube" mode="default" url={pilotUrl} />
                                 </div>
                             </div>
                         </div>
