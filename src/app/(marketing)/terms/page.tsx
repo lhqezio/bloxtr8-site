@@ -1,6 +1,6 @@
 "use client";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer2 from "../components/Footer2";
 import { terms } from "@/content/copy";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -182,7 +182,7 @@ export default function TermsPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer2 />
     </div>
   );
 }

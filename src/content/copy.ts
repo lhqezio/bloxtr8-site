@@ -457,6 +457,7 @@ export const footer2 = {
   ],
   locationLines: ["Montreal, Canada"],
   legalLinks: [
+    { label: "Cookie Policy", href: "/cookies" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" }
   ],

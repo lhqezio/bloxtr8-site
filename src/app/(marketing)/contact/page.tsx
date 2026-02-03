@@ -1,6 +1,6 @@
 "use client";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer2 from "../components/Footer2";
 import ContactForm from "../components/ContactForm";
 import Link from "next/link";
 import { ArrowLeft, Mail, MessageSquare, Shield } from "lucide-react";
@@ -76,7 +76,7 @@ export default function ContactPage() {
         {/* Contact Form Section */}
         <ContactForm />
       </main>
-      <Footer />
+      <Footer2 />
     </div>
   );
 }

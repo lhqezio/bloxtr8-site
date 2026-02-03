@@ -1,8 +1,11 @@
-import { Card } from '@/components/ui/card'
-import { Shield } from 'lucide-react'
-import { StripeLogo} from '@/components/logos/StripeLogo'
-import {DiscordLogo} from '@/components/logos/DiscordLogo'
-import {RobloxLogo} from '@/components/logos/RobloxLogo'
+"use client"
+
+import Gravity, { MatterBody } from "@/components/fancy/physics/gravity"
+import { Card } from "@/components/ui/card"
+import { Shield } from "lucide-react"
+import { StripeLogo } from "@/components/logos/StripeLogo"
+import { DiscordLogo } from "@/components/logos/DiscordLogo"
+import { RobloxLogo } from "@/components/logos/RobloxLogo"
 
 export default function Features() {
     const integrationPillClass =
@@ -32,35 +35,58 @@ export default function Features() {
                         </div>
                         <div
                             aria-hidden
-                            className="**:fill-foreground flex h-44 flex-col justify-between pt-8">
-                            
-                                <div className="**:fill-foreground grid w-full max-w-full grid-cols-2 gap-x-6 gap-y-9">
-                                    <div className="justify-self-start">
-                                        <Card className={integrationPillClass}>
+                            className="**:fill-foreground relative h-44 pt-8 overflow-hidden"
+                        >
+                            <Gravity gravity={{ x: 0, y: 1 }} className="inset-0">
+                                <MatterBody
+                                    isDraggable={true}
+                                    matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}
+                                    x="15%"
+                                    y="20%"
+                                >
+                                    <Card className={integrationPillClass}>
                                             <DiscordLogo className={integrationPillIconClass} />
                                             <span className={integrationPillTextClass}>Discord</span>
-                                        </Card>
-                                    </div>
-                                    <div className="justify-self-center">
-                                        <Card className={integrationPillClass}>
+                                    </Card>
+                                </MatterBody>
+
+                                <MatterBody
+                                    isDraggable={true}
+                                    matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}
+                                    x="55%"
+                                    y="18%"
+                                >
+                                    <Card className={integrationPillClass}>
                                             <StripeLogo className={integrationPillIconClass} />
                                             <span className={integrationPillTextClass}>Stripe</span>
-                                        </Card>
-                                    </div>
-                                    <div className="justify-self-center">
-                                        <Card className={integrationPillClass}>
+                                    </Card>
+                                </MatterBody>
+
+                                <MatterBody
+                                    isDraggable={true}
+                                    matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}
+                                    x="35%"
+                                    y="62%"
+                                >
+                                    <Card className={integrationPillClass}>
                                             <RobloxLogo className={integrationPillIconClass} />
                                             <span className={integrationPillTextClass}>Roblox</span>
-                                        </Card>
-                                    </div>
-                                    <div className="justify-self-start">
-                                        <Card className={integrationPillClass}>
+                                    </Card>
+                                </MatterBody>
+
+                                <MatterBody
+                                    isDraggable={true}
+                                    matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}
+                                    x="75%"
+                                    y="60%"
+                                    angle={-8}
+                                >
+                                    <Card className={integrationPillClass}>
                                             <DiscordLogo className={integrationPillIconClass} />
                                             <span className={integrationPillTextClass}>Bloxtr8</span>
-                                        </Card>
-                                    </div>
-                                </div>
-                            
+                                    </Card>
+                                </MatterBody>
+                            </Gravity>
                         </div>
                     </Card>
                     <Card
