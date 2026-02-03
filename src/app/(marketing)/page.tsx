@@ -3,6 +3,7 @@ import Hero2 from "./components/Hero2";
 import CTA from "./components/CTA";
 import Features from "@/components/features";
 import  Footer2  from "./components/Footer2";
+import Testimonials from "./components/Testomonials";
 
 export default function Page() {
   return (
@@ -13,8 +14,8 @@ export default function Page() {
         <Hero2 />
         <div className="space-y-0">
           <Features />
+          <Testimonials />
           <CTA />
-
         </div>
       </main>
       <Footer2 />
