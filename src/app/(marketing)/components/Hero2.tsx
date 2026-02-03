@@ -140,7 +140,7 @@ export default function HeroSection() {
                                 </div>
 
                                 <div className="w-full lg:col-span-2 lg:max-w-none">
-                                    <Safari videoSrc="https://www.youtube.com/watch?v=RQZSCy-LgDk" mode="simple" />
+                                    <Safari videoSrc="https://www.youtube.com/watch?v=RQZSCy-LgDk" mediaType="youtube" mode="default" url="https://pilot.bloxtr8.com" />
                                 </div>
                             </div>
                         </div>

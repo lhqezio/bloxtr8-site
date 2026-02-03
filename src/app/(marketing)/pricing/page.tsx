@@ -16,7 +16,7 @@ export default function PricingPage() {
       <Header />
       <main className="flex-1">
         {/* Back to Home Link */}
-        <section className="py-8 border-b border-border">
+        {/* <section className="py-8 border-b border-border">
           <div className="container-narrow">
             <Link
               href="/"
@@ -26,7 +26,7 @@ export default function PricingPage() {
               Back to home
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* Hero Section */}
         <section className="py-8 sm:py-12 md:py-16 lg:py-24">
