@@ -1,7 +1,7 @@
 "use client";
 import ContactForm from "../components/ContactForm";
-import Link from "next/link";
-import { ArrowLeft, Mail, MessageSquare, Shield } from "lucide-react";
+import { Mail, MessageSquare, Shield, Rocket } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
@@ -27,6 +27,14 @@ export default function ContactPage() {
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-2">
               We&apos;re building something special. Be the first to know when we launch.
             </p>
+            <div className="mt-6 sm:mt-8">
+              <Button asChild size="lg" className="px-6">
+                <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer">
+                  <Rocket className="w-4 h-4" />
+                  <span>Try Pilot</span>
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           {/* Trust Indicators */}
