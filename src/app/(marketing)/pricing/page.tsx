@@ -250,9 +250,7 @@ export default function PricingPage() {
               <Button asChild size="lg" className="rounded-2xl px-6 sm:px-8 md:px-10 text-sm sm:text-base md:text-lg h-12 md:h-14 min-h-[48px] w-full sm:w-auto">
                 <Link href="/contact">Get Started</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-2xl px-6 sm:px-8 md:px-10 text-sm sm:text-base md:text-lg h-12 md:h-14 min-h-[48px] w-full sm:w-auto">
-                <Link href="/features">Learn More</Link>
-              </Button>
+              
             </div>
           </motion.div>
         </div>

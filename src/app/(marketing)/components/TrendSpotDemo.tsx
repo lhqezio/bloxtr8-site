@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, DollarSign, BarChart3, Gamepad2 } from "lucide-react";
@@ -48,6 +48,13 @@ function SentimentDot({ value }: { value: number }) {
 
 export default function TrendSpotDemo() {
   const [activeTab, setActiveTab] = useState<"gainers" | "decliners">("gainers");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev === "gainers" ? "decliners" : "gainers"));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-background/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-border w-full max-w-4xl mx-auto shadow-light">
