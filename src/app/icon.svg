@@ -1,4 +1,33 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#000000"/>
-  <text x="16" y="22" font-family="monospace" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0">8</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1b1b1b"/>
+  <defs>
+    <linearGradient id="glass-stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#c0c8d8" stop-opacity="0.7"/>
+      <stop offset="60%" stop-color="white" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#a0aec0" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="glass-fill" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Top ring -->
+  <circle cx="16" cy="9" r="6" fill="url(#glass-fill)" stroke="url(#glass-stroke)" stroke-width="2" filter="url(#glow)"/>
+  <path d="M12.5 6.5 A4.5 4.5 0 0 1 19 7" stroke="url(#shine)" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <!-- Bottom ring -->
+  <circle cx="16" cy="23" r="6" fill="url(#glass-fill)" stroke="url(#glass-stroke)" stroke-width="2" filter="url(#glow)"/>
+  <path d="M12.5 20.5 A4.5 4.5 0 0 1 19 21" stroke="url(#shine)" stroke-width="1" stroke-linecap="round" fill="none"/>
 </svg>

@@ -1,21 +1,17 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Challenge from "./components/Challenge";
-import Solution from "./components/Solution";
+import Hero2 from "./components/Hero2";
 import CTA from "./components/CTA";
-import Footer from "./components/Footer";
+import Features from "@/components/features";
+import Testimonials from "./components/Testimonials";
 
 export default function Page() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Challenge />
-        <Solution />
+    <>
+      <Hero2 />
+      <div className="space-y-0">
+        <Features />
+        <Testimonials />
         <CTA />
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </>
   );
 }

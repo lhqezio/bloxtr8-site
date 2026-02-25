@@ -44,6 +44,46 @@ export const team = {
   attribution: "Built by traders, for traders."
 };
 
+export const testimonials = {
+  label: "Testimonials",
+  title: "Trusted and loved by both the developers and the community",
+  description: "From indie developers to big studios, here's how Bloxtr8 helped.",
+  items: [
+    // {
+    //   quote:
+    //     "It's nice and easy to use. I've been using it for a year now and it's made managing my finances so much easier and quick.",
+    //   name: "Jandele",
+    //   title: "Developer of Grow A Garden",
+    //   avatarFallback: "J",
+    //   avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-21C7AEF8690A6F4DAAAB07C4059EF48D-Png/150/150/AvatarHeadshot/Webp/noFilter"
+    // },
+    {
+      quote:
+        "Bloxtr8 is very cool.",
+      name: "StarmanB_1021",
+      title: "Roblox player",
+      avatarFallback: "SB",
+      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-34D99758BA71E5F1A4784F6466D1BED4-Png/150/150/AvatarHeadshot/Webp/noFilter"
+    },
+    {
+      quote:
+        "I've been using Bloxtr8 and it has potential.",
+      name: "Breezy",
+      title: "Founder of Breeze's Studio",
+      avatarFallback: "BZ",
+      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B3CD534E420B33E586DF4256CAABDE4A-Png/150/150/AvatarHeadshot/Webp/noFilter"
+    }
+    // {
+    //   quote:
+    //     "I've been using Bloxtr8 for a year now and it's made managing my finances so much easier and quick.",
+    //   name: "Jhon Zendesk",
+    //   title: "CEO & Co Founder at Zendesk",
+    //   avatarFallback: "CB",
+    //   avatarSrc: ""
+    // }
+  ]
+};
+
 
 
 export const contact = {
@@ -383,7 +423,7 @@ export const cookies = {
 
 // Footer content
 export const footer = {
-  copyright: "© {year} Bloxtr8",
+  copyright: "© {year} Bloxtr8. All rights reserved.",
   links: {
     backToHome: "← Back to home"
   },
@@ -391,7 +431,7 @@ export const footer = {
     product: {
       title: "Product",
       links: [
-        { label: "Features", href: "/#features" },
+        { label: "Features", href: "/features" },
         { label: "Pricing", href: "/pricing" },
         { label: "Blockchain", href: "/blockchain" }
       ]
@@ -420,6 +460,48 @@ export const footer = {
       { label: "LinkedIn", href: "#" }
     ]
   }
+};
+
+// Footer2 (marketing) content
+export const footer2 = {
+  headline: "Start Trading Now",
+  support: {
+    label: "Get Support :",
+    email: "support@bloxtr8.com"
+  },
+  newsletter: {
+    label: "Sign up for newsletter :",
+    inputPlaceholder: "YOUR EMAIL",
+    inputAriaLabel: "Email",
+    submitAriaLabel: "Submit"
+  },
+  navLinks: [
+    { label: "About", href: "https://tr8.ca", targetBlank: true },
+    { label: "Blockchain", href: "/blockchain" },
+    { label: "Contact", href: "/contact" },
+    { label: "Features", href: "/features" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Home", href: "/" }
+  ],
+  socialLinks: [
+    {
+      label: "Linkedin",
+      href: "https://www.linkedin.com/company/110757936",
+      targetBlank: true,
+      withIcon: true
+    },
+    { label: "Twitter", 
+      href: "https://x.com/bloxtr8", 
+      targetBlank: true, 
+      withIcon: true }
+  ],
+  locationLines: ["Montreal, Canada"],
+  legalLinks: [
+    { label: "Cookie Policy", href: "/cookies" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms & Conditions", href: "/terms" }
+  ],
+  bigWord: "BLOXTR8"
 };
 
 // Pricing page content

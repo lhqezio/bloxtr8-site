@@ -6,7 +6,7 @@ import { trackEvent } from "@/components/analytics";
 
 const CTA = () => {
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-t border-border">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-border">
       <div className="container-narrow px-4 sm:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -29,7 +29,7 @@ const CTA = () => {
             <Button 
               asChild 
               size="lg" 
-              className="rounded-2xl px-6 sm:px-8 min-h-[48px] text-base sm:text-lg w-full sm:w-auto"
+              className=" px-6 sm:px-8 min-h-[48px] text-base sm:text-lg w-full sm:w-auto"
             >
               <Link 
                 href="/contact"
