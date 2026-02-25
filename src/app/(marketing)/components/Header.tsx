@@ -22,7 +22,6 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-sm text-muted-foreground font-mono font-medium absolute left-1/2 -translate-x-1/2 z-[101]">
           {isHomePage ? (
             <>
-              <a href="features" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.features}</a>
               <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.pricing}</Link>
               <Link 
                 href="/blockchain" 
@@ -34,7 +33,6 @@ export default function Header() {
             </>
           ) : (
             <>
-              <Link href="/features" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.features}</Link>
               <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.pricing}</Link>
               <Link 
                 href="/blockchain" 
@@ -96,13 +94,7 @@ export default function Header() {
               </>
             ) : (
               <>
-                <Link
-                  href="/features"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.features}
-                </Link>
+                
                 <Link
                   href="/pricing"
                   className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"

@@ -431,7 +431,6 @@ export const footer = {
     product: {
       title: "Product",
       links: [
-        { label: "Features", href: "/features" },
         { label: "Pricing", href: "/pricing" },
         { label: "Blockchain", href: "/blockchain" }
       ]
@@ -479,7 +478,6 @@ export const footer2 = {
     { label: "About", href: "https://tr8.ca", targetBlank: true },
     { label: "Blockchain", href: "/blockchain" },
     { label: "Contact", href: "/contact" },
-    { label: "Features", href: "/features" },
     { label: "Pricing", href: "/pricing" },
     { label: "Home", href: "/" }
   ],
