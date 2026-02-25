@@ -3,10 +3,49 @@
 import Link from "next/link"
 import Gravity, { MatterBody } from "@/components/fancy/physics/gravity"
 import { Card } from "@/components/ui/card"
-import { ArrowUpRight, Shield } from "lucide-react"
+import { ArrowUpRight, Rocket, Shield, TrendingUp } from "lucide-react"
 import { StripeLogo } from "@/components/logos/StripeLogo"
 import { DiscordLogo } from "@/components/logos/DiscordLogo"
 import { RobloxLogo } from "@/components/logos/RobloxLogo"
+
+const bentoCell =
+    "flex items-center justify-center rounded-lg border border-foreground/20 text-center duration-200 "
+
+function BentoGrid() {
+    return (
+        <div
+            aria-hidden
+            className="grid h-44 w-full grid-cols-3 grid-rows-2 gap-1.5 pb-6 pt-4"
+        >
+            <div
+                className={`group flex-col gap-2 transition-colors duration-200 ${bentoCell} hover:bg-blue-500 hover:border-blue-500`}
+            >
+                <TrendingUp className="size-6 text-foreground " />
+                <p className="text-foreground font-medium ">TrendSpot</p>
+            </div>
+            <div
+                className={`group col-span-2 flex-col gap-2 transition-colors duration-200 ${bentoCell} hover:bg-[#5865F2] hover:border-[#5865F2]`}
+            >
+                <DiscordLogo className="size-6 text-foreground " />
+                <p className="text-foreground font-medium ">
+                    Discord Integration
+                </p>
+            </div>
+            <div
+                className={`group col-span-2 flex-col gap-2 transition-colors duration-200 ${bentoCell} hover:bg-purple-500 hover:border-purple-500`}
+            >
+                <Rocket className="size-6 text-foreground " />
+                <p className="text-foreground font-medium ">CreatorX</p>
+            </div>
+            <div
+                className={`group flex-col gap-2 transition-colors duration-200 ${bentoCell} hover:bg-green-500 hover:border-green-500`}
+            >
+                <Shield className="size-6 text-foreground " />
+                <p className="text-foreground font-medium ">Escrow Protection</p>
+            </div>
+        </div>
+    )
+}
 
 export default function Features() {
     const integrationPillClass =
@@ -117,42 +156,7 @@ export default function Features() {
                         </h3>
                         <p className="text-muted-foreground text-sm">Escrow protection, Discord workflows, analytics, and more.</p>
                         </div>
-                        <div
-                            aria-hidden
-                            className="*:bg-foreground/15 flex h-44 justify-between pb-6 pt-12 *:h-full *:w-px">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div className="bg-primary!"></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div className="bg-primary!"></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div className="bg-primary!"></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div className="bg-primary!"></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div className="bg-primary!"></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div className="bg-primary!"></div>
-                        </div>
+                        <BentoGrid />
                     </Card>
                     <Card
                         className="row-span-2 grid grid-rows-subgrid overflow-hidden">
