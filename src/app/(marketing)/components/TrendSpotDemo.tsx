@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { TrendingUp, TrendingDown, DollarSign, BarChart3, Gamepad2 } from "lucide-react";
+import { TrendingUp, DollarSign, BarChart3, Gamepad2 } from "lucide-react";
 
 const stats = [
   { label: "Total Games", value: "8K", icon: Gamepad2, color: "text-blue-400" },
