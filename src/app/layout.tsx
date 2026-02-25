@@ -16,7 +16,7 @@ export const metadata = {
   description: meta.description,
   metadataBase: new URL("https://bloxtr8.com"),
   openGraph: { title: meta.ogTitle, description: meta.ogDescription, url: "/", siteName: meta.ogTitle },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
