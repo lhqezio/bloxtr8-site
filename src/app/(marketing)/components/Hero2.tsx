@@ -103,7 +103,7 @@ const SmoothGraphics = () => {
         </div>
     )
 }
-const youtubeDemoUrl = "https://www.youtube.com/watch?v=RQZSCy-LgDk"
+const youtubeDemoUrl = "https://www.youtube.com/watch?v=z5QTJ_-0cp0&feature=youtu.be"
 const pilotUrl = "https://pilot.bloxtr8.com"
 
 export default function HeroSection() {
