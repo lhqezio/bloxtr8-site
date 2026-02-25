@@ -1,8 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import Gravity, { MatterBody } from "@/components/fancy/physics/gravity"
 import { Card } from "@/components/ui/card"
-import { Shield } from "lucide-react"
+import { ArrowUpRight, Shield } from "lucide-react"
 import { StripeLogo } from "@/components/logos/StripeLogo"
 import { DiscordLogo } from "@/components/logos/DiscordLogo"
 import { RobloxLogo } from "@/components/logos/RobloxLogo"
@@ -108,8 +109,13 @@ export default function Features() {
                     <Card
                         className="row-span-2 grid grid-rows-subgrid overflow-hidden">
                         <div className="space-y-2">
-                        <h3 className="font-medium">Enterprise Ready</h3>
-                        <p className="text-muted-foreground text-sm">Sell confidently with enterprise-grade security and reliability.</p>
+                        <h3 className="font-medium">
+                            <Link href="/features" className="inline-flex items-center gap-1.5 underline-offset-4 hover:underline focus:outline-none focus:underline">
+                                The complete toolkit
+                                <ArrowUpRight className="size-4 shrink-0" aria-hidden />
+                            </Link>
+                        </h3>
+                        <p className="text-muted-foreground text-sm">Escrow protection, Discord workflows, analytics, and more.</p>
                         </div>
                         <div
                             aria-hidden
@@ -153,7 +159,7 @@ export default function Features() {
                         <div className="space-y-2">
                             
                             <h3 className="text-foreground font-medium">Security First</h3>
-                            <p className="text-muted-foreground mt-2 text-sm">Built with security in mind.</p>
+                            <p className="text-muted-foreground mt-2 text-sm">Sell confidently with enterprise-grade security and reliability.</p>
                         </div>
 
                         <div className="pointer-events-none flex h-44 w-full items-center overflow-hidden">

@@ -54,7 +54,7 @@ export default function Footer2() {
         <div className="relative grid grid-cols-1 gap-14 pt-20 md:grid-cols-2 md:gap-8 md:pt-28 lg:pt-32">
           {/* Left side */}
           <div className="max-w-xl">
-            <h2 className="text-[44px] leading-[1.05] tracking-tight md:text-[56px]">
+            <h2 className="text-[44px] font-mono leading-[1.05] tracking-tight md:text-[56px]">
               {footer2.headline}
             </h2>
 

@@ -130,7 +130,7 @@ export function Safari({
     >
       {(resolvedIsYoutube || resolvedIsVideo) && (
         <div
-          className="pointer-events-none absolute z-0 overflow-hidden"
+          className="pointer-events-none absolute z-0 overflow-hidden [transform:translateZ(0)] [backface-visibility:hidden]"
           style={{
             left: `${LEFT_PCT}%`,
             top: `${TOP_PCT}%`,
