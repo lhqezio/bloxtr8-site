@@ -42,8 +42,8 @@ export default function Testimonials() {
   const t = items[activeIndex]
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24">
-      <div className="container-wide px-4 sm:px-6">
+    <section className="py-16 sm:py-20 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-24">
+      <div className="container-wide">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-xl">
             <div className="inline-flex items-center rounded-full border border-border px-3 py-1 text-sm text-foreground">
