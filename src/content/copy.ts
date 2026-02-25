@@ -49,30 +49,38 @@ export const testimonials = {
   title: "Trusted and loved by both the developers and the community",
   description: "From indie developers to big studios, here's how Bloxtr8 helped.",
   items: [
-    {
-      quote:
-        "It's nice and easy to use. I've been using it for a year now and it's made managing my finances so much easier and quick.",
-      name: "Jandele",
-      title: "Developer of Grow A Garden",
-      avatarFallback: "J",
-      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-21C7AEF8690A6F4DAAAB07C4059EF48D-Png/150/150/AvatarHeadshot/Webp/noFilter"
-    },
+    // {
+    //   quote:
+    //     "It's nice and easy to use. I've been using it for a year now and it's made managing my finances so much easier and quick.",
+    //   name: "Jandele",
+    //   title: "Developer of Grow A Garden",
+    //   avatarFallback: "J",
+    //   avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-21C7AEF8690A6F4DAAAB07C4059EF48D-Png/150/150/AvatarHeadshot/Webp/noFilter"
+    // },
     {
       quote:
         "Bloxtr8 is very cool.",
       name: "StarmanB_1021",
-      title: "Cool guy and a developer of a cool games",
+      title: "Roblox player",
       avatarFallback: "SB",
       avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-34D99758BA71E5F1A4784F6466D1BED4-Png/150/150/AvatarHeadshot/Webp/noFilter"
     },
     {
       quote:
-        "I've been using Bloxtr8 for a year now and it's made managing my finances so much easier and quick.",
-      name: "Jhon Zendesk",
-      title: "CEO & Co Founder at Zendesk",
-      avatarFallback: "CB",
-      avatarSrc: ""
+        "I've been using Bloxtr8 and it has potential.",
+      name: "Breezy",
+      title: "Founder of Breeze's Studio",
+      avatarFallback: "BZ",
+      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B3CD534E420B33E586DF4256CAABDE4A-Png/150/150/AvatarHeadshot/Webp/noFilter"
     }
+    // {
+    //   quote:
+    //     "I've been using Bloxtr8 for a year now and it's made managing my finances so much easier and quick.",
+    //   name: "Jhon Zendesk",
+    //   title: "CEO & Co Founder at Zendesk",
+    //   avatarFallback: "CB",
+    //   avatarSrc: ""
+    // }
   ]
 };
 

@@ -1,7 +1,7 @@
 import Hero2 from "./components/Hero2";
 import CTA from "./components/CTA";
 import Features from "@/components/features";
-import Testimonials from "./components/Testomonials";
+import Testimonials from "./components/Testimonials";
 
 export default function Page() {
   return (

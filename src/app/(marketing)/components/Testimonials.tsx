@@ -29,6 +29,16 @@ export default function Testimonials() {
     setActiveIndex((i) => (total === 0 ? 0 : Math.min(i, total - 1)))
   }, [total])
 
+  // Auto-advance to next testimonial every 5 seconds
+  React.useEffect(() => {
+    if (total <= 1) return
+    const id = setInterval(() => {
+      setDirection(1)
+      setActiveIndex((i) => (i + 1) % total)
+    }, 5000)
+    return () => clearInterval(id)
+  }, [total])
+
   const t = items[activeIndex]
 
   return (
