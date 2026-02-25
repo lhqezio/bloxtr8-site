@@ -1,35 +1,35 @@
 "use client";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { MessageSquare, Bot, ArrowRight } from "lucide-react";
+import { MessageSquare, Bot, ArrowRight, Gamepad2 } from "lucide-react";
 
 const DiscordCommandDemo = () => {
   const messages = [
     {
       user: "robloxdev123",
-      avatar: "🎮",
+      isBot: false,
       message: "/escrow create",
       isCommand: true,
       timestamp: "2:34 PM"
     },
     {
       user: "Bloxtr8 Bot",
-      avatar: "🤖",
+      isBot: true,
       message: "Creating secure escrow... Please provide trade details:",
       isCommand: false,
       timestamp: "2:34 PM"
     },
     {
-      user: "robloxdev123", 
-      avatar: "🎮",
+      user: "robloxdev123",
+      isBot: false,
       message: "Selling: Adopt Me Mega Neon Dragon\nBuyer: @megadealer\nAmount: $45,000",
       isCommand: false,
       timestamp: "2:35 PM"
     },
     {
       user: "Bloxtr8 Bot",
-      avatar: "🤖", 
-      message: "✅ Escrow created! Contract sent to both parties.\n🔒 Funds secured in escrow wallet.\n📋 Verification in progress...",
+      isBot: true,
+      message: "[OK] Escrow created! Contract sent to both parties.\n[LOCK] Funds secured in escrow wallet.\n[INFO] Verification in progress...",
       isCommand: false,
       timestamp: "2:35 PM"
     }
@@ -62,8 +62,10 @@ const DiscordCommandDemo = () => {
               style={msg.isCommand ? { borderLeft: '3px solid #5865F2' } : {}}
             >
               <div className="flex items-start gap-2 sm:gap-2.5 md:gap-3">
-                <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs sm:text-sm flex-shrink-0">
-                  {msg.user === "Bloxtr8 Bot" ? "🤖" : msg.avatar}
+                <div className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.isBot ? 'bg-indigo-500' : 'bg-muted'}`}>
+                  {msg.isBot
+                    ? <Bot className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-white" />
+                    : <Gamepad2 className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-muted-foreground" />}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-1 sm:gap-1.5 md:gap-2 mb-1">
