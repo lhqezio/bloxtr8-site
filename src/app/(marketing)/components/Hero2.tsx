@@ -119,20 +119,20 @@ export default function HeroSection() {
 
                         <div className="relative z-10 mx-auto w-full max-w-[min(96vw,2800px)] px-4 sm:px-6 lg:px-8">
                             <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-3">
-                                <div className="w-full max-w-xl max-sm:px-4 lg:col-span-1 lg:max-w-none">
-                                     <h1 className="text-balance text-5xl font-medium leading-[1.05] sm:text-6xl sm:leading-[1.05] xl:text-7xl xl:leading-[1.03] 2xl:text-8xl">Sell faster. Trade safer.</h1>
+                                <div className="w-full max-w-xl lg:col-span-1 lg:max-w-none">
+                                     <h1 className="text-balance text-4xl leading-[1.1] font-medium sm:text-5xl sm:leading-[1.05] xl:text-7xl xl:leading-[1.03] 2xl:text-8xl">Sell faster. Trade safer.</h1>
                                      <p className="text-muted-foreground mt-4 text-balance text-base sm:text-lg xl:text-xl 2xl:text-2xl">Bloxtr8 is your all-in-one platform for studios and independent developers to sell their games and assets on Roblox.</p>
 
                                     <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                                        <Button asChild size="lg" className="px-6">
-                                            <a href={pilotUrl} target="_blank" rel="noopener noreferrer">
+                                        <Button asChild size="lg">
+                                            <a href={pilotUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                                 <span className="text-nowrap">Start Trading</span>
                                                 <ChevronRight className="opacity-50" />
                                             </a>
                                         </Button>
 
-                                        <Button asChild size="lg" className="px-6" variant="outline">
-                                            <a href={youtubeDemoUrl} target="_blank" rel="noopener noreferrer">
+                                        <Button asChild size="lg" variant="outline">
+                                            <a href={youtubeDemoUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                                 <span className="text-nowrap">Watch Demo</span>
                                                 <CirclePlay className="h-5 w-5 opacity-70" />
                                             </a>

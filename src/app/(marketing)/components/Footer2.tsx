@@ -50,15 +50,15 @@ export default function Footer2() {
 
   return (
     <footer className="relative w-full overflow-hidden bg-background text-foreground">
-      <div className="container-wide px-6">
-        <div className="relative grid grid-cols-1 gap-14 pt-20 md:grid-cols-2 md:gap-8 md:pt-28 lg:pt-32">
+      <div className="container-wide px-4 sm:px-6">
+        <div className="relative grid grid-cols-1 gap-10 pt-12 md:grid-cols-2 md:gap-8 md:pt-28 lg:pt-32">
           {/* Left side */}
           <div className="max-w-xl">
-            <h2 className="text-[44px] font-mono leading-[1.05] tracking-tight md:text-[56px]">
+            <h2 className="text-2xl font-mono leading-[1.05] tracking-tight sm:text-[44px] md:text-[56px]">
               {footer2.headline}
             </h2>
 
-            <div className="mt-10 space-y-2 text-[14px] text-muted-foreground">
+            <div className="mt-6 sm:mt-10 space-y-2 text-[14px] text-muted-foreground">
               <div>{footer2.support.label}</div>
               <a
                 href={`mailto:${contactEmail}`}
@@ -68,10 +68,10 @@ export default function Footer2() {
               </a>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-10 sm:mt-20">
               <div className="text-[14px] text-muted-foreground">{footer2.newsletter.label}</div>
 
-              <div className="mt-6 flex max-w-[520px] items-center gap-4 border-b border-border pb-3">
+              <div className="mt-4 sm:mt-6 flex max-w-[520px] items-center gap-4 border-b border-border pb-3">
                 <label className="sr-only" htmlFor="footer2-email">
                   {footer2.newsletter.inputPlaceholder}
                 </label>
@@ -94,26 +94,12 @@ export default function Footer2() {
           </div>
 
           {/* Right side */}
-          <div className="grid grid-cols-2 gap-x-10 gap-y-16 md:justify-self-end md:gap-x-20">
+          <div className="grid grid-cols-2 gap-x-10 gap-y-8 sm:gap-y-12 md:justify-self-end md:gap-x-20">
             <div className="space-y-3 text-[14px]">
               {navLinks.map((l) => (
                 <div key={l.label}>
                   <NavLink {...l} />
                 </div>
-              ))}
-            </div>
-
-            <div className="space-y-3 text-[14px]">
-              {socialLinks.map((l) => (
-                <div key={l.label}>
-                  <NavLink {...l} />
-                </div>
-              ))}
-            </div>
-
-            <div className="text-[14px] leading-relaxed">
-              {footer2.locationLines.map((line) => (
-                <div key={line}>{line}</div>
               ))}
             </div>
 
@@ -129,11 +115,17 @@ export default function Footer2() {
                 </div>
               ))}
             </div>
+
+            <div className="text-[14px] leading-relaxed text-muted-foreground col-span-2">
+              {footer2.locationLines.map((line) => (
+                <div key={line}>{line}</div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Big word */}
-        <div className="relative mt-16 pb-8 md:mt-24 md:pb-10">
+        <div className="relative mt-10 pb-6 md:mt-24 md:pb-10">
           <div className="pointer-events-none select-none">
             <div className="font-semibold font-mono tracking-tight leading-[0.82] text-[clamp(56px,16vw,340px)] md:text-[clamp(96px,22vw,340px)] break-words text-center md:text-left text-foreground">
               {footer2.bigWord}
@@ -143,7 +135,14 @@ export default function Footer2() {
           {/* Subtext row under big word */}
           <div className="mt-4 flex flex-col items-center justify-start gap-3 text-xs text-muted-foreground sm:flex-row sm:gap-5 sm:text-sm">
             <div className="font-mono-medium text-center">
-              {footer.copyright.replace("{year}", new Date().getFullYear().toString())}
+              <a
+                href="https://tr8.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                {footer.copyright.replace("{year}", new Date().getFullYear().toString())}
+              </a>
             </div>
 
             <div className="flex items-center justify-center">

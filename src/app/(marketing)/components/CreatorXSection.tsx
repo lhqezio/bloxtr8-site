@@ -22,7 +22,7 @@ const mockMetrics = [
 
 export default function CreatorXSection() {
   return (
-    <section id="creatorx" className="py-8 sm:py-12 md:py-16 lg:py-24">
+    <section id="creatorx" className="py-8 sm:py-12 md:py-16 lg:py-24 border-t border-border">
       <div className="container-narrow px-4 sm:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -120,7 +120,7 @@ export default function CreatorXSection() {
                 CreatorX is currently in alpha. Be among the first to access
                 powerful creator analytics.
               </p>
-              <Button asChild size="lg" className="px-6 sm:px-8">
+              <Button asChild size="lg">
                 <Link href="/contact">Join the Alpha</Link>
               </Button>
             </div>

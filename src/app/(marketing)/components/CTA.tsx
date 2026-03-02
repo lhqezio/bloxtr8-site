@@ -6,16 +6,17 @@ import { trackEvent } from "@/components/analytics";
 
 const CTA = () => {
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-24 border-border">
+    <section className="py-12 sm:py-12 md:py-16 lg:py-24 border-border">
       <div className="container-narrow px-4 sm:px-6">
+        <div className="rounded-2xl border border-border bg-card/50 p-6 sm:p-8 md:p-12">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono-bold mb-3 sm:mb-4 md:mb-6">
-            Ready to <span className="underline decoration-green-500 decoration-[2px] sm:decoration-[3px]">protect</span> your trades?
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 sm:mb-4 md:mb-6">
+            Ready to <span className="underline decoration-primary decoration-[2px] sm:decoration-[3px]">protect</span> your trades?
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
             Join the waitlist and be among the first to experience secure Roblox trading with Bloxtr8.
@@ -29,7 +30,7 @@ const CTA = () => {
             <Button 
               asChild 
               size="lg" 
-              className=" px-6 sm:px-8 min-h-[48px] text-base sm:text-lg w-full sm:w-auto"
+              className="w-full sm:w-auto"
             >
               <Link 
                 href="/contact"
@@ -47,6 +48,7 @@ const CTA = () => {
             </Button>
           </motion.div>
         </motion.div>
+        </div>
       </div>
     </section>
   );

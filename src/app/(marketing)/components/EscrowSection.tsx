@@ -26,7 +26,7 @@ export default function EscrowSection() {
             complete. No more trust-based trading.
           </p>
 
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Shield className="h-4 w-4 text-green-500 flex-shrink-0" />
               <span>Funds held until trade completes</span>

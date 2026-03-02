@@ -7,7 +7,7 @@ import DiscordCommandDemo from "./DiscordCommandDemo";
 
 export default function DiscordSection() {
   return (
-    <section id="discord" className="py-8 sm:py-12 md:py-16 lg:py-24">
+    <section id="discord" className="py-8 sm:py-12 md:py-16 lg:py-24 border-t border-border">
       <div className="container-narrow px-4 sm:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -26,7 +26,7 @@ export default function DiscordSection() {
             and get notifications without leaving the conversation.
           </p>
 
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <DiscordLogo className="h-4 w-4 flex-shrink-0" />
               <span>Sign in with Discord</span>

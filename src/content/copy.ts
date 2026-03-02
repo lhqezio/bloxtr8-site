@@ -423,7 +423,7 @@ export const cookies = {
 
 // Footer content
 export const footer = {
-  copyright: "© {year} Bloxtr8. All rights reserved.",
+  copyright: "© {year} TR8. All rights reserved.",
   links: {
     backToHome: "← Back to home"
   },
@@ -453,11 +453,7 @@ export const footer = {
   },
   social: {
     title: "Connect",
-    links: [
-      { label: "Discord", href: "#" },
-      { label: "Twitter", href: "#" },
-      { label: "LinkedIn", href: "#" }
-    ]
+    links: []
   }
 };
 
@@ -475,24 +471,12 @@ export const footer2 = {
     submitAriaLabel: "Submit"
   },
   navLinks: [
-    { label: "About", href: "https://tr8.ca", targetBlank: true },
     { label: "Blockchain", href: "/blockchain" },
     { label: "Contact", href: "/contact" },
     { label: "Pricing", href: "/pricing" },
     { label: "Home", href: "/" }
   ],
-  socialLinks: [
-    {
-      label: "Linkedin",
-      href: "https://www.linkedin.com/company/110757936",
-      targetBlank: true,
-      withIcon: true
-    },
-    { label: "Twitter", 
-      href: "https://x.com/bloxtr8", 
-      targetBlank: true, 
-      withIcon: true }
-  ],
+  socialLinks: [],
   locationLines: ["Montreal, Canada"],
   legalLinks: [
     { label: "Cookie Policy", href: "/cookies" },

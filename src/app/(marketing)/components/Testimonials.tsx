@@ -20,7 +20,6 @@ type Testimonial = {
 export default function Testimonials() {
   const items = (testimonialsCopy.items ?? []) as Testimonial[]
   const [activeIndex, setActiveIndex] = React.useState(0)
-  const [direction, setDirection] = React.useState<1 | -1>(1)
   const prefersReducedMotion = useReducedMotion()
 
   const total = items.length
@@ -33,7 +32,6 @@ export default function Testimonials() {
   React.useEffect(() => {
     if (total <= 1) return
     const id = setInterval(() => {
-      setDirection(1)
       setActiveIndex((i) => (i + 1) % total)
     }, 5000)
     return () => clearInterval(id)
@@ -42,19 +40,19 @@ export default function Testimonials() {
   const t = items[activeIndex]
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-24">
-      <div className="container-wide">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6">
+      <div className="container-narrow">
+        <div className="grid grid-cols-1 gap-8 lg:gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-xl">
             <div className="inline-flex items-center rounded-full border border-border px-3 py-1 text-sm text-foreground">
               {testimonialsCopy.label}
             </div>
 
-            <h2 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] sm:text-5xl">
+            <h2 className="mt-6 text-balance text-2xl sm:text-3xl md:text-4xl font-mono-bold leading-[1.05]">
               {testimonialsCopy.title}
             </h2>
 
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
               {testimonialsCopy.description}
             </p>
 
@@ -63,7 +61,6 @@ export default function Testimonials() {
                 direction="prev"
                 onClick={() => {
                   if (total <= 1) return
-                  setDirection(-1)
                   setActiveIndex((i) => (i - 1 + total) % total)
                 }}
                 label="Previous testimonial"
@@ -72,7 +69,6 @@ export default function Testimonials() {
                 direction="next"
                 onClick={() => {
                   if (total <= 1) return
-                  setDirection(1)
                   setActiveIndex((i) => (i + 1) % total)
                 }}
                 label="Next testimonial"
@@ -80,33 +76,22 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="w-full max-w-2xl lg:justify-self-start">
-            <AnimatePresence mode="wait" initial={false} custom={direction}>
+          <div className="relative w-full max-w-2xl overflow-hidden lg:justify-self-start min-h-[220px] sm:min-h-[260px] md:min-h-[280px]">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={t ? String(activeIndex) : "empty"}
-                custom={direction}
-                variants={{
-                  enter: (dir: 1 | -1) => ({
-                    x: prefersReducedMotion ? 0 : dir === 1 ? 48 : -48,
-                    opacity: prefersReducedMotion ? 1 : 0,
-                  }),
-                  center: { x: 0, opacity: 1 },
-                  exit: (dir: 1 | -1) => ({
-                    x: prefersReducedMotion ? 0 : dir === 1 ? -48 : 48,
-                    opacity: prefersReducedMotion ? 1 : 0,
-                  }),
-                }}
-                initial="enter"
-                animate="center"
-                exit="exit"
+                className="absolute inset-x-0 top-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{
-                  duration: prefersReducedMotion ? 0 : 0.28,
+                  duration: prefersReducedMotion ? 0 : 0.2,
                   ease: "easeOut",
                 }}
               >
                 <Quote className="h-12 w-12 text-foreground fill-foreground" />
 
-                <p className="mt-6 text-pretty text-2xl font-medium leading-relaxed text-muted-foreground sm:text-3xl">
+                <p className="mt-6 text-pretty text-xl font-medium leading-relaxed text-muted-foreground sm:text-2xl md:text-3xl">
                   {t?.quote}
                 </p>
 
