@@ -31,10 +31,10 @@ export default function PricingPage() {
               <span>100% FREE to Start</span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-mono-bold mb-3 sm:mb-4 md:mb-6 leading-[1.1] sm:leading-tight px-2">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-mono-bold mb-3 sm:mb-4 md:mb-6 leading-[1.1] sm:leading-tight px-2">
               <span className="underline decoration-green-500 decoration-[2px] sm:decoration-[3px]">Free escrow</span>. <span className="underline decoration-blue-500 decoration-[2px] sm:decoration-[3px]">Fair fees</span>.
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-3 sm:mb-4 md:mb-6 font-medium px-2">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-3 sm:mb-4 md:mb-6 font-medium px-2">
               {pricing.hero.subtitle}
             </p>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
@@ -49,7 +49,7 @@ export default function PricingPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="max-w-5xl mx-auto"
           >
-            <div className="bg-card border-2 border-border rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-16 shadow-strong relative overflow-hidden">
+            <div className="bg-card border border-border sm:border-2 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-16 shadow-strong relative overflow-hidden">
 
               {/* Fee Display */}
               <div className="text-center mb-6 sm:mb-8 md:mb-12">
@@ -60,7 +60,7 @@ export default function PricingPage() {
                   className="mb-3 sm:mb-4 md:mb-6"
                 >
                   <div className="inline-flex items-baseline gap-1 sm:gap-2">
-                    <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-mono-bold text-foreground">
+                    <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-mono-bold text-foreground">
                       {pricing.feeBreakdown.total}
                     </span>
                   </div>
@@ -83,9 +83,9 @@ export default function PricingPage() {
                     initial={{ x: -30, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
-                    className="bg-background/50 border-2 border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center hover:border-blue-500/30 transition-all"
+                    className="bg-background/50 border border-border sm:border-2 rounded-xl sm:rounded-2xl p-3 sm:p-6 md:p-8 text-center hover:border-blue-500/30 transition-all"
                   >
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono-bold text-blue-400 mb-1.5 sm:mb-2 md:mb-3">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono-bold text-blue-400 mb-1 sm:mb-2 md:mb-3">
                       {pricing.feeBreakdown.buyer}
                     </div>
                     <div className="text-sm sm:text-base md:text-lg font-mono-medium text-foreground mb-0.5 sm:mb-1">Buyer</div>
@@ -95,9 +95,9 @@ export default function PricingPage() {
                     initial={{ x: 30, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
-                    className="bg-background/50 border-2 border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center hover:border-purple-500/30 transition-all"
+                    className="bg-background/50 border border-border sm:border-2 rounded-xl sm:rounded-2xl p-3 sm:p-6 md:p-8 text-center hover:border-purple-500/30 transition-all"
                   >
-                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono-bold text-purple-400 mb-1.5 sm:mb-2 md:mb-3">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-mono-bold text-purple-400 mb-1 sm:mb-2 md:mb-3">
                       {pricing.feeBreakdown.seller}
                     </div>
                     <div className="text-sm sm:text-base md:text-lg font-mono-medium text-foreground mb-0.5 sm:mb-1">Seller</div>
@@ -107,7 +107,7 @@ export default function PricingPage() {
               </div>
 
               {/* Benefits Grid */}
-              <div className="border-t-2 border-border pt-6 sm:pt-8 md:pt-12">
+              <div className="border-t border-border sm:border-t-2 pt-6 sm:pt-8 md:pt-12">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-mono-bold mb-4 sm:mb-6 md:mb-8 text-center">
                   Everything You Get
                 </h3>
@@ -198,7 +198,7 @@ export default function PricingPage() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="bg-card border-2 border-border rounded-lg sm:rounded-xl overflow-hidden hover:border-blue-500/30 transition-all"
+                className="bg-card border border-border sm:border-2 rounded-lg sm:rounded-xl overflow-hidden hover:border-blue-500/30 transition-all"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
@@ -247,7 +247,7 @@ export default function PricingPage() {
               Just secure escrow when you need it. Only pay when trades succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4 justify-center">
-              <Button asChild size="lg" className="rounded-2xl px-6 sm:px-8 md:px-10 text-sm sm:text-base md:text-lg h-12 md:h-14 min-h-[48px] w-full sm:w-auto">
+              <Button asChild size="lg" className="w-full sm:w-auto">
                 <Link href="/contact">Get Started</Link>
               </Button>
               

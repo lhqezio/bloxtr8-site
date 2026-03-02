@@ -471,6 +471,7 @@ export const footer2 = {
     submitAriaLabel: "Submit"
   },
   navLinks: [
+    { label: "TR8", href: "https://tr8.ca", targetBlank: true, withIcon: true },
     { label: "Blockchain", href: "/blockchain" },
     { label: "Contact", href: "/contact" },
     { label: "Pricing", href: "/pricing" },

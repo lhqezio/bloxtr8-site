@@ -135,14 +135,7 @@ export default function Footer2() {
           {/* Subtext row under big word */}
           <div className="mt-4 flex flex-col items-center justify-start gap-3 text-xs text-muted-foreground sm:flex-row sm:gap-5 sm:text-sm">
             <div className="font-mono-medium text-center">
-              <a
-                href="https://tr8.ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors"
-              >
-                {footer.copyright.replace("{year}", new Date().getFullYear().toString())}
-              </a>
+              {footer.copyright.replace("{year}", new Date().getFullYear().toString())}
             </div>
 
             <div className="flex items-center justify-center">
