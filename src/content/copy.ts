@@ -44,27 +44,68 @@ export const team = {
   attribution: "Built by traders, for traders."
 };
 
+export const howItWorks = {
+  title: "How Bloxtr8 Works",
+  subtitle: "Three steps to a secure trade",
+  steps: [
+    {
+      number: "01",
+      title: "Create Deal",
+      description: "Use /escrow in Discord or the web app to set up a trade with a buyer or seller."
+    },
+    {
+      number: "02",
+      title: "Funds Held",
+      description: "Payment is held safely in escrow until both parties confirm the trade details."
+    },
+    {
+      number: "03",
+      title: "Trade Done",
+      description: "Asset is verified and transferred, funds are released to the seller automatically."
+    }
+  ]
+};
+
+export const comparison = {
+  title: "Why Bloxtr8?",
+  traditional: {
+    label: "Trust Trading",
+    items: [
+      "Hope they don't scam you",
+      "No proof of payment",
+      "Manual verification",
+      "No dispute resolution",
+      "Screenshots as \"proof\"",
+      "DMs with strangers"
+    ]
+  },
+  bloxtr8: {
+    label: "Bloxtr8",
+    items: [
+      "Escrow holds funds securely",
+      "Stripe-secured payments",
+      "Auto identity verification",
+      "Built-in dispute resolution",
+      "On-chain audit trail",
+      "Discord bot integration"
+    ]
+  }
+};
+
+export const statsSection = {
+  stats: [
+    { value: "8,000+", label: "games tracked" },
+    { value: "$50K+", label: "secured in escrow" },
+    { value: "6%", label: "fair fee" },
+    { value: "24/7", label: "uptime" }
+  ]
+};
+
 export const testimonials = {
   label: "Testimonials",
   title: "Trusted and loved by both the developers and the community",
   description: "From indie developers to big studios, here's how Bloxtr8 helped.",
   items: [
-    // {
-    //   quote:
-    //     "It's nice and easy to use. I've been using it for a year now and it's made managing my finances so much easier and quick.",
-    //   name: "Jandele",
-    //   title: "Developer of Grow A Garden",
-    //   avatarFallback: "J",
-    //   avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-21C7AEF8690A6F4DAAAB07C4059EF48D-Png/150/150/AvatarHeadshot/Webp/noFilter"
-    // },
-    {
-      quote:
-        "Bloxtr8 is very cool.",
-      name: "StarmanB_1021",
-      title: "Roblox player",
-      avatarFallback: "SB",
-      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-34D99758BA71E5F1A4784F6466D1BED4-Png/150/150/AvatarHeadshot/Webp/noFilter"
-    },
     {
       quote:
         "I've been using Bloxtr8 and it has potential.",
@@ -72,15 +113,15 @@ export const testimonials = {
       title: "Founder of Breeze's Studio",
       avatarFallback: "BZ",
       avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B3CD534E420B33E586DF4256CAABDE4A-Png/150/150/AvatarHeadshot/Webp/noFilter"
+    },
+    {
+      quote:
+        "Bloxtr8 is very cool.",
+      name: "StarmanB_1021",
+      title: "Roblox player",
+      avatarFallback: "SB",
+      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-34D99758BA71E5F1A4784F6466D1BED4-Png/150/150/AvatarHeadshot/Webp/noFilter"
     }
-    // {
-    //   quote:
-    //     "I've been using Bloxtr8 for a year now and it's made managing my finances so much easier and quick.",
-    //   name: "Jhon Zendesk",
-    //   title: "CEO & Co Founder at Zendesk",
-    //   avatarFallback: "CB",
-    //   avatarSrc: ""
-    // }
   ]
 };
 
@@ -541,30 +582,22 @@ export const blockchain = {
   },
   stats: [
     {
-      value: 2,
-      prefix: "<",
-      suffix: "s",
+      display: "<2s",
       label: "Settlement Time",
       description: "Near-instant finality"
     },
     {
-      value: 0.001,
-      prefix: "$",
-      suffix: "",
+      display: "$0.001",
       label: "Gas Fees",
       description: "On Base L2"
     },
     {
-      value: 24,
-      prefix: "",
-      suffix: "/7",
+      display: "24/7",
       label: "Uptime",
       description: "Always online"
     },
     {
-      value: 0,
-      prefix: "",
-      suffix: "%",
+      display: "0%",
       label: "Trust Required",
       description: "Code is the judge"
     }

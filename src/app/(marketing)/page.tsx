@@ -1,17 +1,23 @@
-import Hero2 from "./components/Hero2";
-import CTA from "./components/CTA";
-import Features2 from "@/components/features2";
+import HeroRedesign from "./components/HeroRedesign";
+import SocialProofStrip from "./components/SocialProofStrip";
+import FeatureCarousel from "./components/FeatureCarousel";
+import HowItWorks from "./components/HowItWorks";
+import ComparisonSection from "./components/ComparisonSection";
+import StatsSection from "./components/StatsSection";
 import Testimonials from "./components/Testimonials";
+import CTA from "./components/CTA";
 
 export default function Page() {
   return (
     <>
-      <Hero2 />
-      <div className="space-y-0">
-        <Features2 />
-        <Testimonials />
-        <CTA />
-      </div>
+      <HeroRedesign />
+      <SocialProofStrip />
+      <FeatureCarousel />
+      <HowItWorks />
+      <ComparisonSection />
+      <StatsSection />
+      <Testimonials />
+      <CTA />
     </>
   );
 }
