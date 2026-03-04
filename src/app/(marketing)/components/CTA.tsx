@@ -19,10 +19,10 @@ const CTA = () => {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono-bold mb-4 sm:mb-6">
-            Your trades deserve{" "}
-            <span className="text-green-500">escrow</span>.
+            Ready to sell your{" "}
+            <span className="text-green-500">game</span>?
             <br />
-            Start using Bloxtr8 today.
+            List it on Bloxtr8 today.
           </h2>
           <motion.div
             initial={{ y: 20, opacity: 0 }}

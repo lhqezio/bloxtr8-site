@@ -195,7 +195,7 @@ export default function FeatureCarousel() {
       {/* Section header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-10 sm:mb-14">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono-bold">
-          How we make you more efficient
+          How we make you more $$
         </h2>
       </div>
 

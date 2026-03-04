@@ -45,23 +45,23 @@ export const team = {
 };
 
 export const howItWorks = {
-  title: "Three steps. Zero trust required.",
-  subtitle: "You don't need to trust anyone — the system does it for you.",
+  title: "List. Sell. Get paid.",
+  subtitle: "Three steps — escrow handles the rest.",
   steps: [
     {
       number: "01",
-      title: "Create Deal",
-      description: "Use /escrow in Discord or the web app to set up a trade with a buyer or seller."
+      title: "List Your Game",
+      description: "Create a listing in Discord or the web app. Set your price and terms."
     },
     {
       number: "02",
-      title: "Funds Held",
-      description: "Payment is held safely in escrow until both parties confirm the trade details."
+      title: "Buyer Pays",
+      description: "Payment is held in escrow until both sides confirm the deal."
     },
     {
       number: "03",
-      title: "Trade Done",
-      description: "Asset is verified and transferred, funds are released to the seller automatically."
+      title: "You Get Paid",
+      description: "Game is transferred, funds are released to you automatically."
     }
   ]
 };
@@ -84,9 +84,9 @@ export const comparison = {
     items: [
       "Escrow holds funds securely",
       "Stripe-secured payments",
-      "Auto identity verification",
+      "Auto identity verification (coming soon)",
       "Built-in dispute resolution",
-      "On-chain audit trail",
+      "On-chain audit trail (coming soon)",
       "Discord bot integration"
     ]
   }
@@ -169,10 +169,10 @@ export const navigation = {
 };
 
 export const meta = {
-  title: "Bloxtr8 — Escrow-protected Roblox trading",
-  description: "Sellers get paid. Buyers get what they paid for. Secure escrow for Roblox games and assets — no trust required.",
+  title: "Bloxtr8 — List your Roblox game. Get paid.",
+  description: "The marketplace for Roblox games and assets — with built-in escrow so every trade is protected.",
   ogTitle: "Bloxtr8",
-  ogDescription: "Escrow-protected Roblox trading. No trust required."
+  ogDescription: "List your Roblox game. Get paid."
 };
 
 // Page-specific metadata
