@@ -543,7 +543,7 @@ export default function ProductMockup() {
         ease: "easeInOut",
         delay: T.settle,
       }}
-      className="relative w-full"
+      className="relative w-full overflow-hidden"
     >
       {/* Background glow */}
       <div

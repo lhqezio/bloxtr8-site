@@ -60,7 +60,7 @@ const cx = {
 function CreatorXMockup() {
   return (
     <div
-      className="w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+      className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
       style={{ background: cx.surface0, border: `1px solid ${cx.rim}` }}
     >
       {/* Title bar */}
@@ -78,7 +78,7 @@ function CreatorXMockup() {
 
       {/* Body */}
       <div
-        className="flex flex-col gap-3 p-4"
+        className="flex flex-col gap-3 p-4 flex-1"
         style={{
           background: "linear-gradient(180deg, oklch(0.16 0.01 300 / 60%), oklch(0.145 0 0))",
         }}
@@ -128,7 +128,7 @@ function CreatorXMockup() {
         </div>
 
         {/* Mini portfolio thumbnails */}
-        <div className="grid grid-cols-3 gap-1.5">
+        <div className="grid grid-cols-3 gap-1.5 flex-1">
           {[
             { bg: "linear-gradient(135deg, #7c3aed, #2563eb)", Icon: Sword },
             { bg: "linear-gradient(135deg, #ec4899, #f97316)", Icon: Castle },

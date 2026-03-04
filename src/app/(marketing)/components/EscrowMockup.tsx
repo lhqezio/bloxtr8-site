@@ -56,9 +56,9 @@ const dotVariants: Variants = {
 
 export default function EscrowMockup() {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <div
-        className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+        className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full"
         style={{ background: t.surface0, border: `1px solid ${t.rim}` }}
       >
         {/* Title bar */}
@@ -79,14 +79,14 @@ export default function EscrowMockup() {
           variants={shellVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col gap-3 p-4"
+          className="flex flex-col gap-3 p-4 flex-1"
         >
           {/* Deal card */}
           <motion.div
             variants={cardVariants}
             initial="hidden"
             animate="visible"
-            className="rounded-xl p-3.5"
+            className="rounded-xl p-3.5 flex-1 flex flex-col"
             style={{ background: t.surface2, border: `1px solid ${t.border}` }}
           >
             {/* Status + game name */}
@@ -134,7 +134,7 @@ export default function EscrowMockup() {
 
             {/* Amount bar */}
             <div
-              className="rounded-lg p-2.5 flex items-center justify-between"
+              className="rounded-lg p-2.5 flex items-center justify-between mt-auto"
               style={{ background: t.surface3, border: `1px solid ${t.border}` }}
             >
               <span className="text-[9px]" style={{ color: t.muted }}>Amount</span>

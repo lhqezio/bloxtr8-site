@@ -6,7 +6,7 @@ import { comparison } from "@/content/copy";
 
 export default function ComparisonSection() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-28 border-t border-border">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-28 border-t border-border overflow-hidden">
       <div className="container-narrow px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold">
