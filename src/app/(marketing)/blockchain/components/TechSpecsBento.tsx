@@ -75,11 +75,11 @@ export default function TechSpecsBento() {
             Ethereum L2 with low fees and high speed. Built by Coinbase for the next generation of on-chain apps.
           </p>
           <div className="mt-auto grid grid-cols-2 gap-3">
-            <div className="rounded-lg p-3 text-center" className="bg-muted/30 border border-border">
+            <div className="rounded-lg p-3 text-center bg-muted/30 border border-border">
               <div className="text-lg font-mono-bold">~2s</div>
               <div className="text-[10px] text-muted-foreground">Block time</div>
             </div>
-            <div className="rounded-lg p-3 text-center" className="bg-muted/30 border border-border">
+            <div className="rounded-lg p-3 text-center bg-muted/30 border border-border">
               <div className="text-lg font-mono-bold">EVM</div>
               <div className="text-[10px] text-muted-foreground">Compatible</div>
             </div>
@@ -138,11 +138,11 @@ export default function TechSpecsBento() {
             Dollar-pegged stablecoin for predictable value. No crypto volatility risk.
           </p>
           <div className="mt-auto grid grid-cols-2 gap-3">
-            <div className="rounded-lg p-3 text-center" className="bg-muted/30 border border-border">
+            <div className="rounded-lg p-3 text-center bg-muted/30 border border-border">
               <div className="text-lg font-mono-bold">$1.00</div>
               <div className="text-[10px] text-muted-foreground">Always</div>
             </div>
-            <div className="rounded-lg p-3 text-center" className="bg-muted/30 border border-border">
+            <div className="rounded-lg p-3 text-center bg-muted/30 border border-border">
               <div className="text-lg font-mono-bold">Circle</div>
               <div className="text-[10px] text-muted-foreground">Backed by</div>
             </div>
