@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, DollarSign, BarChart3, Gamepad2 } from "lucide-react";
@@ -48,13 +48,16 @@ function SentimentDot({ value }: { value: number }) {
 
 export default function TrendSpotDemo() {
   const [activeTab, setActiveTab] = useState<"gainers" | "decliners">("gainers");
+  const rotateTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    rotateTimeoutRef.current = setTimeout(() => {
       setActiveTab((prev) => (prev === "gainers" ? "decliners" : "gainers"));
     }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current);
+    };
+  }, [activeTab]);
 
   return (
     <div className="bg-background/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-border w-full max-w-4xl mx-auto shadow-light">
@@ -101,7 +104,10 @@ export default function TrendSpotDemo() {
       <div className="mb-4 sm:mb-6">
         <div className="flex gap-2 mb-3">
           <button
-            onClick={() => setActiveTab("gainers")}
+            onClick={() => {
+              if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current);
+              setActiveTab("gainers");
+            }}
             className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-colors ${
               activeTab === "gainers"
                 ? "bg-green-500/10 text-green-400 border border-green-500/20"
@@ -111,7 +117,10 @@ export default function TrendSpotDemo() {
             Top Gainers
           </button>
           <button
-            onClick={() => setActiveTab("decliners")}
+            onClick={() => {
+              if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current);
+              setActiveTab("decliners");
+            }}
             className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-colors ${
               activeTab === "decliners"
                 ? "bg-red-500/10 text-red-400 border border-red-500/20"

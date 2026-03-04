@@ -20,9 +20,12 @@ type Testimonial = {
 export default function Testimonials() {
   const items = (testimonialsCopy.items ?? []) as Testimonial[]
   const [activeIndex, setActiveIndex] = React.useState(0)
+  const rotateTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+  const lastInputAtRef = React.useRef(0)
   const prefersReducedMotion = useReducedMotion()
 
   const total = items.length
+  const INPUT_DEBOUNCE_MS = 250
 
   React.useEffect(() => {
     setActiveIndex((i) => (total === 0 ? 0 : Math.min(i, total - 1)))
@@ -31,11 +34,13 @@ export default function Testimonials() {
   // Auto-advance to next testimonial every 5 seconds
   React.useEffect(() => {
     if (total <= 1) return
-    const id = setInterval(() => {
+    rotateTimeoutRef.current = setTimeout(() => {
       setActiveIndex((i) => (i + 1) % total)
     }, 5000)
-    return () => clearInterval(id)
-  }, [total])
+    return () => {
+      if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current)
+    }
+  }, [total, activeIndex])
 
   const t = items[activeIndex]
 
@@ -61,6 +66,10 @@ export default function Testimonials() {
                 direction="prev"
                 onClick={() => {
                   if (total <= 1) return
+                  const now = Date.now()
+                  if (now - lastInputAtRef.current < INPUT_DEBOUNCE_MS) return
+                  lastInputAtRef.current = now
+                  if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current)
                   setActiveIndex((i) => (i - 1 + total) % total)
                 }}
                 label="Previous testimonial"
@@ -69,6 +78,10 @@ export default function Testimonials() {
                 direction="next"
                 onClick={() => {
                   if (total <= 1) return
+                  const now = Date.now()
+                  if (now - lastInputAtRef.current < INPUT_DEBOUNCE_MS) return
+                  lastInputAtRef.current = now
+                  if (rotateTimeoutRef.current) clearTimeout(rotateTimeoutRef.current)
                   setActiveIndex((i) => (i + 1) % total)
                 }}
                 label="Next testimonial"
