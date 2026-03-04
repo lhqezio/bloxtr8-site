@@ -19,12 +19,8 @@ export default function BentoFeatures() {
       <div className="container-narrow px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 sm:mb-4">
-            Powerful Features for Modern Studios
+            How we make you more money
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Everything you need to connect, secure, and sell your creations in
-            Roblox effortlessly.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">

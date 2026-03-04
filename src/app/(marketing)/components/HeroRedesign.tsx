@@ -24,9 +24,9 @@ export default function HeroRedesign() {
                 transition={{ duration: 0.6, delay: 0 }}
                 className="text-balance text-4xl leading-[1.1] font-medium sm:text-5xl sm:leading-[1.05] lg:text-6xl xl:text-7xl xl:leading-[1.03]"
               >
-                Trade Roblox games.
+                The escrow platform
                 <br />
-                <span className="text-green-500">Without the risk.</span>
+                <span className="text-green-500">for Roblox.</span>
               </motion.h1>
 
               <motion.p
@@ -35,8 +35,8 @@ export default function HeroRedesign() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-muted-foreground mt-6 text-balance text-base sm:text-lg lg:text-xl max-w-2xl"
               >
-                All-in-one platform for studios and indie devs to sell games and
-                assets with escrow protection.
+                Sellers get paid. Buyers get what they paid for. No trust
+                required — the escrow handles it.
               </motion.p>
 
               <motion.div
@@ -52,7 +52,7 @@ export default function HeroRedesign() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"
                   >
-                    <span className="text-nowrap">Start Trading</span>
+                    <span className="text-nowrap">Protect Your Trades</span>
                     <ChevronRight className="opacity-50" />
                   </a>
                 </Button>
@@ -64,7 +64,7 @@ export default function HeroRedesign() {
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto"
                   >
-                    <span className="text-nowrap">Watch Demo</span>
+                    <span className="text-nowrap">See How It Works</span>
                     <CirclePlay className="h-5 w-5 opacity-70" />
                   </a>
                 </Button>

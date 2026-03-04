@@ -19,10 +19,10 @@ const CTA = () => {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono-bold mb-4 sm:mb-6">
-            Stop losing money to Roblox{" "}
-            <span className="text-green-500">scams</span>.
+            Your trades deserve{" "}
+            <span className="text-green-500">escrow</span>.
             <br />
-            Start trading with Bloxtr8 today.
+            Start using Bloxtr8 today.
           </h2>
           <motion.div
             initial={{ y: 20, opacity: 0 }}

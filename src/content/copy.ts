@@ -45,8 +45,8 @@ export const team = {
 };
 
 export const howItWorks = {
-  title: "How Bloxtr8 Works",
-  subtitle: "Three steps to a secure trade",
+  title: "Three steps. Zero trust required.",
+  subtitle: "You don't need to trust anyone — the system does it for you.",
   steps: [
     {
       number: "01",
@@ -67,9 +67,9 @@ export const howItWorks = {
 };
 
 export const comparison = {
-  title: "Why Bloxtr8?",
+  title: "Trust trading is broken.",
   traditional: {
-    label: "Trust Trading",
+    label: "How most people trade",
     items: [
       "Hope they don't scam you",
       "No proof of payment",
@@ -80,7 +80,7 @@ export const comparison = {
     ]
   },
   bloxtr8: {
-    label: "Bloxtr8",
+    label: "How Bloxtr8 trades",
     items: [
       "Escrow holds funds securely",
       "Stripe-secured payments",
@@ -94,10 +94,10 @@ export const comparison = {
 
 export const statsSection = {
   stats: [
-    { value: "8,000+", label: "games tracked" },
-    { value: "$50K+", label: "secured in escrow" },
-    { value: "6%", label: "fair fee" },
-    { value: "24/7", label: "uptime" }
+    { value: "8,000+", label: "games tracked live" },
+    { value: "$50K+", label: "protected so far" },
+    { value: "6%", label: "split fairly" },
+    { value: "24/7", label: "always online" }
   ]
 };
 
@@ -169,10 +169,10 @@ export const navigation = {
 };
 
 export const meta = {
-  title: "Bloxtr8 — Stop losing money to Roblox trade scams",
-  description: "Discord-native escrow with automatic contracts and secure payments. Protect your community from fraud.",
+  title: "Bloxtr8 — Escrow-protected Roblox trading",
+  description: "Sellers get paid. Buyers get what they paid for. Secure escrow for Roblox games and assets — no trust required.",
   ogTitle: "Bloxtr8",
-  ogDescription: "Stop losing money to Roblox trade scams."
+  ogDescription: "Escrow-protected Roblox trading. No trust required."
 };
 
 // Page-specific metadata
@@ -576,9 +576,9 @@ export const pricing = {
 // Blockchain page content
 export const blockchain = {
   hero: {
-    title: "Escrow that runs itself",
-    subtitle: "Smart contracts execute. You just trade.",
-    tagline: "Settlement in under 2 seconds. Zero middlemen."
+    title: "In code we trust.",
+    subtitle: "Smart contracts execute the trade. No middlemen, no delays, no trust required.",
+    tagline: "Settlement in under 2 seconds on Base L2."
   },
   stats: [
     {
@@ -613,8 +613,8 @@ export const blockchain = {
     ]
   },
   comparison: {
-    title: "Traditional vs Blockchain",
-    subtitle: "The difference is dramatic",
+    title: "Middlemen are expensive.",
+    subtitle: "Here's what you stop paying for.",
     traditional: {
       label: "Traditional Escrow",
       items: [
@@ -637,8 +637,8 @@ export const blockchain = {
     }
   },
   tech: {
-    title: "Built on cutting-edge infrastructure",
-    subtitle: "Powered by the most advanced blockchain technology",
+    title: "What's under the hood",
+    subtitle: "Base L2, USDC, audited Solidity — everything open and verifiable.",
     specs: [
       {
         label: "Network",
@@ -668,8 +668,8 @@ export const blockchain = {
     ]
   },
   emailSignup: {
-    title: "Be first to trade trustlessly",
-    subtitle: "Join the waitlist for early access to blockchain escrow",
+    title: "Get early access",
+    subtitle: "Be the first to trade on-chain when we launch.",
     placeholder: "Enter your email",
     button: "Get Early Access",
     success: "You're on the list! We'll notify you when blockchain integration launches."

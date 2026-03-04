@@ -42,13 +42,11 @@ function BentoCard({
 export default function TechSpecsBento() {
   return (
     <section id="transaction-demo" className="py-12 sm:py-16 md:py-20 lg:py-28 border-t border-border">
-      <div className="container-narrow px-4 sm:px-6 text-center mb-10 sm:mb-14">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 sm:mb-4">
-          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            {blockchain.tech.title}
-          </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-10 sm:mb-14">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono-bold mb-3 sm:mb-4">
+          {blockchain.tech.title}
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
           {blockchain.tech.subtitle}
         </p>
       </div>

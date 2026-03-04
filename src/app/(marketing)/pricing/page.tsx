@@ -16,87 +16,41 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
+const studioFeatures = [
+  "TrendSpot market analytics",
+  "Track 8,000+ games",
+  "CreatorX portfolio tools",
+  "Discord community tools",
+  "Real-time stat monitoring",
+];
+
 export default function PricingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-16 sm:pt-20 md:pt-28 lg:pt-36 pb-12 sm:pb-16 md:pb-20">
+      {/* Pricing Cards */}
+      <section className="relative pt-16 sm:pt-20 md:pt-28 lg:pt-36 pb-16 sm:pb-20 md:pb-28 lg:pb-36">
         <div className="grid-bg absolute inset-0 -z-20" />
 
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 px-4 py-1.5 rounded-full font-mono-bold text-green-600 dark:text-green-400 mb-6 text-[10px] sm:text-xs uppercase tracking-wider"
-          >
-            <span>100% Free to Start</span>
-          </motion.div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {/* Studio Card — FREE */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.08] dark:border-white/[0.08] backdrop-blur-md rounded-2xl p-6 sm:p-8 md:p-10 flex flex-col"
+            >
+              <h3 className="text-lg sm:text-xl font-mono-bold mb-6">Studio</h3>
 
-          <motion.h1
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-balance text-4xl leading-[1.1] font-medium sm:text-5xl sm:leading-[1.05] lg:text-6xl xl:text-7xl xl:leading-[1.03]"
-          >
-            Simple, transparent pricing.
-          </motion.h1>
-
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground mt-5 text-balance text-base sm:text-lg lg:text-xl max-w-xl mx-auto"
-          >
-            No monthly fees. No setup costs. Just a small fee when your trade completes successfully.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Pricing Card */}
-      <section className="pb-16 sm:pb-20 md:pb-28 lg:pb-36">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Fee Card */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.08] dark:border-white/[0.08] backdrop-blur-md rounded-2xl p-6 sm:p-8 md:p-10 text-center"
-          >
-            <span className="text-6xl sm:text-7xl md:text-8xl font-mono-bold text-foreground leading-none">
-              {pricing.feeBreakdown.total}
-            </span>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-3 font-medium">
-              Transaction fee per successful trade
-            </p>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-              {pricing.feeBreakdown.note}
-            </p>
-
-            <div className="mt-6 sm:mt-8">
-              <p className="text-muted-foreground mb-3 sm:mb-4 font-mono-medium text-xs sm:text-sm">
-                {pricing.feeBreakdown.description}
-              </p>
-              <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto">
-                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02]">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-mono-bold text-foreground">
-                    {pricing.feeBreakdown.buyer}
-                  </div>
-                  <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">Buyer</div>
-                </div>
-                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02]">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-mono-bold text-foreground">
-                    {pricing.feeBreakdown.seller}
-                  </div>
-                  <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">Seller</div>
-                </div>
+              <div className="mb-6">
+                <span className="text-6xl sm:text-7xl font-mono-bold text-foreground leading-none">
+                  Free
+                </span>
               </div>
-            </div>
 
-            <div className="mt-6 sm:mt-8">
-              <Button asChild size="lg" className="w-full sm:w-auto">
+              <Button asChild size="lg" variant="outline" className="w-full mb-6">
                 <a
                   href={pilotUrl}
                   target="_blank"
@@ -104,9 +58,59 @@ export default function PricingPage() {
                   onClick={() => {
                     trackEvent("cta_click", {
                       event_category: "engagement",
-                      event_label: "pricing_card_cta",
+                      event_label: "pricing_studio_cta",
+                      cta_text: "Get Started",
+                      cta_location: "pricing_studio_card",
+                    });
+                  }}
+                >
+                  <span className="text-nowrap">Get Started</span>
+                  <ChevronRight className="opacity-50" />
+                </a>
+              </Button>
+
+              <ul className="space-y-2.5 sm:space-y-3 flex-1 mb-6">
+                {studioFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base text-foreground">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Everything you need to research and showcase.
+              </p>
+            </motion.div>
+
+            {/* Trading Card — 6% */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-black/[0.03] dark:bg-white/[0.03] border-2 border-green-500/40 backdrop-blur-md rounded-2xl p-6 sm:p-8 md:p-10 flex flex-col"
+            >
+              <h3 className="text-lg sm:text-xl font-mono-bold mb-6">Trading</h3>
+
+              <div className="mb-6">
+                <span className="text-6xl sm:text-7xl font-mono-bold text-foreground leading-none">
+                  {pricing.feeBreakdown.total}
+                </span>
+              </div>
+
+              <Button asChild size="lg" className="w-full mb-6">
+                <a
+                  href={pilotUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    trackEvent("cta_click", {
+                      event_category: "engagement",
+                      event_label: "pricing_trading_cta",
                       cta_text: "Start Trading",
-                      cta_location: "pricing_card",
+                      cta_location: "pricing_trading_card",
                     });
                   }}
                 >
@@ -114,31 +118,42 @@ export default function PricingPage() {
                   <ChevronRight className="opacity-50" />
                 </a>
               </Button>
-            </div>
-          </motion.div>
 
-          {/* What's included */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-10 sm:mt-14"
-          >
-            <h3 className="text-lg sm:text-xl font-mono-bold mb-4 sm:mb-5 text-center">
-              What&apos;s included
-            </h3>
-            <ul className="space-y-2.5 sm:space-y-3 max-w-md mx-auto">
-              {pricing.benefits.map((benefit, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3"
-                >
-                  <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 shrink-0 mt-0.5" />
-                  <span className="text-sm sm:text-base text-foreground">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02] text-center">
+                  <div className="text-xl sm:text-2xl font-mono-bold text-foreground">
+                    {pricing.feeBreakdown.buyer}
+                  </div>
+                  <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">
+                    Buyer
+                  </div>
+                </div>
+                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02] text-center">
+                  <div className="text-xl sm:text-2xl font-mono-bold text-foreground">
+                    {pricing.feeBreakdown.seller}
+                  </div>
+                  <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">
+                    Seller
+                  </div>
+                </div>
+              </div>
+
+              <ul className="space-y-2.5 sm:space-y-3 flex-1 mb-6">
+                {pricing.benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base text-foreground">
+                      {benefit}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Per successful trade. {pricing.feeBreakdown.description}.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
