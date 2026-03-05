@@ -208,7 +208,7 @@ export default function FeatureCarousel() {
           </div>
           <div className="flex items-center gap-3 mb-2">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{
                 background: `${panels[0].accent}18`,
                 border: `1px solid ${panels[0].accent}33`,
@@ -227,7 +227,7 @@ export default function FeatureCarousel() {
         <FeatureCard panel={panels[1]} index={1} className="md:col-span-2">
           <div className="flex items-center gap-3 mb-2">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{
                 background: `${panels[1].accent}18`,
                 border: `1px solid ${panels[1].accent}33`,
@@ -249,7 +249,7 @@ export default function FeatureCarousel() {
         <FeatureCard panel={panels[2]} index={2} className="md:col-span-2">
           <div className="flex items-center gap-3 mb-2">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{
                 background: `${panels[2].accent}18`,
                 border: `1px solid ${panels[2].accent}33`,
@@ -271,7 +271,7 @@ export default function FeatureCarousel() {
         <FeatureCard panel={panels[3]} index={3} className="md:col-span-1">
           <div className="flex items-center gap-3 mb-2">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{
                 background: `${panels[3].accent}18`,
                 border: `1px solid ${panels[3].accent}33`,

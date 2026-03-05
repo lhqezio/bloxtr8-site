@@ -15,7 +15,7 @@ const features = [
     href: "#escrow",
     icon: (
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-500/10">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10">
           <Shield className="h-5 w-5 text-green-500" />
         </div>
         <span className="font-mono-medium text-sm text-green-500">
@@ -32,7 +32,7 @@ const features = [
     href: "#discord",
     icon: (
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10">
           <DiscordLogo className="h-5 w-5" />
         </div>
         <span className="font-mono-medium text-sm text-indigo-400">
@@ -49,7 +49,7 @@ const features = [
     href: "#trendspot",
     icon: (
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10">
           <BarChart3 className="h-5 w-5 text-blue-500" />
         </div>
         <span className="font-mono-medium text-sm text-blue-400">
@@ -67,7 +67,7 @@ const features = [
     alpha: true,
     icon: (
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/10">
           <Palette className="h-5 w-5 text-purple-500" />
         </div>
         <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-[10px]">

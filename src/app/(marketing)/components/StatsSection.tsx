@@ -12,7 +12,7 @@ const fadeUp = (delay: number) => ({
 
 export default function StatsSection() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 border-t border-border section-bg-subtle">
+    <section className="py-12 sm:py-16 md:py-20">
       <div className="container-narrow px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6">
           {statsSection.stats.map((stat, i) => (

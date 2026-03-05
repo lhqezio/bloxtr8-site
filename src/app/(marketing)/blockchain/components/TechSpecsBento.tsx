@@ -62,7 +62,7 @@ export default function TechSpecsBento() {
         <BentoCard accent="#3b82f6" index={1} className="md:col-span-1">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{ background: "#3b82f618", border: "1px solid #3b82f633" }}
             >
               <BaseLogo size={18} color="#3B82F6" />
@@ -88,7 +88,7 @@ export default function TechSpecsBento() {
         <BentoCard accent="#a855f7" index={2} className="md:col-span-1">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{ background: "#a855f718", border: "1px solid #a855f733" }}
             >
               <Shield className="w-4.5 h-4.5" style={{ color: "#a855f7" }} />
@@ -106,7 +106,7 @@ export default function TechSpecsBento() {
         <BentoCard accent="#22d3ee" index={3} className="md:col-span-2">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{ background: "#22d3ee18", border: "1px solid #22d3ee33" }}
             >
               <Clock className="w-4.5 h-4.5" style={{ color: "#22d3ee" }} />
@@ -125,7 +125,7 @@ export default function TechSpecsBento() {
         <BentoCard accent="#06b6d4" index={4} className="md:col-span-1">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{ background: "#06b6d418", border: "1px solid #06b6d433" }}
             >
               <USDCLogo size={18} color="#06B6D4" />
