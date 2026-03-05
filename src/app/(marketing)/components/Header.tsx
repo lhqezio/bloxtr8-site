@@ -110,7 +110,7 @@ export default function Header() {
       {/* Floating sticky CTA - appears when header scrolls out on landing */}
       {isHomePage && (
         <div
-          className={`fixed top-4 right-4 z-[100] transition-all duration-300 ${
+          className={`fixed top-4 right-4 z-[100] transition-all duration-300 hidden md:block ${
             headerHidden
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-4 pointer-events-none"
