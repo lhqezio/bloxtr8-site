@@ -1,22 +1,36 @@
 "use client";
 import Link from "next/link";
+import LogoIcon from "./LogoIcon";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/content/copy";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
+  useEffect(() => {
+    if (!isHomePage || !headerRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeaderHidden(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(headerRef.current);
+    return () => observer.disconnect();
+  }, [isHomePage]);
+
   return (
     <>
-    <header className="sticky top-0 z-[100] border-b border-border bg-background/95 backdrop-blur-md">
-      <div className="container-wide flex h-16 items-center relative px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 relative z-[101] min-h-[44px] min-w-[44px] flex items-center justify-center">
-          <span className="font-mono text-sm sm:text-base tracking-widest uppercase font-medium">{navigation.brand}</span>
+    <header ref={headerRef} className={`${isHomePage ? "relative" : "sticky top-0 border-b border-border"} z-[100] bg-background/95 backdrop-blur-md`}>
+      <div className="container-narrow flex h-16 items-center relative">
+        <Link href="/" className="flex items-center justify-center gap-2 relative z-[101] min-h-[44px] min-w-[44px]">
+          <LogoIcon className="h-5 sm:h-6 drop-shadow-[0_0_6px_rgba(160,160,190,0.4)] dark:drop-shadow-[0_0_8px_rgba(220,220,255,0.6)]" />
+          <span className="font-mono text-base sm:text-lg tracking-widest uppercase font-semibold">{navigation.brand}</span>
         </Link>
         
         {/* Desktop Navigation - Absolutely Centered */}
@@ -90,6 +104,25 @@ export default function Header() {
               </Button>
             </div>
           </nav>
+        </div>
+      )}
+
+      {/* Floating sticky CTA - appears when header scrolls out on landing */}
+      {isHomePage && (
+        <div
+          className={`fixed top-4 right-4 z-[100] transition-all duration-300 ${
+            headerHidden
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
+        >
+          <Button
+            asChild
+            size="lg"
+            className="rounded-2xl font-mono min-h-[44px] px-6 shadow-[0_0_15px_rgba(0,0,0,0.2),0_0_40px_rgba(0,0,0,0.1)] hover:shadow-[0_0_20px_rgba(0,0,0,0.3),0_0_60px_rgba(0,0,0,0.15)] dark:shadow-[0_0_15px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.08)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.12)] transition-all duration-200 hover:scale-105"
+          >
+            <Link href="/contact">{navigation.cta}</Link>
+          </Button>
         </div>
       )}
     </>

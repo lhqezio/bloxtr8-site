@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, MoveRight } from "lucide-react";
-import { footer, footer2 } from "@/content/copy";
+import { ArrowUpRight } from "lucide-react";
+import { footer } from "@/content/copy";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { StripeLogo } from "@/components/logos/StripeLogo";
+import LogoIcon from "./LogoIcon";
 
 type FooterNavLink = {
   label: string;
@@ -16,7 +17,7 @@ type FooterNavLink = {
 
 const NavLink = ({ label, href, external, targetBlank, withIcon }: FooterNavLink) => {
   const className =
-    "text-[14px] leading-none text-muted-foreground hover:text-foreground transition-colors";
+    "text-sm text-muted-foreground hover:text-foreground transition-colors";
 
   const isExternal = Boolean(external || targetBlank || /^https?:\/\//.test(href));
 
@@ -30,7 +31,7 @@ const NavLink = ({ label, href, external, targetBlank, withIcon }: FooterNavLink
       >
         <span className={className}>{label}</span>
         {withIcon ? (
-          <ArrowUpRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
         ) : null}
       </a>
     );
@@ -44,117 +45,90 @@ const NavLink = ({ label, href, external, targetBlank, withIcon }: FooterNavLink
 };
 
 export default function Footer2() {
-  const navLinks: FooterNavLink[] = footer2.navLinks;
-  const socialLinks: FooterNavLink[] = footer2.socialLinks;
-  const contactEmail = footer2.support.email;
+  const year = new Date().getFullYear().toString();
 
   return (
-    <footer className="relative w-full overflow-hidden bg-background text-foreground">
-      <div className="container-wide px-4 sm:px-6">
-        <div className="relative grid grid-cols-1 gap-10 pt-12 md:grid-cols-2 md:gap-8 md:pt-28 lg:pt-32">
-          {/* Left side */}
-          <div className="max-w-xl">
-            <h2 className="text-2xl font-mono leading-[1.05] tracking-tight sm:text-[44px] md:text-[56px]">
-              {footer2.headline}
-            </h2>
-
-            <div className="mt-6 sm:mt-10 space-y-2 text-[14px] text-muted-foreground">
-              <div>{footer2.support.label}</div>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="text-foreground hover:text-foreground/90 transition-colors underline underline-offset-4 decoration-border"
-              >
-                {contactEmail}
-              </a>
-            </div>
-
-            <div className="mt-10 sm:mt-20">
-              <div className="text-[14px] text-muted-foreground">{footer2.newsletter.label}</div>
-
-              <div className="mt-4 sm:mt-6 flex max-w-[520px] items-center gap-4 border-b border-border pb-3">
-                <label className="sr-only" htmlFor="footer2-email">
-                  {footer2.newsletter.inputPlaceholder}
-                </label>
-                <input
-                  id="footer2-email"
-                  name="email"
-                  placeholder={footer2.newsletter.inputPlaceholder}
-                  className="w-full bg-transparent text-[14px] tracking-widest text-foreground placeholder:text-muted-foreground focus:outline-none"
-                  autoComplete="email"
-                />
-                <button
-                  type="button"
-                  className="inline-flex h-10 w-10 items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={footer2.newsletter.submitAriaLabel}
-                >
-                  <MoveRight className="h-5 w-5" aria-hidden="true" />
-                </button>
-              </div>
-            </div>
+    <footer className="w-full border-t border-border bg-background text-foreground">
+      <div className="container-narrow">
+        {/* Main footer content */}
+        <div className="flex flex-col gap-10 py-12 sm:py-16 md:flex-row md:justify-between md:gap-8">
+          {/* Left — Brand */}
+          <div className="shrink-0">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <LogoIcon className="h-5 sm:h-6 drop-shadow-[0_0_6px_rgba(160,160,190,0.4)] dark:drop-shadow-[0_0_8px_rgba(220,220,255,0.6)]" />
+              <span className="font-mono text-base sm:text-lg tracking-widest uppercase font-semibold">
+                BLOXTR8
+              </span>
+            </Link>
           </div>
 
-          {/* Right side */}
-          <div className="grid grid-cols-2 gap-x-10 gap-y-8 sm:gap-y-12 md:justify-self-end md:gap-x-20">
-            <div className="space-y-3 text-[14px]">
-              {navLinks.map((l) => (
+          {/* Right — Link columns */}
+          <div className="grid grid-cols-2 gap-x-12 gap-y-8 sm:grid-cols-3 sm:gap-x-16 lg:gap-x-20">
+            {/* Product */}
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold text-foreground">
+                {footer.columns.product.title}
+              </h3>
+              {footer.columns.product.links.map((l) => (
                 <div key={l.label}>
-                  <NavLink {...l} />
+                  <NavLink label={l.label} href={l.href} />
                 </div>
               ))}
             </div>
 
-            <div className="space-y-3 text-[14px]">
-              {footer2.legalLinks.map((l) => (
+            {/* Company */}
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold text-foreground">
+                {footer.columns.company.title}
+              </h3>
+              {footer.columns.company.links.map((l) => (
                 <div key={l.label}>
-                  <Link
+                  <NavLink
+                    label={l.label}
                     href={l.href}
-                    className="text-[14px] leading-none text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {l.label}
-                  </Link>
+                    targetBlank={/^https?:\/\//.test(l.href)}
+                    withIcon={/^https?:\/\//.test(l.href)}
+                  />
                 </div>
               ))}
             </div>
 
-            <div className="text-[14px] leading-relaxed text-muted-foreground col-span-2">
-              {footer2.locationLines.map((line) => (
-                <div key={line}>{line}</div>
+            {/* Legal */}
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold text-foreground">
+                {footer.columns.legal.title}
+              </h3>
+              {footer.columns.legal.links.map((l) => (
+                <div key={l.label}>
+                  <NavLink label={l.label} href={l.href} />
+                </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Big word */}
-        <div className="relative mt-10 pb-6 md:mt-24 md:pb-10">
-          <div className="pointer-events-none select-none">
-            <div className="font-semibold font-mono tracking-tight leading-[0.82] text-[clamp(56px,16vw,340px)] md:text-[clamp(96px,22vw,340px)] break-words text-center md:text-left text-foreground">
-              {footer2.bigWord}
-            </div>
-          </div>
+        {/* Bottom bar */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-border py-6 sm:flex-row">
+          <span className="text-xs text-muted-foreground font-mono-medium">
+            {footer.copyright.replace("{year}", year)}
+          </span>
 
-          {/* Subtext row under big word */}
-          <div className="mt-4 flex flex-col items-center justify-start gap-3 text-xs text-muted-foreground sm:flex-row sm:gap-5 sm:text-sm">
-            <div className="font-mono-medium text-center">
-              {footer.copyright.replace("{year}", new Date().getFullYear().toString())}
-            </div>
-
-            <div className="flex items-center justify-center">
-              <ThemeToggle />
-            </div>
-
-            <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <span className="font-mono-medium">Powered by</span>
               <a
                 href="https://stripe.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
                 aria-label="Stripe"
               >
-                <StripeLogo size={16} className="text-muted-foreground" />
+                <StripeLogo size={14} className="text-muted-foreground" />
                 <span className="font-mono-medium">Stripe</span>
               </a>
             </div>
+
+            <ThemeToggle />
           </div>
         </div>
       </div>

@@ -101,29 +101,32 @@ export const statsSection = {
   ]
 };
 
-export const testimonials = {
-  label: "Testimonials",
-  title: "Trusted and loved by both the developers and the community",
-  description: "From indie developers to big studios, here's how Bloxtr8 helped.",
-  items: [
-    {
-      quote:
-        "I've been using Bloxtr8 and it has potential.",
-      name: "Breezy",
-      title: "Founder of Breeze's Studio",
-      avatarFallback: "BZ",
-      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B3CD534E420B33E586DF4256CAABDE4A-Png/150/150/AvatarHeadshot/Webp/noFilter"
-    },
-    {
-      quote:
-        "Bloxtr8 is very cool.",
-      name: "StarmanB_1021",
-      title: "Roblox player",
-      avatarFallback: "SB",
-      avatarSrc: "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-34D99758BA71E5F1A4784F6466D1BED4-Png/150/150/AvatarHeadshot/Webp/noFilter"
-    }
-  ]
-};
+export const homeFaq = [
+  {
+    question: "Why escrow vs. just trust trading?",
+    answer: "Trust trading relies on hope. Escrow holds the funds until both sides confirm — the seller delivers, the buyer verifies, and only then does money move. No screenshots, no \"trust me bro.\""
+  },
+  {
+    question: "Who is Bloxtr8 for?",
+    answer: "Anyone buying or selling Roblox games and assets. Whether you're flipping a small game or closing a five-figure deal, Bloxtr8 protects both sides of the trade."
+  },
+  {
+    question: "Is Bloxtr8 free?",
+    answer: "There are no setup fees or subscriptions. We only charge a 6% fee on successful trades, split evenly between buyer and seller (3% each). If the trade doesn't go through, you pay nothing."
+  },
+  {
+    question: "How do I know my money is safe?",
+    answer: "Payments are processed through Stripe with bank-grade security. Funds sit in escrow until you confirm delivery. If something goes wrong, our built-in dispute resolution has your back."
+  },
+  {
+    question: "What games and assets are supported?",
+    answer: "Bloxtr8 supports Roblox game transfers and high-value asset trades. We track over 8,000 games live and are expanding support for more asset types."
+  },
+  {
+    question: "How do I get started?",
+    answer: "Join our Discord server and use the /escrow create command, or head to pilot.bloxtr8.com to start trading directly from the web app."
+  }
+];
 
 
 
@@ -465,9 +468,6 @@ export const cookies = {
 // Footer content
 export const footer = {
   copyright: "© {year} TR8. All rights reserved.",
-  links: {
-    backToHome: "← Back to home"
-  },
   columns: {
     product: {
       title: "Product",
@@ -491,41 +491,7 @@ export const footer = {
         { label: "Cookie Policy", href: "/cookies" }
       ]
     }
-  },
-  social: {
-    title: "Connect",
-    links: []
   }
-};
-
-// Footer2 (marketing) content
-export const footer2 = {
-  headline: "Start Trading Now",
-  support: {
-    label: "Get Support :",
-    email: "support@bloxtr8.com"
-  },
-  newsletter: {
-    label: "Sign up for newsletter :",
-    inputPlaceholder: "YOUR EMAIL",
-    inputAriaLabel: "Email",
-    submitAriaLabel: "Submit"
-  },
-  navLinks: [
-    { label: "TR8", href: "https://tr8.ca", targetBlank: true, withIcon: true },
-    { label: "Blockchain", href: "/blockchain" },
-    { label: "Contact", href: "/contact" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Home", href: "/" }
-  ],
-  socialLinks: [],
-  locationLines: ["Montreal, Canada"],
-  legalLinks: [
-    { label: "Cookie Policy", href: "/cookies" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms & Conditions", href: "/terms" }
-  ],
-  bigWord: "BLOXTR8"
 };
 
 // Pricing page content

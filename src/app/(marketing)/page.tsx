@@ -4,7 +4,7 @@ import FeatureCarousel from "./components/FeatureCarousel";
 import HowItWorks from "./components/HowItWorks";
 import ComparisonSection from "./components/ComparisonSection";
 import StatsSection from "./components/StatsSection";
-import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 
 export default function Page() {
@@ -16,7 +16,7 @@ export default function Page() {
       <HowItWorks />
       <ComparisonSection />
       <StatsSection />
-      <Testimonials />
+      <FAQ />
       <CTA />
     </>
   );
