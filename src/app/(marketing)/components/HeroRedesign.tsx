@@ -2,13 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, CirclePlay } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import ProductMockup from "./ProductMockup";
 
 const pilotUrl = "https://pilot.bloxtr8.com";
-const youtubeDemoUrl =
-  "https://www.youtube.com/watch?v=z5QTJ_-0cp0&feature=youtu.be";
-
 export default function HeroRedesign() {
   return (
     <main className="overflow-hidden">
@@ -57,17 +54,6 @@ export default function HeroRedesign() {
                   </a>
                 </Button>
 
-                <Button asChild size="lg" variant="outline">
-                  <a
-                    href={youtubeDemoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto"
-                  >
-                    <span className="text-nowrap">See How It Works</span>
-                    <CirclePlay className="h-5 w-5 opacity-70" />
-                  </a>
-                </Button>
               </motion.div>
 
               <motion.div
