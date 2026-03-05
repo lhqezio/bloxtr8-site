@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { hero } from "@/content/copy";
 import { Shield, Zap, Star, Heart, Globe, Rocket, Sparkles, Crown } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
-import Link from "next/link";
 
 // Smooth Floating Graphics Component
 const SmoothGraphics = () => {
@@ -249,8 +248,10 @@ export default function Hero() {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start px-2 sm:px-0"
           >
             <Button asChild size="lg" className="rounded-2xl px-6 sm:px-8 min-h-[48px] text-base sm:text-lg w-full sm:w-auto">
-              <Link 
-                href="/contact"
+              <a
+                href="https://pilot.bloxtr8.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   trackEvent("cta_click", {
                     event_category: "engagement",
@@ -261,7 +262,7 @@ export default function Hero() {
                 }}
               >
                 {hero.cta.primary}
-              </Link>
+              </a>
             </Button>
           </motion.div>
             </div>

@@ -63,7 +63,7 @@ export default function Header() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3 relative z-[101] ml-auto">
           <Button asChild variant="outline" className="rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono min-h-[44px]">
-            <Link href="/contact">{navigation.cta}</Link>
+            <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer">{navigation.cta}</a>
           </Button>
         </div>
 
@@ -100,7 +100,7 @@ export default function Header() {
             </Link>
             <div className="pt-4 pb-2">
               <Button asChild variant="outline" className="w-full rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono min-h-[48px] text-base">
-                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</Link>
+                <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</a>
               </Button>
             </div>
           </nav>
@@ -121,7 +121,7 @@ export default function Header() {
             size="lg"
             className="rounded-2xl font-mono min-h-[44px] px-6 shadow-[0_0_15px_rgba(0,0,0,0.2),0_0_40px_rgba(0,0,0,0.1)] hover:shadow-[0_0_20px_rgba(0,0,0,0.3),0_0_60px_rgba(0,0,0,0.15)] dark:shadow-[0_0_15px_rgba(255,255,255,0.15),0_0_40px_rgba(255,255,255,0.08)] dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.25),0_0_60px_rgba(255,255,255,0.12)] transition-all duration-200 hover:scale-105"
           >
-            <Link href="/contact">{navigation.cta}</Link>
+            <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer">{navigation.cta}</a>
           </Button>
         </div>
       )}

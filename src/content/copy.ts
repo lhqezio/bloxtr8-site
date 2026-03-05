@@ -130,36 +130,6 @@ export const homeFaq = [
 
 
 
-export const contact = {
-  title: "Get early access",
-  description: "Join the waitlist to be among the first to experience secure Roblox trading.",
-  form: {
-    name: {
-      label: "Name",
-      placeholder: "Name"
-    },
-    email: {
-      label: "Email", 
-      placeholder: "Email"
-    },
-    discord: {
-      label: "Community handle (optional)",
-      placeholder: "Community handle (optional)"
-    },
-    context: {
-      label: "Tell us about your use case",
-      placeholder: "Tell us about your use case"
-    },
-    submit: {
-      default: "Request invite",
-      loading: "Sending..."
-    },
-    messages: {
-      success: "Thanks — we'll be in touch.",
-      error: "Something went wrong. Try again."
-    }
-  }
-};
 
 export const navigation = {
   brand: "Bloxtr8",
@@ -480,7 +450,7 @@ export const footer = {
       title: "Company",
       links: [
         { label: "About", href: "https://tr8.ca" },
-        { label: "Contact", href: "/contact" }
+        { label: "Contact", href: "mailto:support@bloxtr8.com" }
       ]
     },
     legal: {
@@ -514,28 +484,6 @@ export const pricing = {
     "Transparent fee structure - no surprises",
     "Competitive rates for high-value trades",
     "Instant fee calculation before confirmation"
-  ],
-  faq: [
-    {
-      question: "When do I pay the fee?",
-      answer: "The 6% transaction fee is only charged when a trade is successfully completed. If a trade is cancelled or disputed, no fees apply."
-    },
-    {
-      question: "How is the fee split?",
-      answer: "The 6% fee is split evenly - 3% from the buyer and 3% from the seller. This ensures fair cost distribution for both parties."
-    },
-    {
-      question: "Are there any hidden costs?",
-      answer: "No. There are no setup fees, monthly subscriptions, or hidden charges. You only pay the 6% transaction fee on successful trades."
-    },
-    {
-      question: "What payment methods are accepted?",
-      answer: "We accept Stripe (credit cards) and USDC. Payment processing fees may apply depending on your payment method, but these are clearly displayed before you confirm."
-    },
-    {
-      question: "Can I get a refund if something goes wrong?",
-      answer: "If a trade is disputed or cancelled before completion, no fees are charged. Once a trade is completed and funds are released, fees are non-refundable as per our terms of service."
-    }
   ]
 };
 
@@ -634,10 +582,8 @@ export const blockchain = {
     ]
   },
   emailSignup: {
-    title: "Get early access",
-    subtitle: "Be the first to trade on-chain when we launch.",
-    placeholder: "Enter your email",
-    button: "Get Early Access",
-    success: "You're on the list! We'll notify you when blockchain integration launches."
+    title: "Try Bloxtr8 now",
+    subtitle: "Start trading today — we'll let you know when on-chain launches.",
+    button: "Start Trading"
   }
 };

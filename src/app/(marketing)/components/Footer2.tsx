@@ -19,7 +19,7 @@ const NavLink = ({ label, href, external, targetBlank, withIcon }: FooterNavLink
   const className =
     "text-sm text-muted-foreground hover:text-foreground transition-colors";
 
-  const isExternal = Boolean(external || targetBlank || /^https?:\/\//.test(href));
+  const isExternal = Boolean(external || targetBlank || /^(https?:\/\/|mailto:)/.test(href));
 
   if (isExternal) {
     return (
@@ -114,6 +114,13 @@ export default function Footer2() {
           </span>
 
           <div className="flex items-center gap-4">
+            <a
+              href="mailto:support@bloxtr8.com"
+              className="text-xs text-muted-foreground font-mono-medium hover:text-foreground transition-colors"
+            >
+              Contact Us
+            </a>
+
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <span className="font-mono-medium">Powered by</span>
               <a

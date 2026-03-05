@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import {
   DollarSign,
   Users,
@@ -121,7 +120,7 @@ export default function CreatorXSection() {
                 powerful creator analytics.
               </p>
               <Button asChild size="lg">
-                <Link href="/contact">Join the Alpha</Link>
+                <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer">Join the Alpha</a>
               </Button>
             </div>
           </div>

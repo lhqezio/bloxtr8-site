@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 
@@ -55,8 +54,8 @@ const CTA = () => {
               variant="outline"
               className="w-full sm:w-auto"
             >
-              <Link
-                href="/contact"
+              <a
+                href="mailto:support@bloxtr8.com"
                 onClick={() => {
                   trackEvent("cta_click", {
                     event_category: "engagement",
@@ -67,7 +66,7 @@ const CTA = () => {
                 }}
               >
                 Contact Us
-              </Link>
+              </a>
             </Button>
           </motion.div>
         </motion.div>
