@@ -91,9 +91,12 @@ export default function PricingPage() {
             >
               <h3 className="text-lg sm:text-xl font-mono-bold mb-6">Trading</h3>
 
-              <div className="mb-6">
+              <div className="mb-6 flex items-baseline gap-3">
                 <span className="text-6xl sm:text-7xl font-mono-bold text-foreground leading-none">
                   {pricing.feeBreakdown.total}
+                </span>
+                <span className="text-xl sm:text-2xl font-mono-medium text-muted-foreground">
+                  / trade
                 </span>
               </div>
 
@@ -116,20 +119,20 @@ export default function PricingPage() {
                 </a>
               </Button>
 
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02] text-center">
-                  <div className="text-xl sm:text-2xl font-mono-bold text-foreground">
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg py-2 px-3 bg-black/[0.02] dark:bg-white/[0.02] text-center">
+                  <div className="text-base sm:text-lg font-mono-bold text-foreground">
                     {pricing.feeBreakdown.buyer}
                   </div>
-                  <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">
+                  <div className="text-xs font-mono-medium text-muted-foreground">
                     Buyer fee
                   </div>
                 </div>
-                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02] text-center">
-                  <div className="text-xl sm:text-2xl font-mono-bold text-foreground">
+                <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg py-2 px-3 bg-black/[0.02] dark:bg-white/[0.02] text-center">
+                  <div className="text-base sm:text-lg font-mono-bold text-foreground">
                     {pricing.feeBreakdown.seller}
                   </div>
-                  <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">
+                  <div className="text-xs font-mono-medium text-muted-foreground">
                     Seller fee
                   </div>
                 </div>
