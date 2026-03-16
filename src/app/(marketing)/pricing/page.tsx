@@ -122,7 +122,7 @@ export default function PricingPage() {
                     {pricing.feeBreakdown.buyer}
                   </div>
                   <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">
-                    Buyer
+                    Buyer fee
                   </div>
                 </div>
                 <div className="border border-black/[0.08] dark:border-white/[0.08] rounded-lg p-3 sm:p-4 bg-black/[0.02] dark:bg-white/[0.02] text-center">
@@ -130,7 +130,7 @@ export default function PricingPage() {
                     {pricing.feeBreakdown.seller}
                   </div>
                   <div className="text-xs sm:text-sm font-mono-medium text-muted-foreground mt-0.5">
-                    Seller
+                    Seller fee
                   </div>
                 </div>
               </div>

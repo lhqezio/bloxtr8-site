@@ -96,7 +96,7 @@ export const statsSection = {
   stats: [
     { value: "8,000+", label: "games tracked live" },
     { value: "$50K+", label: "protected so far" },
-    { value: "6%", label: "split fairly" },
+    { value: "5%", label: "per side, fair for all" },
     { value: "24/7", label: "always online" }
   ]
 };
@@ -112,7 +112,7 @@ export const homeFaq = [
   },
   {
     question: "Is Bloxtr8 free?",
-    answer: "There are no setup fees or subscriptions. We only charge a 6% fee on successful trades, split evenly between buyer and seller (3% each). If the trade doesn't go through, you pay nothing."
+    answer: "There are no setup fees or subscriptions. We only charge 5% per side on successful trades ($3 minimum). If the trade doesn't go through, you pay nothing."
   },
   {
     question: "How do I know my money is safe?",
@@ -468,14 +468,14 @@ export const footer = {
 export const pricing = {
   hero: {
     title: "Free escrow. Fair fees.",
-    subtitle: "No hidden costs. No monthly fees. Just 6% per successful trade.",
+    subtitle: "No hidden costs. No monthly fees. Just 5% per successful trade.",
     description: "Transparent pricing that works for everyone. Only pay when you complete a trade."
   },
   feeBreakdown: {
-    total: "6%",
-    buyer: "3%",
-    seller: "3%",
-    description: "Split evenly between buyer and seller",
+    total: "5%",
+    buyer: "5%",
+    seller: "5%",
+    description: "5% from each side, $3 minimum",
     note: "Only charged on successful trades"
   },
   benefits: [
