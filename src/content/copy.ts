@@ -136,7 +136,8 @@ export const navigation = {
   links: {
     features: "Features",
     pricing: "Pricing",
-    blockchain: "Blockchain"
+    blockchain: "Blockchain",
+    blog: "Blog"
   },
   cta: "Get Started"
 };
@@ -450,6 +451,7 @@ export const footer = {
       title: "Company",
       links: [
         { label: "About", href: "https://tr8.ca" },
+        { label: "Blog", href: "/blog" },
         { label: "Contact", href: "mailto:support@bloxtr8.com" }
       ]
     },
