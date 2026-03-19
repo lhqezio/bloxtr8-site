@@ -38,24 +38,28 @@ export default function Header() {
           {isHomePage ? (
             <>
               <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.pricing}</Link>
-              <Link 
-                href="/blockchain" 
-                className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center"
+              <Link
+                href="/blockchain"
+                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer min-h-[44px] flex items-center"
+                style={{ fontFamily: 'var(--font-orbitron)' }}
               >
                 {navigation.links.blockchain}
                 <span className="ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full border border-border bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-cyan-400/10 bg-clip-text text-transparent leading-none" style={{ WebkitTextFillColor: "transparent", backgroundImage: "linear-gradient(to right, #60a5fa, #a78bfa, #22d3ee)", WebkitBackgroundClip: "text" }}>SOON</span>
               </Link>
+              <Link href="/blog" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.blog}</Link>
             </>
           ) : (
             <>
               <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.pricing}</Link>
-              <Link 
-                href="/blockchain" 
-                className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center"
+              <Link
+                href="/blockchain"
+                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer min-h-[44px] flex items-center"
+                style={{ fontFamily: 'var(--font-orbitron)' }}
               >
                 {navigation.links.blockchain}
                 <span className="ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full border border-border bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-cyan-400/10 bg-clip-text text-transparent leading-none" style={{ WebkitTextFillColor: "transparent", backgroundImage: "linear-gradient(to right, #60a5fa, #a78bfa, #22d3ee)", WebkitBackgroundClip: "text" }}>SOON</span>
               </Link>
+              <Link href="/blog" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.blog}</Link>
             </>
           )}
         </nav>
@@ -82,22 +86,73 @@ export default function Header() {
 
       {/* Mobile Navigation - outside header to avoid sticky context issues */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-[99] bg-background overflow-y-auto">
-          <nav className="px-4 sm:px-6 pt-6 pb-8 space-y-1">
-            <Link
-              href="/pricing"
-              className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-muted/50 active:bg-muted/70 min-h-[44px] flex items-center"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {navigation.links.pricing}
-            </Link>
-            <Link
-              href="/blockchain"
-              className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-muted/50 active:bg-muted/70 min-h-[44px] flex items-center"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {navigation.links.blockchain}
-            </Link>
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border z-[99] shadow-lg">
+          <nav className="container-wide pt-4 pb-6 px-4 sm:px-6 space-y-1">
+            {isHomePage ? (
+              <>
+                <a
+                  href="features"
+                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {navigation.links.features}
+                </a>
+                <Link
+                  href="/pricing"
+                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {navigation.links.pricing}
+                </Link>
+                <Link
+                  href="/blockchain"
+                  className="block text-base bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 transition-all duration-200 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ fontFamily: 'var(--font-orbitron)' }}
+                >
+                  {navigation.links.blockchain}
+                </Link>
+                <Link
+                  href="/blog"
+                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {navigation.links.blog}
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/features"
+                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {navigation.links.features}
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {navigation.links.pricing}
+                </Link>
+                <Link
+                  href="/blockchain"
+                  className="block text-base bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 transition-all duration-200 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ fontFamily: 'var(--font-orbitron)' }}
+                >
+                  {navigation.links.blockchain}
+                </Link>
+                <Link
+                  href="/blog"
+                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {navigation.links.blog}
+                </Link>
+              </>
+            )}
             <div className="pt-4 pb-2">
               <Button asChild variant="outline" className="w-full rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono min-h-[48px] text-base">
                 <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</a>
