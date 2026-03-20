@@ -73,12 +73,8 @@ export default async function BlogPostPage({
           </p>
         )}
 
-        <article>
-          <MarkdownRenderer content={body} />
-        </article>
-
         {image && (
-          <figure className="mt-12">
+          <figure className="mb-10">
             <div className="rounded-2xl overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -94,6 +90,10 @@ export default async function BlogPostPage({
             )}
           </figure>
         )}
+
+        <article>
+          <MarkdownRenderer content={body} />
+        </article>
       </div>
     </section>
   );
