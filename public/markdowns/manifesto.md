@@ -32,9 +32,7 @@ Be a ==creator==, not a consumer.
 Tyler the Creator wouldn't have the same aura
 if he was called Tyler the Consumer.
 
-Jandel's Grow a Garden grew from a small team with a big vision
-into the biggest game on Roblox.
-Adopt Me made $60M a year.
+Roblox creators are running studios out of their bedrooms making more than most companies, pulling millions of players and dollars.
 
 Every empire started with one trade. Yours starts here.
 
