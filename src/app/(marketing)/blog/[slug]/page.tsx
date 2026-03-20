@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -29,18 +30,25 @@ export default async function BlogPostPage({
   // Extract title from first line
   const title = (lines[0] || "").replace(/^#\s+/, "").trim();
 
-  // Extract date
+  // Extract metadata
   let date = "";
-  for (const line of lines.slice(0, 5)) {
+  let image = "";
+  let credit = "";
+  for (const line of lines.slice(0, 10)) {
     if (line.startsWith("Created:")) {
       date = line.replace("Created:", "").trim();
-      break;
+    }
+    if (line.startsWith("Image:")) {
+      image = line.replace("Image:", "").trim();
+    }
+    if (line.startsWith("Credit:")) {
+      credit = line.replace("Credit:", "").trim();
     }
   }
 
   // Remove the title line and the "Created:" metadata line from the body
   const bodyLines = lines.filter(
-    (line, i) => i !== 0 && !line.startsWith("Created:")
+    (line, i) => i !== 0 && !line.startsWith("Created:") && !line.startsWith("Image:") && !line.startsWith("Credit:")
   );
   const body = bodyLines.join("\n");
 
@@ -68,6 +76,24 @@ export default async function BlogPostPage({
         <article>
           <MarkdownRenderer content={body} />
         </article>
+
+        {image && (
+          <figure className="mt-12">
+            <div className="rounded-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-auto"
+              />
+            </div>
+            {credit && (
+              <figcaption className="text-sm text-muted-foreground font-mono mt-3 text-center">
+                Credit: {credit}
+              </figcaption>
+            )}
+          </figure>
+        )}
       </div>
     </section>
   );

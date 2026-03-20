@@ -1,4 +1,6 @@
 # If you build it, you own it.
+Image: /images/blog/manifesto.webp
+Credit: Dev Valladares
 
 The economy isn't what it used to be.
 Endless layoffs. Record unemployment. Everyone fighting to get by.
@@ -11,10 +13,10 @@ Day trading. Prediction markets. Sports betting.
 More swings. More bets. More chances that one big win
 might change everything.
 
-It tells a generation they're prisoners.
-Then it sells them a lottery ticket and calls it freedom.
+It tells a generation they're ==prisoners==.
+Then it sells them a lottery ticket and calls it ==freedom==.
 
-We reject that message.
+We ==reject== that message.
 
 > So what's the alternative?
 
@@ -24,9 +26,9 @@ Build something. Build anything.
 Edit a video. Create content. Draw a painting.
 Write a song. Start a business.
 
-Be a creator, not a consumer.
+Be a ==creator==, not a consumer.
 Tyler the Creator wouldn't have the same aura
-if he was called Tyler the Consumer, now would he.
+if he was called Tyler the Consumer.
 
 > But can it actually work?
 
@@ -36,7 +38,7 @@ Adopt Me made $60M a year.
 
 We want to help you join that club.
 
-So we built Bloxtr8 — list your Roblox game, trade with escrow, get paid. No scams, no trust trades.
+So we built ==Bloxtr8== — list your Roblox game, trade with escrow, get paid. No scams, no trust trades.
 If you build it, you own it.
 
 > So, start building.

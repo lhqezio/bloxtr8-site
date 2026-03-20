@@ -1,5 +1,30 @@
 "use client";
+import React from "react";
 import ReactMarkdown from "react-markdown";
+
+const highlightRegex = /==(.*?)==/g;
+
+function processHighlights(text: string): React.ReactNode[] {
+  const parts = text.split(highlightRegex);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} className="underline decoration-purple-500 decoration-2 underline-offset-4 font-medium">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
+
+function processChildren(children: React.ReactNode): React.ReactNode {
+  return React.Children.map(children, (child) => {
+    if (typeof child === "string") {
+      return processHighlights(child);
+    }
+    return child;
+  });
+}
 
 export default function MarkdownRenderer({ content }: { content: string }) {
   return (
@@ -22,7 +47,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
         ),
         p: ({ children }) => (
           <p className="text-base sm:text-lg leading-relaxed text-foreground/90 mb-4">
-            {children}
+            {processChildren(children)}
           </p>
         ),
         strong: ({ children }) => <strong className="font-bold">{children}</strong>,
@@ -42,7 +67,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
             {children}
           </ol>
         ),
-        li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+        li: ({ children }) => <li className="leading-relaxed">{processChildren(children)}</li>,
         a: ({ href, children }) => (
           <a
             href={href}
