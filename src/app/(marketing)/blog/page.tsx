@@ -75,7 +75,7 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
-            Thoughts, updates, and manifestos from our team.
+            Thoughts and updates from us
           </p>
         </div>
 
