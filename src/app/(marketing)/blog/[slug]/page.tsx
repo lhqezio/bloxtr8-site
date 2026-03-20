@@ -3,36 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-
-function parseMarkdown(md: string): string {
-  let html = md
-    // Escape HTML
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    // Bold
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    // Italic
-    .replace(/\*(.+?)\*/g, "<em>$1</em>")
-    // Headings (process line by line)
-    .replace(/^### (.+)$/gm, '<h3 class="text-lg sm:text-xl font-mono-bold mt-8 mb-3">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2 class="text-xl sm:text-2xl font-mono-bold mt-10 mb-4">$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1 class="text-2xl sm:text-3xl md:text-4xl font-mono-bold mt-10 mb-4">$1</h1>')
-    // Horizontal rules
-    .replace(/^---$/gm, '<hr class="border-border my-8" />')
-    // Line breaks: wrap remaining plain text lines in paragraphs
-    .split("\n\n")
-    .map((block) => {
-      const trimmed = block.trim();
-      if (!trimmed) return "";
-      // Don't wrap blocks that are already HTML tags
-      if (trimmed.startsWith("<h") || trimmed.startsWith("<hr")) return trimmed;
-      return `<p class="text-base sm:text-lg leading-relaxed text-foreground/90 mb-4">${trimmed.replace(/\n/g, " ")}</p>`;
-    })
-    .join("\n");
-
-  return html;
-}
+import MarkdownRenderer from "./MarkdownRenderer";
 
 export async function generateStaticParams() {
   const markdownDir = path.join(process.cwd(), "public", "markdowns");
@@ -71,7 +42,7 @@ export default async function BlogPostPage({
   const bodyLines = lines.filter(
     (line, i) => i !== 0 && !line.startsWith("Created:")
   );
-  const bodyHtml = parseMarkdown(bodyLines.join("\n"));
+  const body = bodyLines.join("\n");
 
   return (
     <section className="relative pt-16 sm:pt-20 md:pt-28 pb-16 sm:pb-20 md:pb-28">
@@ -94,10 +65,9 @@ export default async function BlogPostPage({
           </p>
         )}
 
-        <article
-          className="prose-custom"
-          dangerouslySetInnerHTML={{ __html: bodyHtml }}
-        />
+        <article>
+          <MarkdownRenderer content={body} />
+        </article>
       </div>
     </section>
   );
