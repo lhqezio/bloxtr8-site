@@ -86,69 +86,27 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden fixed top-16 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border z-[99] shadow-lg">
           <nav className="container-wide pt-4 pb-6 px-4 sm:px-6 space-y-1">
-            {isHomePage ? (
-              <>
-                <a
-                  href="features"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.features}
-                </a>
-                <Link
-                  href="/pricing"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.pricing}
-                </Link>
-                <Link
-                  href="/blockchain"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.blockchain}
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.blog}
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/features"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.features}
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.pricing}
-                </Link>
-                <Link
-                  href="/blockchain"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.blockchain}
-                </Link>
-                <Link
-                  href="/blog"
-                  className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {navigation.links.blog}
-                </Link>
-              </>
-            )}
+              <Link
+                href="/pricing"
+                className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {navigation.links.pricing}
+              </Link>
+              <Link
+                href="/blockchain"
+                className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {navigation.links.blockchain}
+              </Link>
+              <Link
+                href="/blog"
+                className="block text-base text-muted-foreground hover:text-foreground active:text-foreground transition-all duration-200 font-mono font-medium py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 min-h-[44px] flex items-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {navigation.links.blog}
+              </Link>
             <div className="pt-4 pb-2">
               <Button asChild variant="outline" className="w-full rounded-2xl border-border text-foreground hover:bg-primary hover:text-primary-foreground font-mono min-h-[48px] text-base">
                 <a href="https://pilot.bloxtr8.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>{navigation.cta}</a>

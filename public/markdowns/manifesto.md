@@ -1,6 +1,8 @@
 # If you build it, you own it.
 Image: /images/blog/manifesto.webp
 Credit: Dev Valladares
+Author: Minh
+Date: March 20, 2026
 
 The economy isn't what it used to be.
 Endless layoffs. Record unemployment. Everyone fighting to get by.
@@ -20,7 +22,7 @@ We ==reject== that message.
 
 > So what's the alternative?
 
-**Build.**
+**BUILD.**
 
 Build something. Build anything.
 Edit a video. Create content. Draw a painting.
@@ -29,8 +31,6 @@ Write a song. Start a business.
 Be a ==creator==, not a consumer.
 Tyler the Creator wouldn't have the same aura
 if he was called Tyler the Consumer.
-
-> But can it actually work?
 
 Jandel's Grow a Garden grew from a small team with a big vision
 into the biggest game on Roblox.

@@ -32,11 +32,18 @@ export default async function BlogPostPage({
 
   // Extract metadata
   let date = "";
+  let author = "";
   let image = "";
   let credit = "";
   for (const line of lines.slice(0, 10)) {
     if (line.startsWith("Created:")) {
       date = line.replace("Created:", "").trim();
+    }
+    if (line.startsWith("Date:")) {
+      date = line.replace("Date:", "").trim();
+    }
+    if (line.startsWith("Author:")) {
+      author = line.replace("Author:", "").trim();
     }
     if (line.startsWith("Image:")) {
       image = line.replace("Image:", "").trim();
@@ -46,9 +53,9 @@ export default async function BlogPostPage({
     }
   }
 
-  // Remove the title line and the "Created:" metadata line from the body
+  // Remove the title line and metadata lines from the body
   const bodyLines = lines.filter(
-    (line, i) => i !== 0 && !line.startsWith("Created:") && !line.startsWith("Image:") && !line.startsWith("Credit:")
+    (line, i) => i !== 0 && !line.startsWith("Created:") && !line.startsWith("Date:") && !line.startsWith("Author:") && !line.startsWith("Image:") && !line.startsWith("Credit:")
   );
   const body = bodyLines.join("\n");
 
@@ -67,10 +74,11 @@ export default async function BlogPostPage({
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-mono-bold mb-4">
           {title}
         </h1>
-        {date && (
-          <p className="text-sm text-muted-foreground font-mono mb-10">
-            {date}
-          </p>
+        {(author || date) && (
+          <div className="flex items-center gap-3 text-sm text-muted-foreground font-mono mb-10">
+            {author && <span className="bg-foreground/10 text-foreground px-3 py-1 rounded-full text-xs font-medium">{author}</span>}
+            {date && <span>{date}</span>}
+          </div>
         )}
 
         {image && (

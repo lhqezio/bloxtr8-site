@@ -8,6 +8,7 @@ interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  author: string;
   image: string;
   preview: string;
   readTime: string;
@@ -26,10 +27,17 @@ function parseBlogPost(filename: string): BlogPost {
 
   // Extract metadata from early lines
   let date = "";
+  let author = "";
   let image = "";
   for (const line of lines.slice(0, 10)) {
     if (line.startsWith("Created:")) {
       date = line.replace("Created:", "").trim();
+    }
+    if (line.startsWith("Date:")) {
+      date = line.replace("Date:", "").trim();
+    }
+    if (line.startsWith("Author:")) {
+      author = line.replace("Author:", "").trim();
     }
     if (line.startsWith("Image:")) {
       image = line.replace("Image:", "").trim();
@@ -44,11 +52,11 @@ function parseBlogPost(filename: string): BlogPost {
   // Extract preview from body text
   const bodyLines = lines
     .slice(1)
-    .filter((l) => !l.startsWith("Created:") && !l.startsWith("Image:") && !l.startsWith("Credit:") && !l.startsWith("#") && !l.startsWith(">") && l.trim() !== "")
+    .filter((l) => !l.startsWith("Created:") && !l.startsWith("Date:") && !l.startsWith("Author:") && !l.startsWith("Image:") && !l.startsWith("Credit:") && !l.startsWith("#") && !l.startsWith(">") && l.trim() !== "")
     .map((l) => l.replace(/\*\*/g, "").replace(/\*/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").trim());
   const preview = bodyLines.slice(0, 3).join(" ").slice(0, 200) + (bodyLines.join(" ").length > 200 ? "..." : "");
 
-  return { slug, title, date, image, preview, readTime };
+  return { slug, title, date, author, image, preview, readTime };
 }
 
 export default function BlogPage() {
@@ -101,15 +109,11 @@ export default function BlogPage() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 backdrop-blur-[2px]" />
                 <div className="relative z-10 h-full flex flex-col justify-end p-8 sm:p-10 md:p-12">
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-2 mb-4 text-xs font-mono">
                     {featured.date && (
-                      <span className="text-xs text-white/70 font-mono">
-                        {featured.date}
-                      </span>
+                      <span className="text-white/70">{featured.date}</span>
                     )}
-                    <span className="text-xs text-white/70 font-mono">
-                      {featured.readTime}
-                    </span>
+                    <span className="text-white/70">{featured.readTime}</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold mb-3 text-white">
                     {featured.title}
@@ -142,15 +146,11 @@ export default function BlogPage() {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30 backdrop-blur-[2px]" />
                     <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8">
-                      <div className="flex items-center gap-3 mb-3">
+                      <div className="flex items-center gap-2 mb-3 text-xs font-mono">
                         {post.date && (
-                          <span className="text-xs text-white/70 font-mono">
-                            {post.date}
-                          </span>
+                          <span className="text-white/70">{post.date}</span>
                         )}
-                        <span className="text-xs text-white/70 font-mono">
-                          {post.readTime}
-                        </span>
+                        <span className="text-white/70">{post.readTime}</span>
                       </div>
                       <h2 className="text-lg sm:text-xl font-mono-bold mb-2 text-white">
                         {post.title}
