@@ -40,8 +40,7 @@ export default function Header() {
               <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.pricing}</Link>
               <Link
                 href="/blockchain"
-                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer min-h-[44px] flex items-center"
-                style={{ fontFamily: 'var(--font-orbitron)' }}
+                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer min-h-[44px] flex items-center"
               >
                 {navigation.links.blockchain}
                 <span className="ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full border border-border bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-cyan-400/10 bg-clip-text text-transparent leading-none" style={{ WebkitTextFillColor: "transparent", backgroundImage: "linear-gradient(to right, #60a5fa, #a78bfa, #22d3ee)", WebkitBackgroundClip: "text" }}>SOON</span>
@@ -53,8 +52,7 @@ export default function Header() {
               <Link href="/pricing" className="hover:text-foreground transition-all duration-200 hover:scale-105 cursor-pointer min-h-[44px] flex items-center">{navigation.links.pricing}</Link>
               <Link
                 href="/blockchain"
-                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer min-h-[44px] flex items-center"
-                style={{ fontFamily: 'var(--font-orbitron)' }}
+                className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-bold text-base hover:scale-105 transition-all duration-200 cursor-pointer min-h-[44px] flex items-center"
               >
                 {navigation.links.blockchain}
                 <span className="ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full border border-border bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-cyan-400/10 bg-clip-text text-transparent leading-none" style={{ WebkitTextFillColor: "transparent", backgroundImage: "linear-gradient(to right, #60a5fa, #a78bfa, #22d3ee)", WebkitBackgroundClip: "text" }}>SOON</span>
@@ -73,7 +71,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-[101] p-2.5 text-muted-foreground hover:text-foreground active:text-foreground transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center -mr-2"
+          className="md:hidden relative z-[101] ml-auto p-2.5 text-muted-foreground hover:text-foreground active:text-foreground transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center -mr-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
           aria-expanded={isMobileMenuOpen}
@@ -106,9 +104,8 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/blockchain"
-                  className="block text-base bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 transition-all duration-200 min-h-[44px] flex items-center"
+                  className="block text-base bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-bold py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 transition-all duration-200 min-h-[44px] flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  style={{ fontFamily: 'var(--font-orbitron)' }}
                 >
                   {navigation.links.blockchain}
                 </Link>
@@ -138,9 +135,8 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/blockchain"
-                  className="block text-base bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-orbitron font-bold py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 transition-all duration-200 min-h-[44px] flex items-center"
+                  className="block text-base bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent font-bold py-3 px-2 rounded-lg hover:bg-background/50 active:bg-background/70 transition-all duration-200 min-h-[44px] flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  style={{ fontFamily: 'var(--font-orbitron)' }}
                 >
                   {navigation.links.blockchain}
                 </Link>
