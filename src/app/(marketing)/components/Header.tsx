@@ -86,7 +86,7 @@ export default function Header() {
 
       {/* Mobile Navigation - outside header to avoid sticky context issues */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border z-[99] shadow-lg">
+        <div className="md:hidden fixed top-16 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border z-[99] shadow-lg">
           <nav className="container-wide pt-4 pb-6 px-4 sm:px-6 space-y-1">
             {isHomePage ? (
               <>
