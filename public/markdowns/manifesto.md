@@ -36,7 +36,7 @@ Jandel's Grow a Garden grew from a small team with a big vision
 into the biggest game on Roblox.
 Adopt Me made $60M a year.
 
-We want to help you join that club.
+Every empire started with one trade. Yours starts here.
 
 So we built ==Bloxtr8== — list your Roblox game, trade with escrow, get paid. No scams, no trust trades.
 If you build it, you own it.
