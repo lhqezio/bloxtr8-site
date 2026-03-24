@@ -81,12 +81,12 @@ export default function FeatureCarousel() {
       {/* Asymmetric bento grid — 3 cols, varied spans */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 md:grid-rows-[480px_480px]">
         {/* Card 1 — Escrow: narrow 1-col */}
-        <FeatureCard index={0} accent="#22c55e" noDefaultBg className="md:col-span-1 relative bg-emerald-300/80 border-emerald-400/60">
+        <FeatureCard index={0} accent="#22c55e" className="md:col-span-1 relative">
           <div className="p-5 sm:p-6 shrink-0">
-            <h3 className="text-xl sm:text-2xl font-mono-bold mb-2 text-emerald-900">
+            <h3 className="text-xl sm:text-2xl font-mono-bold mb-2">
               Escrow
             </h3>
-            <p className="text-sm text-emerald-800/70 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Stripe-secured payments with automatic identity verification. Funds are held safely until both parties confirm.
             </p>
           </div>
