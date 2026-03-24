@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import LogoIcon from "./LogoIcon";
+
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/content/copy";
 import { useState, useEffect, useRef } from "react";
@@ -28,8 +28,7 @@ export default function Header() {
     <>
     <header ref={headerRef} className={`${isHomePage ? "relative" : "sticky top-0 border-b border-border"} z-[100] bg-background/95 backdrop-blur-md`}>
       <div className="container-narrow flex h-16 items-center relative">
-        <Link href="/" className="flex items-center justify-center gap-2 relative z-[101] min-h-[44px] min-w-[44px]">
-          <LogoIcon className="h-5 sm:h-6 drop-shadow-[0_0_6px_rgba(160,160,190,0.4)] dark:drop-shadow-[0_0_8px_rgba(220,220,255,0.6)]" />
+        <Link href="/" className="flex items-center justify-center relative z-[101] min-h-[44px] min-w-[44px]">
           <span className="font-mono text-base sm:text-lg tracking-widest uppercase font-semibold">{navigation.brand}</span>
         </Link>
         
