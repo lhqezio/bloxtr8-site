@@ -105,19 +105,6 @@ export default function SmartContractMockup() {
         className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
         style={{ background: t.surface0, border: `1px solid ${t.rim}` }}
       >
-        {/* Title bar */}
-        <div
-          className="flex items-center gap-1.5 px-3 py-2 shrink-0"
-          style={{ background: t.surface1, borderBottom: `1px solid ${t.rim}` }}
-        >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-          <span className="ml-4 text-[9px] opacity-60" style={{ color: t.fgMuted }}>
-            BloxEscrow.sol — Verified
-          </span>
-        </div>
-
         {/* Code body */}
         <motion.div
           variants={shellVariants}

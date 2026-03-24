@@ -32,7 +32,7 @@ export default function HeroRedesign() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-muted-foreground mt-6 text-balance text-base sm:text-lg lg:text-xl max-w-2xl"
               >
-                The marketplace for Roblox games and assets — with built-in
+                The marketplace for Roblox games and assets with built-in
                 escrow so every trade is protected.
               </motion.p>
 

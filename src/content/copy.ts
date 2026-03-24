@@ -7,7 +7,7 @@ export const hero = {
     connector: "high-value",
     secondary: "trades",
     target: "Roblox",
-    context: "with trusted escrow — protect your community.",
+    context: "with trusted escrow. Protect your community.",
     underlineWords: {
       trades: "trades",
       roblox: "Roblox"
@@ -46,7 +46,7 @@ export const team = {
 
 export const howItWorks = {
   title: "List. Sell. Get paid.",
-  subtitle: "Three steps — escrow handles the rest.",
+  subtitle: "Three steps. Escrow handles the rest.",
   steps: [
     {
       number: "01",
@@ -104,7 +104,7 @@ export const statsSection = {
 export const homeFaq = [
   {
     question: "Why escrow vs. just trust trading?",
-    answer: "Trust trading relies on hope. Escrow holds the funds until both sides confirm — the seller delivers, the buyer verifies, and only then does money move. No screenshots, no \"trust me bro.\""
+    answer: "Trust trading relies on hope. Escrow holds the funds until both sides confirm. The seller delivers, the buyer verifies, and only then does money move. No screenshots, no \"trust me bro.\""
   },
   {
     question: "Who is Bloxtr8 for?",
@@ -143,8 +143,8 @@ export const navigation = {
 };
 
 export const meta = {
-  title: "Bloxtr8 — List your Roblox game. Get paid.",
-  description: "The marketplace for Roblox games and assets — with built-in escrow so every trade is protected.",
+  title: "Bloxtr8 | List your Roblox game. Get paid.",
+  description: "The marketplace for Roblox games and assets, with built-in escrow so every trade is protected.",
   ogTitle: "Bloxtr8",
   ogDescription: "List your Roblox game. Get paid."
 };
@@ -152,7 +152,7 @@ export const meta = {
 // Page-specific metadata
 export const pageMeta = {
   founders: {
-    title: "Founders — Bloxtr8",
+    title: "Founders | Bloxtr8",
     description: "Meet the team behind Bloxtr8."
   },
 };
@@ -554,7 +554,7 @@ export const blockchain = {
   },
   tech: {
     title: "What's under the hood",
-    subtitle: "Base L2, USDC, audited Solidity — everything open and verifiable.",
+    subtitle: "Base L2, USDC, audited Solidity. Everything open and verifiable.",
     specs: [
       {
         label: "Network",
@@ -585,7 +585,7 @@ export const blockchain = {
   },
   emailSignup: {
     title: "Try Bloxtr8 now",
-    subtitle: "Start trading today — we'll let you know when on-chain launches.",
+    subtitle: "Start trading today. We'll let you know when on-chain launches.",
     button: "Start Trading"
   }
 };

@@ -1,46 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, BarChart3, MessageSquare, Palette, Sword, Castle, Gamepad2 } from "lucide-react";
+import { Sword, Castle, Gamepad2 } from "lucide-react";
 import EscrowMockup from "./EscrowMockup";
 import TrendSpotMockup from "./TrendSpotMockup";
 import DiscordMockup from "./DiscordMockup";
-
-/* ─── panel config ─── */
-const panels = [
-  {
-    title: "Secure Escrow",
-    icon: Shield,
-    accent: "#22c55e",
-    description:
-      "Stripe-secured payments with automatic identity verification. Funds are held safely until both parties confirm.",
-    comingSoon: false,
-  },
-  {
-    title: "TrendSpot",
-    icon: BarChart3,
-    accent: "#3b82f6",
-    description:
-      "Real-time market analytics. Track 8,000+ games, monitor trends, and make data-driven trading decisions.",
-    comingSoon: false,
-  },
-  {
-    title: "Discord Integration",
-    icon: MessageSquare,
-    accent: "#6366f1",
-    description:
-      "Trade directly from your Discord server. No need to leave your community.",
-    comingSoon: false,
-  },
-  {
-    title: "CreatorX",
-    icon: Palette,
-    accent: "#a855f7",
-    description:
-      "Portfolio tools for creators. Showcase your work and connect with buyers.",
-    comingSoon: true,
-  },
-];
 
 /* ─── design tokens for CreatorX ─── */
 const cx = {
@@ -60,22 +24,9 @@ const cx = {
 function CreatorXMockup() {
   return (
     <div
-      className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
-      style={{ background: cx.surface0, border: `1px solid ${cx.rim}` }}
+      className="w-full h-full rounded-tr-xl sm:rounded-tr-2xl overflow-hidden shadow-2xl flex flex-col"
+      style={{ background: cx.surface0, borderTop: `1px solid ${cx.rim}`, borderLeft: `1px solid ${cx.rim}`, borderRight: `1px solid ${cx.rim}` }}
     >
-      {/* Title bar */}
-      <div
-        className="flex items-center gap-1.5 px-3 py-2 shrink-0"
-        style={{ background: cx.surface1, borderBottom: `1px solid ${cx.rim}` }}
-      >
-        <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-        <span className="ml-4 text-[9px] opacity-60" style={{ color: cx.fgMuted }}>
-          CreatorX — Portfolio
-        </span>
-      </div>
-
       {/* Body */}
       <div
         className="flex flex-col gap-3 p-4 flex-1"
@@ -98,16 +49,6 @@ function CreatorXMockup() {
             <div className="text-[11px] font-semibold" style={{ color: cx.fg }}>NexGenStudios</div>
             <div className="text-[9px]" style={{ color: cx.muted }}>UGC Creator · Joined 2024</div>
           </div>
-          <span
-            className="text-[8px] px-2 py-0.5 rounded-full font-semibold shrink-0"
-            style={{
-              background: "oklch(0.6 0.15 300 / 15%)",
-              color: cx.purple,
-              border: "1px solid oklch(0.6 0.15 300 / 25%)",
-            }}
-          >
-            ALPHA
-          </span>
         </div>
 
         {/* Stats row */}
@@ -157,30 +98,30 @@ function CreatorXMockup() {
   );
 }
 
-/* ─── Card wrapper with liquid glass styling ─── */
+/* ─── Card wrapper ─── */
 function FeatureCard({
-  panel,
   index,
+  accent,
   children,
   className = "",
+  noDefaultBg = false,
 }: {
-  panel: (typeof panels)[number];
   index: number;
+  accent: string;
   children: React.ReactNode;
   className?: string;
+  noDefaultBg?: boolean;
 }) {
-  const accent = panel.accent;
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`rounded-2xl backdrop-blur-xl p-5 sm:p-6 flex flex-col bg-card ${className}`}
-      style={{
-        background: `linear-gradient(135deg, ${accent}15, ${accent}08, transparent 60%), var(--color-card)`,
-        border: `1px solid ${accent}25`,
-        boxShadow: `0 0 40px ${accent}08, 0 4px 30px oklch(0 0 0 / 10%), inset 0 1px 0 0 oklch(1 0 0 / 8%)`,
+      className={`rounded-2xl border border-border overflow-hidden flex flex-col ${className}`}
+      style={noDefaultBg ? {} : {
+        background: `linear-gradient(145deg, ${accent}0a 0%, var(--card) 50%)`,
+        borderTop: `1px solid ${accent}30`,
       }}
     >
       {children}
@@ -199,102 +140,69 @@ export default function FeatureCarousel() {
         </h2>
       </div>
 
-      {/* Asymmetric Bento Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
-        {/* Card 1 — Escrow: compact 1-col */}
-        <FeatureCard panel={panels[0]} index={0} className="md:col-span-1">
-          <div className="rounded-xl overflow-hidden border border-border mb-4 flex-1 min-h-0 flex flex-col [&>*]:flex-1">
+      {/* Asymmetric bento grid — 3 cols, varied spans */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 md:grid-rows-[480px_480px]">
+        {/* Card 1 — Escrow: narrow 1-col */}
+        <FeatureCard index={0} accent="#22c55e" noDefaultBg className="md:col-span-1 relative bg-emerald-300/80 border-emerald-400/60">
+          <div className="p-6 shrink-0">
+            <h3 className="text-xl sm:text-2xl font-mono-bold mb-2 text-emerald-900">
+              Escrow
+            </h3>
+            <p className="text-sm text-emerald-800/70 leading-relaxed">
+              Stripe-secured payments with automatic identity verification. Funds are held safely until both parties confirm.
+            </p>
+          </div>
+          <div className="flex-1 min-h-0 ml-8 rounded-tl-xl overflow-hidden shadow-lg">
             <EscrowMockup />
           </div>
-          <div className="flex items-center gap-3 mb-2">
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-              style={{
-                background: `${panels[0].accent}18`,
-                border: `1px solid ${panels[0].accent}33`,
-              }}
-            >
-              <Shield className="w-4.5 h-4.5" style={{ color: panels[0].accent }} />
-            </div>
-            <h3 className="text-lg sm:text-xl font-mono-bold">{panels[0].title}</h3>
-          </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {panels[0].description}
-          </p>
         </FeatureCard>
 
-        {/* Card 2 — TrendSpot: hero 2-col */}
-        <FeatureCard panel={panels[1]} index={1} className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-2">
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-              style={{
-                background: `${panels[1].accent}18`,
-                border: `1px solid ${panels[1].accent}33`,
-              }}
-            >
-              <BarChart3 className="w-4.5 h-4.5" style={{ color: panels[1].accent }} />
-            </div>
-            <h3 className="text-lg sm:text-xl font-mono-bold">{panels[1].title}</h3>
+        {/* Card 2 — TrendSpot: wide 2-col, corner clip */}
+        <FeatureCard index={1} accent="#3b82f6" className="md:col-span-2 relative">
+          <div className="p-6 sm:p-8 shrink-0">
+            <h3 className="text-xl sm:text-2xl font-mono-bold mb-2">
+              <span className="text-blue-400">Trend</span>Spot
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-sm">
+              Real-time market analytics. Track 8,000+ games, monitor trends, and make data-driven trading decisions.
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            {panels[1].description}
-          </p>
-          <div className="rounded-xl overflow-hidden border border-border mt-auto flex-1 min-h-0">
+          <div className="flex-1 min-h-0 mr-8 rounded-tr-xl overflow-hidden shadow-lg">
             <TrendSpotMockup />
           </div>
         </FeatureCard>
 
         {/* Card 3 — Discord: wide 2-col */}
-        <FeatureCard panel={panels[2]} index={2} className="md:col-span-2">
-          <div className="flex items-center gap-3 mb-2">
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-              style={{
-                background: `${panels[2].accent}18`,
-                border: `1px solid ${panels[2].accent}33`,
-              }}
-            >
-              <MessageSquare className="w-4.5 h-4.5" style={{ color: panels[2].accent }} />
-            </div>
-            <h3 className="text-lg sm:text-xl font-mono-bold">{panels[2].title}</h3>
+        <FeatureCard index={2} accent="#6366f1" className="md:col-span-2 relative">
+          <div className="p-6 sm:p-8 shrink-0">
+            <h3 className="text-xl sm:text-2xl font-mono-bold mb-2">
+              <span className="text-indigo-400">Discord</span> Integration
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-sm">
+              Trade directly from your Discord server. No need to leave your community.
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            {panels[2].description}
-          </p>
-          <div className="rounded-xl overflow-hidden border border-border mt-auto flex-1 min-h-0">
+          <div className="flex-1 min-h-0 ml-8 rounded-tl-xl overflow-hidden shadow-lg">
             <DiscordMockup />
           </div>
         </FeatureCard>
 
-        {/* Card 4 — CreatorX: compact 1-col */}
-        <FeatureCard panel={panels[3]} index={3} className="md:col-span-1">
-          <div className="flex items-center gap-3 mb-2">
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
-              style={{
-                background: `${panels[3].accent}18`,
-                border: `1px solid ${panels[3].accent}33`,
-              }}
-            >
-              <Palette className="w-4.5 h-4.5" style={{ color: panels[3].accent }} />
+        {/* Card 4 — CreatorX: narrow 1-col */}
+        <FeatureCard index={3} accent="#a855f7" className="md:col-span-1 relative">
+          <div className="p-6 shrink-0">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-xl sm:text-2xl font-mono-bold">
+                <span className="text-purple-400">Creator</span>X
+              </h3>
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                Coming Soon
+              </span>
             </div>
-            <h3 className="text-lg sm:text-xl font-mono-bold">{panels[3].title}</h3>
-            <span
-              className="text-[10px] px-2 py-0.5 rounded-full font-semibold"
-              style={{
-                background: `${panels[3].accent}18`,
-                color: panels[3].accent,
-                border: `1px solid ${panels[3].accent}33`,
-              }}
-            >
-              ALPHA
-            </span>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Portfolio tools for creators. Showcase your work and connect with buyers.
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            {panels[3].description}
-          </p>
-          <div className="rounded-xl overflow-hidden border border-border mt-auto flex-1 min-h-0">
+          <div className="flex-1 min-h-0 mr-8 rounded-tr-xl overflow-hidden shadow-lg blur-[6px]">
             <CreatorXMockup />
           </div>
         </FeatureCard>

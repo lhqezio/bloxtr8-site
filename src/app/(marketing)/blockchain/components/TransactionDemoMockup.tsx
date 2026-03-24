@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, User, Package, Zap, Play, Pause } from "lucide-react";
+import { Check, User, Package, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 
 /* ─── design tokens (matching EscrowMockup) ─── */
@@ -57,27 +57,6 @@ export default function TransactionDemoMockup() {
         className="rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
         style={{ background: t.surface0, border: `1px solid ${t.rim}` }}
       >
-        {/* Title bar */}
-        <div
-          className="flex items-center gap-1.5 px-3 py-2 shrink-0"
-          style={{ background: t.surface1, borderBottom: `1px solid ${t.rim}` }}
-        >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-          <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-          <span className="ml-4 text-[9px] opacity-60" style={{ color: t.fgMuted }}>
-            Bloxtr8 — Live Escrow
-          </span>
-          <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="ml-auto flex items-center gap-1 text-[8px] font-semibold px-1.5 py-0.5 rounded"
-            style={{ color: t.muted, background: t.surface2 }}
-          >
-            {isPlaying ? <Pause className="w-2.5 h-2.5" /> : <Play className="w-2.5 h-2.5" />}
-            {isPlaying ? "LIVE" : "PAUSED"}
-          </button>
-        </div>
-
         <div className="p-3 sm:p-4 flex flex-col gap-3">
           {/* Horizontal pipeline */}
           <div className="flex items-center px-1">
