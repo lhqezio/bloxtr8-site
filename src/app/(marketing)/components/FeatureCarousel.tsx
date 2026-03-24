@@ -71,13 +71,6 @@ function FeatureCard({
 export default function FeatureCarousel() {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-28 border-t border-border">
-      {/* Section header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-10 sm:mb-14">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono-bold">
-          How we make you more $$
-        </h2>
-      </div>
-
       {/* Asymmetric bento grid — 3 cols, varied spans */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 md:grid-rows-[480px_480px]">
         {/* Card 1 — Escrow: narrow 1-col */}
