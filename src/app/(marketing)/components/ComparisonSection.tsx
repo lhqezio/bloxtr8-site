@@ -9,7 +9,7 @@ export default function ComparisonSection() {
     <section className="py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
       <div className="container-narrow px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono-bold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono-bold">
             {comparison.title}
           </h2>
         </div>
