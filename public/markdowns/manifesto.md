@@ -36,7 +36,7 @@ Roblox creators are running studios out of their bedrooms making more than most 
 
 Every empire started with one trade. Yours starts here.
 
-So we built ==Bloxtr8== — list your Roblox game, trade with escrow, get paid. No scams, no trust trades.
+So we built ==Bloxtr8==: list your Roblox game, trade with escrow, get paid. No scams, no trust trades.
 If you build it, you own it.
 
 > So, start building.
